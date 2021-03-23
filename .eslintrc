@@ -1,0 +1,66 @@
+{
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["eslint-plugin-import-helpers"],
+  "rules": {
+    // React specific rules
+    "react/jsx-filename-extension": "off", // it's .tsx in TypeScript projects
+    "react/jsx-props-no-spreading": "off", // props spreading is fine
+    "react/react-in-jsx-scope": "off", // not needed with new React runtime
+    "react/require-default-props": "off", // not needed with TypeScript
+
+    // Import rules
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/prefer-default-export": "off", // named exports are much better
+    "import/no-default-export": "error", // https://humanwhocodes.com/blog/2019/01/stop-using-default-exports-javascript-module/
+    "import-helpers/order-imports": [
+      "error",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          ["module"],
+          ["parent", "sibling", "index"],
+          "/[/]use[A-Z][a-zA-Z]+$/", // hooks
+          "/[.](svg|css|json)$/" // assets
+        ]
+      }
+    ],
+
+    // General rules
+    "func-style": ["error", "declaration"] // function declarations are more readable
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@typescript-eslint/recommended"],
+      "settings": {
+        "import/resolver": {
+          "typescript": {}
+        }
+      },
+      "rules": {
+        "no-use-before-define": "off", // handled by @typescript-eslint
+        "no-duplicate-imports": "off", // handled by @typescript-eslint
+
+        "@typescript-eslint/ban-ts-comment": [
+          "error",
+          { "ts-ignore": "allow-with-description" }
+        ],
+        "@typescript-eslint/no-duplicate-imports": "error",
+        "@typescript-eslint/explicit-module-boundary-types": "off", // TypeScript is good on infering types
+        "@typescript-eslint/no-use-before-define": "error"
+      }
+    }
+  ]
+}

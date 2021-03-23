@@ -1,0 +1,11 @@
+{
+  "title": "Selfie",
+  "images": [
+    {
+      "url": "/images/series/selfie/DSC06408.jpg",
+      "cover": true
+    }
+  ],
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "background": "#fbdc02"
+}

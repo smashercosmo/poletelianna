@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "name": "series",
+      "href": "/"
+    },
+    {
+      "name": "pics",
+      "href": "/pics"
+    },
+    {
+      "name": "backstage",
+      "href": "/backstage"
+    },
+    {
+      "name": "about",
+      "href": "/about"
+    },
+    {
+      "name": "contacts",
+      "href": "/contacts"
+    }
+  ]
+}

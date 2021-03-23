@@ -1,0 +1,22 @@
+.root {
+  white-space: nowrap;
+  text-align: center;
+  overflow: hidden;
+}
+
+.text {
+  position: relative;
+}
+
+.before,
+.after {
+  position: absolute;
+}
+
+.before {
+  left: 100%;
+}
+
+.after {
+  right: 100%;
+}

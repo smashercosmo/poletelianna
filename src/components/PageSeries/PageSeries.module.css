@@ -1,0 +1,30 @@
+.album {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-row-end: span 2;
+}
+
+@media (--md) {
+  .album {
+    padding: var(--gap-rem);
+  }
+
+  .album:nth-child(1),
+  .album:nth-child(3) {
+    grid-row-start: 2;
+  }
+
+  .album:nth-child(1) {
+    grid-column-start: 1;
+  }
+
+  .album:nth-child(3) {
+    grid-column-start: 3;
+  }
+
+  .album:nth-child(5) {
+    grid-row-start: 2;
+    grid-column-start: 5;
+  }
+}

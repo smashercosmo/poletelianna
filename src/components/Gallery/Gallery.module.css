@@ -1,0 +1,56 @@
+.root {
+  --home-page-columns-number: 1;
+  --home-page-column-width: 1fr;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: repeat(
+    var(--home-page-columns-number),
+    var(--home-page-column-width)
+  );
+  grid-gap: calc(var(--gap-rem) * 2);
+  padding: 0 calc(var(--gap-rem) / 2) var(--gap-rem) calc(var(--gap-rem) / 2);
+  position: relative;
+}
+
+.heading {
+  font-size: var(--fz-40);
+  padding-top: 1.25rem;
+  padding-bottom: 3.75rem;
+  position: relative;
+  font-family: 'Transgender Grotesk Regular', sans-serif;
+}
+
+/* 1. disable scale animation on mobile */
+@media (max-width: 719px) {
+  .inner {
+    transform: scale(1) !important;
+  }
+}
+
+/* 2. disable scale animation according to user preferences */
+@media (prefers-reduced-motion: reduce) {
+  .inner {
+    transform: scale(1) !important;
+  }
+}
+
+/* 3. disable scale animation if we're rendering cms preview */
+.root.isPreview .inner {
+  transform: scale(1) !important;
+}
+
+@media (--md) {
+  .root {
+    --home-page-columns-number: 5;
+    --home-page-column-width: 950px;
+
+    user-select: none;
+  }
+
+  .inner {
+    padding: 0;
+    grid-gap: var(--gap-rem);
+  }
+}

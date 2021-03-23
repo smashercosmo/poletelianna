@@ -1,0 +1,100 @@
+.root {
+  --frame-nav-item-padding-px: 12;
+  --frame-nav-item-padding-rem: calc(
+    var(--frame-nav-item-padding-px) / var(--base-font-size) * 1rem
+  );
+
+  display: grid;
+}
+
+.top,
+.bottom,
+.left,
+.right {
+  background-color: white;
+  position: fixed;
+  z-index: 1;
+}
+
+.top {
+  display: grid;
+  top: 0;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.top,
+.bottom {
+  left: 0;
+  right: 0;
+  height: var(--gap-rem);
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.left,
+.right {
+  top: 0;
+  bottom: 0;
+  width: var(--gap-rem);
+}
+
+.telegram,
+.instagram {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--gap-rem);
+}
+
+.telegram {
+  left: 0;
+  transform: rotate(-90deg);
+}
+
+.instagram {
+  right: 0;
+  transform: rotate(90deg);
+}
+
+.telegram a,
+.instagram a {
+  outline: 0 none;
+  pointer-events: auto;
+}
+
+.telegram a:focus,
+.instagram a:focus {
+  text-decoration: underline;
+}
+
+.main {
+  position: relative;
+  z-index: 0;
+  padding: var(--gap-rem) 0;
+}
+
+@media (--md) {
+  .main {
+    padding: var(--gap-rem);
+  }
+}
+
+.footer {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}

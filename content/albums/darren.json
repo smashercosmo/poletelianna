@@ -1,0 +1,11 @@
+{
+  "title": "Darren",
+  "images": [
+    {
+      "url": "/images/series/darren/DSC05519.jpg",
+      "cover": true
+    }
+  ],
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "background": "#ffdbb4"
+}

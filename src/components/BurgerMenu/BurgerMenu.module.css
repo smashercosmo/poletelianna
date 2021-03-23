@@ -1,0 +1,66 @@
+.root {
+  border: 0 none;
+  background: white;
+  cursor: pointer;
+  outline: 0 none;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 2rem;
+  padding: 0.625rem 0;
+  position: relative;
+}
+
+.outline {
+  transition: transform 0.1s linear;
+  border: 1px solid;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.root:hover .outline,
+.root:focus .outline {
+  transform: scale(1.1);
+}
+
+.line {
+  height: 1px;
+  width: 1rem;
+  background-color: black;
+  transition: transform 0.1s linear;
+}
+
+.line:first-child {
+  transform: translateY(-3px);
+}
+
+.line:last-child {
+  transform: translateY(3px);
+}
+
+.root:hover .line:first-child,
+.root:focus .line:first-child {
+  transform: translateY(-2px);
+}
+
+.root:hover .line:last-child,
+.root:focus .line:last-child {
+  transform: translateY(2px);
+}
+
+.root.expanded .line:first-child {
+  transform: translateY(1px);
+}
+
+.root.expanded .line:last-child {
+  transform: translateY(-1px);
+}

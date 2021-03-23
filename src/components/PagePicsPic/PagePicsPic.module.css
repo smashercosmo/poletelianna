@@ -1,0 +1,10 @@
+.root {
+  height: 100%;
+}
+
+.title {
+  font-size: var(--fz-32);
+  padding-top: 0.5rem;
+  text-transform: lowercase;
+  font-family: 'Transgender Grotesk Regular', sans-serif;
+}

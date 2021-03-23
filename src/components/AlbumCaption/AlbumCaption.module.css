@@ -1,0 +1,35 @@
+.heading {
+  position: relative;
+}
+
+.title {
+  font-family: 'Transgender Grotesk Regular', sans-serif;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  text-transform: lowercase;
+}
+
+.subtitle {
+  display: flex;
+  font-family: var(--base-font-family);
+  font-weight: normal;
+}
+
+.description {
+  line-height: 1.4;
+}
+
+@media (--md) {
+  .title {
+    padding-bottom: 1rem;
+  }
+
+  .subtitle {
+    position: absolute;
+    bottom: 100%;
+  }
+
+  .description {
+    line-height: 1.6;
+  }
+}

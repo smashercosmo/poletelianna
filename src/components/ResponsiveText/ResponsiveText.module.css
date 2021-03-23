@@ -1,0 +1,37 @@
+.root {
+  --r-fz-xs: initial;
+  --r-fz-sm: initial;
+  --r-fz-md: initial;
+  --r-fz-lg: initial;
+  --r-fz-xl: initial;
+  --r-fz: var(--r-fz-xs);
+
+  font-size: var(--r-fz);
+}
+
+@media (--sm) {
+  .root {
+    --r-fz: var(--r-fz-sm, var(--r-fz-xs));
+  }
+}
+
+@media (--md) {
+  .root {
+    --r-fz: var(--r-fz-md, var(--r-fz-sm, var(--r-fz-xs)));
+  }
+}
+
+@media (--lg) {
+  .root {
+    --r-fz: var(--r-fz-lg, var(--r-fz-md, var(--r-fz-sm, var(--r-fz-xs))));
+  }
+}
+
+@media (--xl) {
+  .root {
+    --r-fz: var(
+      --r-fz-xl,
+      var(--r-fz-lg, var(--r-fz-md, var(--r-fz-sm, var(--r-fz-xs))))
+    );
+  }
+}

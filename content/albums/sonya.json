@@ -1,0 +1,11 @@
+{
+  "title": "Sonya",
+  "images": [
+    {
+      "url": "/images/series/sonya/DSC01504.jpg",
+      "cover": true
+    }
+  ],
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "background": "#d6e0ff"
+}

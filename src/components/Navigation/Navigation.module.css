@@ -1,0 +1,28 @@
+.item {
+  outline: 0 none;
+}
+
+.item:focus {
+  text-decoration: underline;
+}
+
+.root.horizontal {
+  margin-left: calc(-1 * var(--frame-nav-item-padding-rem));
+  margin-right: calc(-1 * var(--frame-nav-item-padding-rem));
+}
+
+.root.horizontal,
+.item.horizontal {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.item.horizontal {
+  padding-left: var(--frame-nav-item-padding-rem);
+  padding-right: var(--frame-nav-item-padding-rem);
+}
+
+.item.vertical {
+  display: block;
+}

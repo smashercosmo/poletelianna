@@ -1,0 +1,17 @@
+{
+  "title": "Cube",
+  "images": [
+    {
+      "url": "/images/series/cube/DSC07173.jpg",
+      "cover": true
+    },
+    {
+      "url": "/images/series/cube/DSC07167.jpg"
+    },
+    {
+      "url": "/images/series/cube/DSC07124.jpg"
+    }
+  ],
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "background": "#ffdc79"
+}

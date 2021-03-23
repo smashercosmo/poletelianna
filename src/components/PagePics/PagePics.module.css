@@ -1,0 +1,30 @@
+.pic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-row-end: span 2;
+}
+
+@media (--md) {
+  .pic {
+    padding: var(--gap-rem);
+  }
+
+  .pic:nth-child(1),
+  .pic:nth-child(3) {
+    grid-row-start: 2;
+  }
+
+  .pic:nth-child(1) {
+    grid-column-start: 1;
+  }
+
+  .pic:nth-child(3) {
+    grid-column-start: 3;
+  }
+
+  .pic:nth-child(5) {
+    grid-row-start: 2;
+    grid-column-start: 5;
+  }
+}

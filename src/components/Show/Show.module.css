@@ -1,0 +1,31 @@
+.root {
+  display: none;
+}
+
+.shown {
+  display: block;
+}
+
+@media (--sm) {
+  .sm.root {
+    display: block;
+  }
+}
+
+@media (--md) {
+  .md.root {
+    display: block;
+  }
+}
+
+@media (--lg) {
+  .lg.root {
+    display: block;
+  }
+}
+
+@media (--xl) {
+  .xl.root {
+    display: block;
+  }
+}

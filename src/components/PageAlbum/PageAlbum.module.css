@@ -1,0 +1,73 @@
+.root {
+  margin-bottom: calc(var(--gap-rem) * -1);
+  margin-top: calc(var(--gap-rem) * -1);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: grid;
+  height: 100%;
+  padding: var(--gap-rem);
+  grid-gap: var(--gap-rem);
+  grid-template-columns: minmax(0, 700px) minmax(300px, 30%);
+  justify-content: center;
+  align-items: center;
+}
+
+.caption {
+  align-self: flex-end;
+}
+
+.scroller {
+  display: flex;
+  height: 100%;
+  gap: var(--gap-rem);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.item {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* modern scroll snap points */
+@supports (scroll-snap-align: start) {
+  .scroller {
+    scroll-snap-type: x mandatory;
+  }
+
+  .item {
+    scroll-snap-align: center;
+  }
+}
+
+/* old scroll snap points spec */
+@supports not (scroll-snap-align: start) {
+  .scroller {
+    -webkit-scroll-snap-type: mandatory;
+    scroll-snap-type: mandatory;
+    -webkit-scroll-snap-destination: 0% center;
+    scroll-snap-destination: 0% center;
+    -webkit-scroll-snap-points-x: repeat(100%);
+    scroll-snap-points-x: repeat(100%);
+  }
+
+  .item {
+    scroll-snap-coordinate: 0 0;
+  }
+}

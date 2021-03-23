@@ -1,0 +1,98 @@
+backend:
+  name: git-gateway
+media_folder: /static/images
+public_folder: /images
+collections:
+  - name: blocks
+    label: Blocks
+    files:
+      - label: Navigation
+        name: navigation
+        file: content/blocks/navigation.json
+        fields:
+          - label: Items
+            name: items
+            widget: list
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Href, name: href, widget: string }
+
+  - label: Albums
+    name: albums
+    folder: content/albums
+    format: json
+    create: true
+    media_folder: '{{media_folder}}/series/{{filename}}'
+    public_folder: '{{public_folder}}/series/{{filename}}'
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text }
+      - { label: Background, name: background, widget: color }
+      - label: Images
+        name: images
+        widget: list
+        required: false
+        fields:
+          - { label: URL, name: url, widget: image }
+          - { label: Cover, name: cover, widget: boolean, required: false }
+
+  - name: pages
+    label: Pages
+    files:
+      - label: Series
+        name: series
+        file: content/pages/series/series.json
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Albums
+            name: albums
+            widget: relation
+            collection: albums
+            search_fields: ["title"]
+            value_field: title
+            display_fields: ["title"]
+            multiple: true
+
+      - label: Pics
+        name: pics
+        file: content/pages/pics/pics.json
+        media_folder: '{{media_folder}}/pics'
+        public_folder: '{{public_folder}}/pics'
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Pics
+            name: pics
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Background, name: background, widget: color }
+              - { label: Image, name: image, widget: image }
+
+      - label: Backstage
+        name: backstage
+        file: content/pages/backstage/backstage.json
+        fields:
+          - label: Title
+            name: title
+            widget: string
+
+      - label: About
+        name: about
+        file: content/pages/about/about.json
+        fields:
+          - label: Title
+            name: title
+            widget: string
+
+      - label: Contacts
+        name: contacts
+        file: content/pages/contacts/contacts.json
+        fields:
+          - label: Title
+            name: title
+            widget: string

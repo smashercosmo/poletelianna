@@ -1,0 +1,30 @@
+overwrite: true
+schema: "http://localhost:8000/___graphql"
+documents:
+  - ./src/**/*.{ts,tsx}
+  - ./node_modules/gatsby-transformer-remark/!(node_modules)/**/*.js
+  - ./node_modules/gatsby-transformer-sharp/!(node_modules)/**/*.js
+  - ./node_modules/gatsby-transformer-yaml/!(node_modules)/**/*.js
+  - ./node_modules/gatsby-transformer-json/!(node_modules)/**/*.js
+  - ./node_modules/gatsby-plugin-image/!(node_modules)/**/*.ts
+generates:
+  ./src/types/generated/graphql.ts:
+    hooks:
+      afterOneFileWrite:
+        - prettier --write
+    plugins:
+      - typescript
+      - typescript-operations
+config:
+  # https://github.com/dotansimha/graphql-code-generator/issues/642#issuecomment-495919863
+  namingConvention:
+    enumValues: keep
+  avoidOptionals: true
+  immutableTypes: true
+  # https://github.com/dotansimha/graphql-code-generator/issues/2051#issuecomment-504762976
+  maybeValue: T
+  declarationKind: interface
+  useTypeImports: true
+  preResolveTypes: true
+  scalars:
+    GatsbyImageData: gatsby-plugin-image#IGatsbyImageData
