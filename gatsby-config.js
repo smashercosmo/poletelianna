@@ -12,7 +12,7 @@ module.exports = {
     `gatsby-plugin-image`,
     'gatsby-plugin-typescript',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sitemap',
+    /* 'gatsby-plugin-sitemap', */
     'gatsby-transformer-remark',
     'gatsby-plugin-svgr',
     {
