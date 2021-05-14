@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import { getMediaQueryList } from '../../lib/getMediaQueryList'
+
 import type { breakpoints } from '../../lib/getMediaQueryList'
 
 function useExpanded({

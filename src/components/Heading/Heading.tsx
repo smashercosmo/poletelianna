@@ -1,10 +1,11 @@
-import * as React from 'react'
 import clsx from 'clsx'
 
 import styles from './Heading.module.css'
 
-type HeadingProps = React.DetailedHTMLProps<
-  React.HTMLAttributes<HTMLHeadingElement>,
+import type { DetailedHTMLProps, HTMLAttributes } from 'react'
+
+type HeadingProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLHeadingElement>,
   HTMLHeadingElement
 > & {
   level: 1 | 2 | 3 | 4 | 5 | 6

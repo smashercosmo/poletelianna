@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { VisuallyHidden } from '@react-aria/visually-hidden'
 import { a } from '@react-spring/web'
 import clsx from 'clsx'
@@ -6,14 +5,14 @@ import clsx from 'clsx'
 import { Heading } from '../Heading/Heading'
 import { RepeatingText } from '../RepeatingText/RepeatingText'
 import { Hide } from '../Hide/Hide'
-
 import { useAnimateScale } from '../../hooks/useAnimateScale'
-
 import styles from './Gallery.module.css'
+
+import type { ReactNode } from 'react'
 
 interface GalleryProps {
   title: string
-  children: React.ReactNode
+  children: ReactNode
   isPreview?: boolean
   currentWindow?: Window
 }

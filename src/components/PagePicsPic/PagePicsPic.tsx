@@ -1,13 +1,10 @@
-import * as React from 'react'
-import type { IGatsbyImageData } from 'gatsby-plugin-image'
-
 import { Heading } from '../Heading/Heading'
 import { Image } from '../Image/Image'
-import type { ImageProps } from '../Image/Image'
-
 import { useResizedImage } from '../../hooks/useResizedImage'
-
 import styles from './PagePicsPic.module.css'
+
+import type { ImageProps } from '../Image/Image'
+import type { IGatsbyImageData } from 'gatsby-plugin-image'
 
 interface PagePicsPicProps {
   title: string

@@ -1,7 +1,7 @@
-import React from 'react'
 import { graphql } from 'gatsby'
 
 import { PagePics } from '../components/PagePics/PagePics'
+
 import type { PicsPageQuery } from '../types/generated/graphql'
 
 export const query = graphql`

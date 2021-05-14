@@ -1,10 +1,11 @@
-import * as React from 'react'
 import clsx from 'clsx'
 
 import styles from './Paragraph.module.css'
 
-type ParagraphProps = React.DetailedHTMLProps<
-  React.HTMLAttributes<HTMLParagraphElement>,
+import type { DetailedHTMLProps, HTMLAttributes } from 'react'
+
+type ParagraphProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLParagraphElement>,
   HTMLParagraphElement
 >
 

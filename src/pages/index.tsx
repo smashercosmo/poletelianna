@@ -1,7 +1,7 @@
-import React from 'react'
 import { graphql } from 'gatsby'
 
 import { PageSeries } from '../components/PageSeries/PageSeries'
+
 import type { SeriesPageQuery } from '../types/generated/graphql'
 
 export const query = graphql`

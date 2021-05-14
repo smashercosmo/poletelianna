@@ -1,14 +1,12 @@
-import React, { useEffect, useState, useRef } from 'react'
-import { navigate } from 'gatsby'
-import type { IGatsbyImageData } from 'gatsby-plugin-image'
+import * as React from 'react'
 
 import { Image } from '../Image/Image'
 import { AlbumCaption } from '../AlbumCaption/AlbumCaption'
-import type { ImageProps } from '../Image/Image'
-
 import { useResizedImages } from '../../hooks/useResizedImage'
-
 import styles from './PageAlbum.module.css'
+
+import type { ImageProps } from '../Image/Image'
+import type { IGatsbyImageData } from 'gatsby-plugin-image'
 
 interface PageAlbumProps {
   title: string
@@ -19,12 +17,12 @@ interface PageAlbumProps {
 
 function PageAlbum(props: PageAlbumProps) {
   const { title, description, url, images } = props
-  const [scrolledItem, setScrolledItem] = useState(0)
-  const scrollerRef = useRef<HTMLDivElement | null>(null)
+  const [scrolledItem, setScrolledItem] = React.useState(0)
+  const scrollerRef = React.useRef<HTMLDivElement | null>(null)
   const scrollItems = images.length
   const resizedImages = useResizedImages({ images, maxSize: 620 })
 
-  useEffect(() => {
+  React.useEffect(() => {
     let scrollerNode: HTMLDivElement | undefined
     let scrollTimeout: number | null = null
     let wheelTimeout: number | null = null
@@ -80,7 +78,7 @@ function PageAlbum(props: PageAlbumProps) {
     }
   }, [scrollItems])
 
-  useEffect(() => {
+  React.useEffect(() => {
     const path = `${url}/${scrolledItem}`
     window.history.replaceState({ path }, '', path)
   }, [scrolledItem, url])

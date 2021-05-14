@@ -1,12 +1,11 @@
-import * as React from 'react'
-
 import { Header } from '../Header/Header'
 import { Show } from '../Show/Show'
-
 import styles from './Frame.module.css'
 
+import type { ReactNode } from 'react'
+
 type FrameProps = {
-  children: React.ReactNode
+  children: ReactNode
   navigationItems: ReadonlyArray<{ name: string; href: string }>
   currentPath: string
 }

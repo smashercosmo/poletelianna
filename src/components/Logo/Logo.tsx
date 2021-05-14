@@ -1,7 +1,4 @@
-import * as React from 'react'
-
 import { pxToRem } from '../../lib/pxToRem'
-
 import { ReactComponent as LogoImage } from './logo.svg'
 import styles from './Logo.module.css'
 

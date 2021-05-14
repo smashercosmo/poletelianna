@@ -1,7 +1,8 @@
-import React from 'react'
-import { graphql, PageProps } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import { PageAlbum } from '../../../components/PageAlbum/PageAlbum'
+
+import type { PageProps } from 'gatsby'
 import type { AlbumPageQuery } from '../../../types/generated/graphql'
 
 export const query = graphql`

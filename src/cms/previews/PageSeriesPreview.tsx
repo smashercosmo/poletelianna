@@ -1,8 +1,9 @@
 import * as React from 'react'
 import slugify from '@sindresorhus/slugify'
-import type { PreviewTemplateComponentProps } from 'netlify-cms-core'
 
 import { PageSeries } from '../../components/PageSeries/PageSeries'
+
+import type { PreviewTemplateComponentProps } from 'netlify-cms-core'
 
 // TODO make PR to netlify-cms to add 'window' and 'document' props
 type PageSeriesPreviewProps = PreviewTemplateComponentProps & {

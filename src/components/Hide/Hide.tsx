@@ -1,10 +1,11 @@
-import * as React from 'react'
 import clsx from 'clsx'
 
 import styles from './Hide.module.css'
 
+import type { ReactNode } from 'react'
+
 type HideProps = {
-  children: React.ReactNode
+  children: ReactNode
   at?: 'sm' | 'md' | 'lg' | 'xl'
 }
 

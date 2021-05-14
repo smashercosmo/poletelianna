@@ -1,4 +1,3 @@
-import * as React from 'react'
 import clsx from 'clsx'
 import { VisuallyHidden } from '@react-aria/visually-hidden'
 

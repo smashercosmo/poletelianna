@@ -1,5 +1,6 @@
-import React, { ImgHTMLAttributes } from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
+
+import type { ImgHTMLAttributes } from 'react'
 import type { GatsbyImageProps } from 'gatsby-plugin-image'
 
 type SimpleImageProps = Omit<

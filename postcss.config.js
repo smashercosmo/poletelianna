@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 const { readFileSync } = require('fs')
 
 const mediaBreakPointsCss = readFileSync('src/styles/breakpoints.css')

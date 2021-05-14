@@ -1,10 +1,11 @@
-import * as React from 'react'
 import clsx from 'clsx'
 
 import styles from './Show.module.css'
 
+import type { ReactNode } from 'react'
+
 type ShowProps = {
-  children: React.ReactNode
+  children: ReactNode
   when?: boolean
   at?: 'sm' | 'md' | 'lg' | 'xl'
 }

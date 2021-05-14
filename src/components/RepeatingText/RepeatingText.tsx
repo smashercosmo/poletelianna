@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import styles from './RepeatingText.module.css'
 
 interface RepeatingText {

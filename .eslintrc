@@ -1,38 +1,35 @@
 {
   "extends": [
-    "airbnb",
-    "airbnb/hooks",
-    "plugin:prettier/recommended"
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
   ],
-  "plugins": ["eslint-plugin-import-helpers"],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
     // React specific rules
-    "react/jsx-filename-extension": "off", // it's .tsx in TypeScript projects
-    "react/jsx-props-no-spreading": "off", // props spreading is fine
     "react/react-in-jsx-scope": "off", // not needed with new React runtime
-    "react/require-default-props": "off", // not needed with TypeScript
 
     // Import rules
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "js": "never",
-        "ts": "never",
-        "tsx": "never"
-      }
-    ],
-    "import/prefer-default-export": "off", // named exports are much better
     "import/no-default-export": "error", // https://humanwhocodes.com/blog/2019/01/stop-using-default-exports-javascript-module/
-    "import-helpers/order-imports": [
+    "import/order": [
       "error",
       {
-        "newlinesBetween": "always",
+        "newlines-between": "always",
         "groups": [
-          ["module"],
-          ["parent", "sibling", "index"],
-          "/[/]use[A-Z][a-zA-Z]+$/", // hooks
-          "/[.](svg|css|json)$/" // assets
+          ["builtin", "external"],
+          ["internal", "parent", "sibling", "index"],
+          ["type"]
         ]
       }
     ],
@@ -43,12 +40,10 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@typescript-eslint/recommended"],
-      "settings": {
-        "import/resolver": {
-          "typescript": {}
-        }
-      },
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/typescript"
+      ],
       "rules": {
         "no-use-before-define": "off", // handled by @typescript-eslint
         "no-duplicate-imports": "off", // handled by @typescript-eslint
@@ -57,10 +52,15 @@
           "error",
           { "ts-ignore": "allow-with-description" }
         ],
+        "@typescript-eslint/consistent-type-imports": "error",
         "@typescript-eslint/no-duplicate-imports": "error",
         "@typescript-eslint/explicit-module-boundary-types": "off", // TypeScript is good on infering types
         "@typescript-eslint/no-use-before-define": "error"
       }
+    },
+    {
+      "files": ["*.js", "*.ts", "*.tsx"],
+      "extends": ["plugin:prettier/recommended"]
     }
   ]
 }

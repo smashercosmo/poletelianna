@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import { calculateAspectRatioFit } from '../lib/calculateAspectRatioFit'
+
 import type { ImageProps } from '../components/Image/Image'
 
 function resizeImage(args: { image: ImageProps['image']; maxSize: number }) {

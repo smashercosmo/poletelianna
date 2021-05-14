@@ -1,6 +1,7 @@
 import { useSpring, config } from '@react-spring/web'
 
 import { getMediaQueryList } from '../lib/getMediaQueryList'
+
 import type { breakpoints } from '../lib/getMediaQueryList'
 
 const isBrowser = typeof window !== 'undefined'

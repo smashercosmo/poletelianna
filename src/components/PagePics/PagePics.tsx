@@ -1,14 +1,12 @@
-import * as React from 'react'
 import { Link } from 'gatsby'
 
 import { PagePicsPic } from '../PagePicsPic/PagePicsPic'
 import { Gallery } from '../Gallery/Gallery'
-import type { ImageProps } from '../Image/Image'
-
 import { useAnimateBackground } from '../../hooks/useAnimateBackground'
 import { useDragScroll } from '../../hooks/useDragScroll'
-
 import styles from './PagePics.module.css'
+
+import type { ImageProps } from '../Image/Image'
 
 export interface Pic {
   title: string

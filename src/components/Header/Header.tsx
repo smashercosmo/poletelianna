@@ -1,4 +1,3 @@
-import * as React from 'react'
 import clsx from 'clsx'
 import { Link } from 'gatsby'
 import { VisuallyHidden } from '@react-aria/visually-hidden'
@@ -10,9 +9,7 @@ import { Logo } from '../Logo/Logo'
 import { Heading } from '../Heading/Heading'
 import { Navigation } from '../Navigation/Navigation'
 import { BurgerMenu } from '../BurgerMenu/BurgerMenu'
-
 import { useExpanded } from './useExpanded'
-
 import styles from './Header.module.css'
 
 type HeaderProps = {
@@ -30,6 +27,7 @@ function Header(props: HeaderProps) {
   return (
     <FocusOn
       enabled={isExpanded}
+      // eslint-disable-next-line jsx-a11y/no-autofocus
       autoFocus
       onEscapeKey={() => setIsExpanded(false)}>
       <header

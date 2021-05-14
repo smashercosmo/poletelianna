@@ -1,7 +1,6 @@
-import React from 'react'
-import type { ReactNode } from 'react'
-
 import styles from './ResponsiveText.module.css'
+
+import type { ReactNode } from 'react'
 
 type FontSize = string | 16 | 20 | 32 | 40 | 56
 

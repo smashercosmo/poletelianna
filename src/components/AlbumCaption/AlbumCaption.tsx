@@ -1,11 +1,9 @@
-import * as React from 'react'
-
 import { Heading } from '../Heading/Heading'
 import { Paragraph } from '../Paragraph/Paragraph'
 import { ResponsiveText } from '../ResponsiveText/ResponsiveText'
-import type { ResponsiveFontSize } from '../ResponsiveText/ResponsiveText'
-
 import styles from './AlbumCaption.module.css'
+
+import type { ResponsiveFontSize } from '../ResponsiveText/ResponsiveText'
 
 interface AlbumCaptionProps {
   title: string
