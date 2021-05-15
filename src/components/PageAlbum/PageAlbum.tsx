@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 
 import { Image } from '../Image/Image'
 import { Text } from '../Base/Base'
+import { Show } from '../Show/Show'
 import { AlbumCaption } from '../AlbumCaption/AlbumCaption'
 import { useResizedImages } from '../../hooks/useResizedImage'
 import { ReactComponent as BackIcon } from './back-icon.svg'
@@ -14,16 +15,35 @@ import type { IGatsbyImageData } from 'gatsby-plugin-image'
 interface PageAlbumProps {
   title: string
   description: string
-  uri: string
-  index: number
   images: ReadonlyArray<ImageProps['image']>
 }
 
+function getIndex(
+  mayBeIndexString: string | undefined | null,
+  maxIndex: number,
+) {
+  const mayBeIndexNumber = Number(mayBeIndexString)
+
+  if (Number.isInteger(mayBeIndexNumber)) {
+    if (mayBeIndexNumber < 0) return 0
+    else if (mayBeIndexNumber > maxIndex) return maxIndex
+    else return mayBeIndexNumber
+  }
+
+  return 0
+}
+
 function PageAlbum(props: PageAlbumProps) {
-  const { title, description, uri, index, images } = props
-  const [scrolledItem, setScrolledItem] = React.useState(0)
+  const { title, description, images } = props
+  const mayBePage =
+    typeof window === 'undefined'
+      ? '0'
+      : new URLSearchParams(window.location.search).get('page')
+  const scrollItemsCount = images.length
+  const page = getIndex(mayBePage, scrollItemsCount)
+  const [scrolledItem, setScrolledItem] = React.useState(page)
+  const [scrollerVisible, setScrollerVisible] = React.useState(false)
   const scrollerRef = React.useRef<HTMLDivElement | null>(null)
-  const scrollItems = images.length
   const resizedImages = useResizedImages({ images, maxSize: 620 })
 
   React.useEffect(() => {
@@ -35,7 +55,7 @@ function PageAlbum(props: PageAlbumProps) {
     function getCurrentItem() {
       if (!scrollerNode) return undefined
       const { scrollLeft, scrollWidth } = scrollerNode
-      return Math.round((scrollLeft / scrollWidth) * scrollItems)
+      return Math.round((scrollLeft / scrollWidth) * scrollItemsCount)
     }
 
     function onScrollEnd() {
@@ -80,49 +100,56 @@ function PageAlbum(props: PageAlbumProps) {
         scrollerNode.removeEventListener('touchmove', onTouchMove)
       }
     }
-  }, [scrollItems])
+  }, [scrollItemsCount])
 
   React.useEffect(() => {
-    const path = `${uri}/${index}`
+    const path = `${window.location.pathname}?page=${scrolledItem}`
     window.history.replaceState({ path }, '', path)
-  }, [uri, index])
+  }, [scrolledItem])
 
   React.useEffect(() => {
-    const path = `${uri}/${scrolledItem}`
-    window.history.replaceState({ path }, '', path)
-  }, [uri, scrolledItem])
+    if (!scrollerRef.current) return
+    const node = scrollerRef.current
+    const params = new URLSearchParams(window.location.search)
+    const page = getIndex(params.get('page'), scrollItemsCount)
+    const scrollLeft = Math.floor(node.scrollWidth * (page / scrollItemsCount))
+    scrollerRef.current.scrollTo(scrollLeft, 0)
+    setScrollerVisible(true)
+  }, [scrollItemsCount])
 
   return (
     <div className={styles.root}>
-      <div className={styles.content}>
-        <div className={styles.scroller} ref={scrollerRef}>
-          {resizedImages.map((image, index) => {
-            return (
-              // eslint-disable-next-line react/no-array-index-key
-              <div key={`item-${index}`} className={styles.item}>
-                <Image
-                  image={image as IGatsbyImageData}
-                  imgStyle={{ maxWidth: '100%', maxHeight: '100%' }}
-                  alt=""
-                />
-              </div>
-            )
-          })}
+      <Show when={scrollerVisible} mode="visibility">
+        <div className={styles.content}>
+          <div className={styles.scroller} ref={scrollerRef}>
+            {resizedImages.map((image, index) => {
+              return (
+                // eslint-disable-next-line react/no-array-index-key
+                <div key={`item-${index}`} className={styles.item}>
+                  <Image
+                    image={image as IGatsbyImageData}
+                    imgStyle={{ maxWidth: '100%', maxHeight: '100%' }}
+                    alt=""
+                  />
+                </div>
+              )
+            })}
+          </div>
+          <div className={styles.caption}>
+            <Link to="/" className={styles.back}>
+              <BackIcon className={styles.arrow} />
+              <Text fontSize={16}>go back</Text>
+            </Link>
+            <AlbumCaption
+              title={title}
+              description={description}
+              titleSize={{ xs: 32, md: 56 }}
+              subtitleSize={{ xs: 16, md: 20 }}
+              descriptionSize={{ xs: 16, md: 20 }}
+            />
+          </div>
         </div>
-        <div className={styles.caption}>
-          <Link to="/" className={styles.back}>
-            <BackIcon className={styles.arrow} />
-            <Text fontSize={16}>go back</Text>
-          </Link>
-          <AlbumCaption
-            title={title}
-            description={description}
-            titleSize={{ xs: 32, md: 56 }}
-            subtitleSize={{ xs: 16, md: 20 }}
-            descriptionSize={{ xs: 16, md: 20 }}
-          />
-        </div>
-      </div>
+      </Show>
     </div>
   )
 }

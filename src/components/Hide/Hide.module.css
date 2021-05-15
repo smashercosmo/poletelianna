@@ -1,27 +1,55 @@
-.root {
+.root.display {
   display: block;
 }
 
+.hidden.display {
+  display: none;
+}
+
+.root.visibility {
+  visibility: visible;
+}
+
+.hidden.visibility {
+  display: none;
+}
+
 @media (--sm) {
-  .sm.root {
+  .sm.root.display {
     display: none;
+  }
+
+  .sm.root.visibility {
+    visibility: hidden;
   }
 }
 
 @media (--md) {
-  .md.root {
+  .md.root.display {
     display: none;
+  }
+
+  .md.root.visibility {
+    visibility: hidden;
   }
 }
 
 @media (--lg) {
-  .lg.root {
+  .lg.root.display {
     display: none;
+  }
+
+  .lg.root.visibility {
+    visibility: hidden;
   }
 }
 
 @media (--xl) {
-  .xl.root {
+  .xl.display {
     display: none;
+  }
+
+  .xl.root.visibility {
+    visibility: hidden;
   }
 }

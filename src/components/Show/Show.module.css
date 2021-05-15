@@ -1,14 +1,26 @@
-.root {
+.root.display {
   display: none;
 }
 
-.shown {
+.shown.display {
   display: block;
 }
 
+.root.visibility {
+  visibility: hidden;
+}
+
+.shown.visibility {
+  visibility: visible;
+}
+
+
 @media (--sm) {
-  .sm.root {
+  .sm.root.display {
     display: block;
+  }
+  .sm.root.visibility {
+    visibility: visible;
   }
 }
 
@@ -16,16 +28,25 @@
   .md.root {
     display: block;
   }
+  .md.root.visibility {
+    visibility: visible;
+  }
 }
 
 @media (--lg) {
   .lg.root {
     display: block;
   }
+  .lg.root.visibility {
+    visibility: visible;
+  }
 }
 
 @media (--xl) {
   .xl.root {
     display: block;
+  }
+  .xl.root.visibility {
+    visibility: visible;
   }
 }
