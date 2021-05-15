@@ -1,6 +1,6 @@
 :root {
-  --base-font-family: -apple-system, blinkmacsystemfont, segoe ui, roboto,
-    oxygen, ubuntu, cantarell, fira sans, droid sans, helvetica neue, sans-serif;
+  --ff-transgender: 'Transgender Grotesk', sans-serif;
+  --ff-object-sans: 'Object Sans', sans-serif;
   --base-font-size: 16;
   --fz-16: calc(16 / var(--base-font-size) * 1rem);
   --fz-20: calc(20 / var(--base-font-size) * 1rem);
@@ -22,7 +22,7 @@ body {
 }
 
 body {
-  font-family: var(--base-font-family);
+  font-family: var(--ff-object-sans);
   background-color: rgb(245, 234, 234);
 }
 
@@ -36,9 +36,18 @@ a:hover {
 }
 
 @font-face {
-  font-family: 'Transgender Grotesk Regular';
+  font-family: 'Transgender Grotesk';
   src: url('../../static/fonts/transgender-grotesk-regular.woff2')
     format('woff2');
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Object Sans';
+  src: url('../../static/fonts/object-sans-regular.woff2')
+  format('woff2');
   font-display: swap;
   font-weight: normal;
   font-style: normal;

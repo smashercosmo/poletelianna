@@ -19,7 +19,7 @@
   padding-top: 1.25rem;
   padding-bottom: 3.75rem;
   position: relative;
-  font-family: 'Transgender Grotesk Regular', sans-serif;
+  font-family: var(--ff-transgender);
 }
 
 /* 1. disable scale animation on mobile */

@@ -3,7 +3,7 @@
 }
 
 .title {
-  font-family: 'Transgender Grotesk Regular', sans-serif;
+  font-family: var(--ff-transgender);
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   text-transform: lowercase;
@@ -11,7 +11,7 @@
 
 .subtitle {
   display: flex;
-  font-family: var(--base-font-family);
+  font-family: var(--ff-object-sans);
   font-weight: normal;
 }
 
