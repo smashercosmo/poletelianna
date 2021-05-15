@@ -1,0 +1,19 @@
+.root {
+  --c: initial;
+  --fz: initial;
+  --fs: initial;
+  --fw: initial;
+  --ff: initial;
+  --lh: initial;
+  --ta: initial;
+  --va: initial;
+
+  color: var(--c);
+  font-size: calc(var(--fz) / var(--base-font-size) * 1rem);
+  font-style: var(--fs);
+  font-weight: var(--fw);
+  font-family: var(--ff);
+  line-height: var(--lh);
+  text-align: var(--ta);
+  vertical-align: var(--va);
+}
