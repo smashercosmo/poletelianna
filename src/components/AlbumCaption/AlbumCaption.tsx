@@ -17,7 +17,7 @@ function AlbumCaption(props: AlbumCaptionProps) {
   const { title, description, titleSize, subtitleSize, descriptionSize } = props
 
   return (
-    <>
+    <div>
       <Heading level={1} className={styles.heading}>
         <div role="doc-subtitle" className={styles.subtitle}>
           <ResponsiveText {...subtitleSize}>series</ResponsiveText>
@@ -29,7 +29,7 @@ function AlbumCaption(props: AlbumCaptionProps) {
       <Paragraph className={styles.description}>
         <ResponsiveText {...descriptionSize}>{description}</ResponsiveText>
       </Paragraph>
-    </>
+    </div>
   )
 }
 

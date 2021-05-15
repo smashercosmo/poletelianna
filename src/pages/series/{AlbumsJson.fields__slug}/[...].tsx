@@ -21,9 +21,23 @@ export const query = graphql`
   }
 `
 
+function getIndex(mayBeIndexString: string | undefined, maxIndex: number) {
+  const mayBeIndexNumber = Number(mayBeIndexString)
+
+  if (Number.isInteger(mayBeIndexNumber)) {
+    if (mayBeIndexNumber < 0) return 0
+    else if (mayBeIndexNumber > maxIndex) return maxIndex
+    else return mayBeIndexNumber
+  }
+
+  return 0
+}
+
 function Album(props: PageProps<AlbumPageQuery>) {
-  const { data, uri } = props
+  const { data, uri, params } = props
   const { title, description, images } = data.content
+  const { '*': mayBeIndex } = params
+  const index = getIndex(mayBeIndex, images.length - 1)
 
   const simplifiedImages = images.map((image) => {
     return image.url.childImageSharp.gatsbyImageData
@@ -32,7 +46,8 @@ function Album(props: PageProps<AlbumPageQuery>) {
   return (
     <PageAlbum
       title={title}
-      url={uri}
+      uri={uri}
+      index={index}
       description={description}
       images={simplifiedImages}
     />

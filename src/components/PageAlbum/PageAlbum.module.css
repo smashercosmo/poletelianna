@@ -14,11 +14,24 @@
   grid-gap: var(--gap-rem);
   grid-template-columns: minmax(0, 700px) minmax(300px, 30%);
   justify-content: center;
-  align-items: center;
 }
 
 .caption {
-  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  margin-bottom: auto;
+}
+
+.arrow {
+  --arrow-width: calc(28 / var(--base-font-size) * 1rem);
+  width: var(--arrow-width);
+  margin-left: calc(var(--arrow-width) * -1);
+  transform: translateX(-0.75rem);
 }
 
 .scroller {
