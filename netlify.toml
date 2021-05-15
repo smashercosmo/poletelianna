@@ -1,0 +1,7 @@
+[[redirects]]
+  from = "/series"
+  to = "/"
+
+[[redirects]]
+  from = "/series/:album"
+  to = "/series/:album/0"
