@@ -8,6 +8,7 @@ import { AlbumCaption } from '../AlbumCaption/AlbumCaption'
 import { useResizedImages } from '../../hooks/useResizedImage'
 import { ReactComponent as BackIcon } from './back-icon.svg'
 import styles from './PageAlbum.module.css'
+import { Hide } from '../Hide/Hide'
 
 import type { ImageProps } from '../Image/Image'
 import type { IGatsbyImageData } from 'gatsby-plugin-image'
@@ -125,7 +126,7 @@ function PageAlbum(props: PageAlbumProps) {
             <div className={styles.back}>
               <Link to="/">
                 <span className={styles.backLinkContent}>
-                  <BackIcon className={styles.arrow} />
+                  <BackIcon className={styles.arrow} id="back-icon-svg" />
                   <Text fontSize={16}>go back</Text>
                 </span>
               </Link>
@@ -138,9 +139,27 @@ function PageAlbum(props: PageAlbumProps) {
                 subtitleSize={{ xs: 16 }}
                 descriptionSize={{ xs: 16 }}
               />
-              <div className={styles.instruction}>
-                Swipe or scroll left and right or use arrow keys
-              </div>
+              <Hide when={scrollItemsCount < 2}>
+                <div className={styles.instruction}>
+                  <div className={styles.instructionIcon}>
+                    <svg
+                      className={styles.left}
+                      focusable="false"
+                      aria-hidden="true">
+                      <use href="#back-icon-svg" />
+                    </svg>
+                    <svg
+                      className={styles.right}
+                      focusable="false"
+                      aria-hidden="true">
+                      <use href="#back-icon-svg" />
+                    </svg>
+                  </div>
+                  <div className={styles.instructionText}>
+                    Swipe or scroll left and right
+                  </div>
+                </div>
+              </Hide>
             </div>
           </div>
           <div

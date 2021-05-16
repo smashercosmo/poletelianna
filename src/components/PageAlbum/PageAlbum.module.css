@@ -1,17 +1,21 @@
 .root {
+  --page-album-arrow-width: calc(28 / var(--base-font-size) * 1rem);
+  --page-album-arrow-height: calc(23 / var(--base-font-size) * 1rem);
+  --page-album-arrow-gap: 0.75rem;
+
   margin-bottom: calc(var(--gap-rem) * -1);
   margin-top: calc(var(--gap-rem) * -1);
   padding-top: calc(var(--gap-rem) * 1.5);
   padding-bottom: calc(var(--gap-rem) * 1.5);
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
 .content {
   display: grid;
-  grid-gap: var(--gap-rem);
+  grid-gap: calc(var(--gap-rem) / 2);
   height: 100%;
   justify-content: center;
 }
@@ -49,9 +53,6 @@
 }
 
 .back {
-  --arrow-width: calc(28 / var(--base-font-size) * 1rem);
-  --arrow-gap: 0.75rem;
-
   margin-bottom: 2rem;
 }
 
@@ -61,8 +62,30 @@
 }
 
 .arrow {
-  width: var(--arrow-width);
-  margin-right: var(--arrow-gap);
+  width: var(--page-album-arrow-width);
+  height: var(--page-album-arrow-height);
+  margin-right: var(--page-album-arrow-gap);
+}
+
+.left,
+.right {
+  width: var(--page-album-arrow-width);
+  height: var(--page-album-arrow-height);
+}
+
+.right {
+  transform: scaleX(-1);
+}
+
+.instruction {
+  display: flex;
+  align-items: center;
+  opacity: 0.3;
+  padding-top: 3rem;
+}
+
+.instructionIcon {
+  margin-right: 1rem;
 }
 
 @media (--md) {
@@ -78,8 +101,14 @@
 }
 
 @media (--lg) {
+  .root {
+    align-items: center;
+  }
+
   .content {
     grid-template-columns: minmax(0, 700px) minmax(300px, 30%);
+    grid-gap: var(--gap-rem);
+    min-height: 700px;
   }
 
   .caption {
@@ -96,12 +125,25 @@
     align-items: center;
   }
 
-  .arrow, .back {
-    margin-left: calc(-1 * (var(--arrow-width) + var(--arrow-gap)));
+  .arrow,
+  .back {
+    margin-left: calc(
+      -1 * (var(--page-album-arrow-width) + var(--page-album-arrow-gap))
+    );
   }
 
   .backLinkContent {
-    padding-left: calc(var(--arrow-width) + var(--arrow-gap));
+    padding-left: calc(
+      var(--page-album-arrow-width) + var(--page-album-arrow-gap)
+    );
+  }
+
+  .instruction {
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0 0 0 0);
   }
 }
 
