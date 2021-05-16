@@ -2,6 +2,7 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:import/errors",
@@ -17,9 +18,6 @@
     }
   },
   "rules": {
-    // React specific rules
-    "react/react-in-jsx-scope": "off", // not needed with new React runtime
-
     // Import rules
     "import/no-default-export": "error", // https://humanwhocodes.com/blog/2019/01/stop-using-default-exports-javascript-module/
     "import/order": [
@@ -47,15 +45,15 @@
       "rules": {
         "no-use-before-define": "off", // handled by @typescript-eslint
         "no-duplicate-imports": "off", // handled by @typescript-eslint
+        "@typescript-eslint/no-use-before-define": "error",
+        "@typescript-eslint/no-duplicate-imports": "error",
 
         "@typescript-eslint/ban-ts-comment": [
           "error",
           { "ts-ignore": "allow-with-description" }
         ],
         "@typescript-eslint/consistent-type-imports": "error",
-        "@typescript-eslint/no-duplicate-imports": "error",
-        "@typescript-eslint/explicit-module-boundary-types": "off", // TypeScript is good on infering types
-        "@typescript-eslint/no-use-before-define": "error"
+        "@typescript-eslint/explicit-module-boundary-types": "off" // TypeScript is good on infering types
       }
     },
     {
