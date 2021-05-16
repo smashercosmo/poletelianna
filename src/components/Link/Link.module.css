@@ -1,0 +1,14 @@
+.root {
+  text-decoration: none;
+  outline: none;
+}
+
+.content {
+  display: inline-block;
+  outline: none;
+}
+
+.root:focus > .content {
+  outline: thin dotted currentColor;
+  outline-offset: 2px;
+}
