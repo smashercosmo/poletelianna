@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
 
+import { Link } from '../Link/Link'
 import { Image } from '../Image/Image'
 import { Text } from '../Base/Base'
 import { Show } from '../Show/Show'
@@ -121,7 +121,34 @@ function PageAlbum(props: PageAlbumProps) {
     <div className={styles.root}>
       <Show when={scrollerVisible} mode="visibility">
         <div className={styles.content}>
-          <div className={styles.scroller} ref={scrollerRef}>
+          <div className={styles.caption}>
+            <div className={styles.back}>
+              <Link to="/">
+                <span className={styles.backLinkContent}>
+                  <BackIcon className={styles.arrow} />
+                  <Text fontSize={16}>go back</Text>
+                </span>
+              </Link>
+            </div>
+            <div className={styles.text} id="scroller-caption">
+              <AlbumCaption
+                title={title}
+                description={description}
+                titleSize={{ xs: 40, md: 56 }}
+                subtitleSize={{ xs: 16 }}
+                descriptionSize={{ xs: 16 }}
+              />
+              <div className={styles.instruction}>
+                Swipe or scroll left and right or use arrow keys
+              </div>
+            </div>
+          </div>
+          <div
+            className={styles.scroller}
+            ref={scrollerRef}
+            /* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */
+            tabIndex={0}
+            aria-labelledby="scroller-caption">
             {resizedImages.map((image, index) => {
               return (
                 // eslint-disable-next-line react/no-array-index-key
@@ -134,19 +161,6 @@ function PageAlbum(props: PageAlbumProps) {
                 </div>
               )
             })}
-          </div>
-          <div className={styles.caption}>
-            <Link to="/" className={styles.back}>
-              <BackIcon className={styles.arrow} />
-              <Text fontSize={16}>go back</Text>
-            </Link>
-            <AlbumCaption
-              title={title}
-              description={description}
-              titleSize={{ xs: 32, md: 56 }}
-              subtitleSize={{ xs: 16, md: 20 }}
-              descriptionSize={{ xs: 16, md: 20 }}
-            />
           </div>
         </div>
       </Show>

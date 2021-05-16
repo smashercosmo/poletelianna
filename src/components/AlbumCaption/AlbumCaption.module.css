@@ -7,12 +7,16 @@
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   text-transform: lowercase;
+  clear: left;
 }
 
 .subtitle {
   display: flex;
   font-family: var(--ff-object-sans);
   font-weight: normal;
+  /* needed to remove element from the flow */
+  /* so that 'baseline' is calculated from 'title' */
+  float: left;
 }
 
 .description {
@@ -22,11 +26,6 @@
 @media (--md) {
   .title {
     padding-bottom: 1rem;
-  }
-
-  .subtitle {
-    position: absolute;
-    bottom: 100%;
   }
 
   .description {
