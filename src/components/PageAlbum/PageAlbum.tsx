@@ -156,7 +156,7 @@ function PageAlbum(props: PageAlbumProps) {
                     </svg>
                   </div>
                   <div className={styles.instructionText}>
-                    Swipe or scroll left and right
+                    swipe or scroll left and right
                   </div>
                 </div>
               </Hide>

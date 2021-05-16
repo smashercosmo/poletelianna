@@ -53,7 +53,7 @@
 }
 
 .back {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .backLinkContent {
@@ -71,6 +71,10 @@
 .right {
   width: var(--page-album-arrow-width);
   height: var(--page-album-arrow-height);
+}
+
+.left {
+  margin-right: -14px;
 }
 
 .right {
