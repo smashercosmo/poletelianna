@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useGesture } from 'react-use-gesture'
+import { useGesture } from '@use-gesture/react'
 import { useSpring, config } from '@react-spring/web'
 
 function clamp(min: number, val: number, max: number) {
@@ -37,7 +37,7 @@ function useDragScroll(currentWindow?: Window) {
   )
 
   function setX(
-    movement: number,
+    offset: number,
     down: boolean,
     direction: number,
     velocity: number,
@@ -46,14 +46,14 @@ function useDragScroll(currentWindow?: Window) {
     const { scrollWidth, clientWidth } = documentElement
     const minScrollLeft = 0
     const maxScrollLeft = scrollWidth - clientWidth
-    const value = down ? movement : movement + direction * velocity * 200
+    const value = down ? offset : offset + direction * velocity * 200
     const to = clamp(minScrollLeft, value, maxScrollLeft)
     if (down) values.x.set(to)
     else values.x.start({ to })
   }
 
   function setY(
-    movement: number,
+    offset: number,
     down: boolean,
     direction: number,
     velocity: number,
@@ -62,7 +62,7 @@ function useDragScroll(currentWindow?: Window) {
     const { scrollHeight, clientHeight } = documentElement
     const minScrollTop = 0
     const maxScrollTop = scrollHeight - clientHeight
-    const value = down ? movement : movement + direction * velocity * 200
+    const value = down ? offset : offset + direction * velocity * 200
     const to = clamp(minScrollTop, value, maxScrollTop)
     if (down) values.y.set(to)
     else values.y.start({ to })
@@ -73,12 +73,12 @@ function useDragScroll(currentWindow?: Window) {
       onDrag(props) {
         const {
           down,
-          vxvy: [vx, vy],
+          velocity: [velocityX, velocityY],
           direction: [directionX, directionY],
-          movement: [movementX, movementY],
+          offset: [offsetX, offsetY],
         } = props
-        setX(-movementX, down, -directionX, Math.abs(vx))
-        setY(-movementY, down, -directionY, Math.abs(vy))
+        setX(-offsetX, down, -directionX, velocityX)
+        setY(-offsetY, down, -directionY, velocityY)
       },
       onWheel() {
         if (!win) return
@@ -90,14 +90,14 @@ function useDragScroll(currentWindow?: Window) {
     },
     {
       drag: {
-        initial: () => {
+        from: () => {
           return documentElement
             ? [-documentElement.scrollLeft, -documentElement.scrollTop]
             : [0, 0]
         },
       },
       window: win,
-      domTarget: win,
+      target: win,
     },
   )
 
