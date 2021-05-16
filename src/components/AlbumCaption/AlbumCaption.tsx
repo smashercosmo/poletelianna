@@ -19,7 +19,7 @@ function AlbumCaption(props: AlbumCaptionProps) {
   return (
     <div>
       <Heading level={1} className={styles.heading}>
-        <div role="doc-subtitle" className={styles.subtitle}>
+        <div className={styles.subtitle}>
           <ResponsiveText {...subtitleSize}>series</ResponsiveText>
         </div>
         <div className={styles.title}>
