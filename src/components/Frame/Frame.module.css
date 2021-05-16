@@ -72,13 +72,7 @@
 
 .telegram a,
 .instagram a {
-  outline: 0 none;
   pointer-events: auto;
-}
-
-.telegram a:focus,
-.instagram a:focus {
-  text-decoration: underline;
 }
 
 .main {

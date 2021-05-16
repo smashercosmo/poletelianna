@@ -19,11 +19,14 @@
 }
 
 .logo {
-  width: 11rem;
   margin-right: -11rem;
   margin-left: calc(-1 * var(--gap-rem) / 2);
   position: relative;
   z-index: 1;
+}
+
+.logoContent {
+  width: 11rem;
 }
 
 .nav {

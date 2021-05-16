@@ -1,6 +1,6 @@
 import clsx from 'clsx'
-import { Link } from 'gatsby'
 
+import { Link } from '../Link/Link'
 import styles from './Navigation.module.css'
 
 type NavigationProps = {
@@ -16,7 +16,6 @@ function Navigation(props: NavigationProps) {
       {navigationItems.map((navigationItem) => {
         return (
           <Link
-            tabIndex={0}
             key={navigationItem.href}
             to={navigationItem.href}
             className={clsx(styles.item, styles[orientation])}>

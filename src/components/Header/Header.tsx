@@ -1,8 +1,8 @@
 import clsx from 'clsx'
-import { Link } from 'gatsby'
 import { VisuallyHidden } from '@react-aria/visually-hidden'
 import { FocusOn } from 'react-focus-on'
 
+import { Link } from '../Link/Link'
 import { Hide } from '../Hide/Hide'
 import { Show } from '../Show/Show'
 import { Logo } from '../Logo/Logo'
@@ -32,12 +32,16 @@ function Header(props: HeaderProps) {
       onEscapeKey={() => setIsExpanded(false)}>
       <header
         className={clsx(styles.header, { [styles.expanded]: isExpanded })}>
-        <Link to="/" className={styles.logo}>
-          <Heading level={1}>
-            <Logo />
-            <VisuallyHidden>PoleteliAnna.com</VisuallyHidden>
-          </Heading>
-        </Link>
+        <div className={styles.logo}>
+          <Link to="/">
+            <Heading level={1}>
+              <div className={styles.logoContent}>
+                <Logo />
+                <VisuallyHidden>PoleteliAnna.com</VisuallyHidden>
+              </div>
+            </Heading>
+          </Link>
+        </div>
         <div className={clsx(styles.nav, { [styles.expanded]: isExpanded })}>
           <Show at="md" when={isExpanded}>
             <Navigation

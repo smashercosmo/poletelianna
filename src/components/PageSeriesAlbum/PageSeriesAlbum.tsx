@@ -21,15 +21,13 @@ function PageSeriesAlbum(props: PageSeriesAlbumProps) {
       <div className={styles.image}>
         <Image image={image as IGatsbyImageData} alt="" />
       </div>
-      <div>
-        <AlbumCaption
-          title={title}
-          description={description}
-          titleSize={{ xs: 32, md: 56 }}
-          subtitleSize={{ xs: 16, md: 20 }}
-          descriptionSize={{ xs: 16, md: 20 }}
-        />
-      </div>
+      <AlbumCaption
+        title={title}
+        description={description}
+        titleSize={{ xs: 32, md: 56 }}
+        subtitleSize={{ xs: 16 }}
+        descriptionSize={{ xs: 16 }}
+      />
     </article>
   )
 }

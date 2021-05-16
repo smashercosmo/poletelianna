@@ -1,11 +1,3 @@
-.item {
-  outline: 0 none;
-}
-
-.item:focus {
-  text-decoration: underline;
-}
-
 .root.horizontal {
   margin-left: calc(-1 * var(--frame-nav-item-padding-rem));
   margin-right: calc(-1 * var(--frame-nav-item-padding-rem));

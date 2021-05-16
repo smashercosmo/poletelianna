@@ -1,7 +1,6 @@
-import { Link } from 'gatsby'
-
 import { PageSeriesAlbum } from '../PageSeriesAlbum/PageSeriesAlbum'
 import { Gallery } from '../Gallery/Gallery'
+import { Link } from '../Link/Link'
 import { useAnimateBackground } from '../../hooks/useAnimateBackground'
 import { useDragScroll } from '../../hooks/useDragScroll'
 import styles from './PageSeries.module.css'
