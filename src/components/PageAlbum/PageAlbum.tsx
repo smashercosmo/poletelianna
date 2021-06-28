@@ -1,14 +1,14 @@
 import * as React from 'react'
 
-import { Link } from '../Link/Link'
 import { Image } from '../Image/Image'
-import { Text } from '../Base/Base'
 import { Show } from '../Show/Show'
 import { AlbumCaption } from '../AlbumCaption/AlbumCaption'
+import { AlbumControl } from '../AlbumControl/AlbumControl'
+import { AlbumBackButton } from '../AlbumBackButton/AlbumBackButton'
+import { AlbumScrollerInstruction } from '../AlbumScrollerInstruction/AlbumScrollerInstruction'
 import { useResizedImages } from '../../hooks/useResizedImage'
-import { ReactComponent as BackIcon } from './back-icon.svg'
+import { smoothScroll } from '../../lib/smoothScroll'
 import styles from './PageAlbum.module.css'
-import { Hide } from '../Hide/Hide'
 
 import type { ImageProps } from '../Image/Image'
 import type { IGatsbyImageData } from 'gatsby-plugin-image'
@@ -118,48 +118,70 @@ function PageAlbum(props: PageAlbumProps) {
     setScrollerVisible(true)
   }, [scrollItemsCount])
 
+  function scrollTo(itemToScroll: number) {
+    if (
+      !scrollerRef.current ||
+      itemToScroll === scrolledItem ||
+      itemToScroll < 0 ||
+      itemToScroll > scrollItemsCount - 1
+    ) {
+      return
+    }
+
+    const scrollLeft = Math.floor(
+      scrollerRef.current.scrollWidth * (itemToScroll / scrollItemsCount),
+    )
+    setScrolledItem(itemToScroll)
+    smoothScroll(scrollerRef.current, scrollLeft)
+  }
+
   return (
     <div className={styles.root}>
       <Show when={scrollerVisible} mode="visibility">
         <div className={styles.content}>
-          <div className={styles.caption}>
+          <div className={styles.column}>
             <div className={styles.back}>
-              <Link to="/">
-                <span className={styles.backLinkContent}>
-                  <BackIcon className={styles.arrow} id="back-icon-svg" />
-                  <Text fontSize={16}>go back</Text>
-                </span>
-              </Link>
+              <AlbumBackButton />
             </div>
             <div className={styles.text} id="scroller-caption">
-              <AlbumCaption
-                title={title}
-                description={description}
-                titleSize={{ xs: 40, md: 56 }}
-                subtitleSize={{ xs: 16 }}
-                descriptionSize={{ xs: 16 }}
-              />
-              <Hide when={scrollItemsCount < 2}>
+              <div className={styles.caption}>
+                <AlbumCaption
+                  title={title}
+                  description={description}
+                  titleSize={{ xs: 40, md: 56 }}
+                  subtitleSize={{ xs: 16 }}
+                  descriptionSize={{ xs: 16 }}
+                />
+              </div>
+              <Show at="lg">
+                {scrollItemsCount > 1 && (
+                  <div className={styles.controls}>
+                    <div className={styles.prev}>
+                      <AlbumControl
+                        disabled={scrolledItem === 0}
+                        onClick={() => {
+                          scrollTo(scrolledItem - 1)
+                        }}
+                        direction="left"
+                      />
+                    </div>
+                    <AlbumControl
+                      disabled={scrolledItem === scrollItemsCount - 1}
+                      onClick={() => {
+                        scrollTo(scrolledItem + 1)
+                      }}
+                      direction="right"
+                    />
+                  </div>
+                )}
+              </Show>
+              {scrollItemsCount > 1 && (
                 <div className={styles.instruction}>
-                  <div className={styles.instructionIcon}>
-                    <svg
-                      className={styles.left}
-                      focusable="false"
-                      aria-hidden="true">
-                      <use href="#back-icon-svg" />
-                    </svg>
-                    <svg
-                      className={styles.right}
-                      focusable="false"
-                      aria-hidden="true">
-                      <use href="#back-icon-svg" />
-                    </svg>
-                  </div>
-                  <div className={styles.instructionText}>
+                  <AlbumScrollerInstruction>
                     swipe or scroll left and right
-                  </div>
+                  </AlbumScrollerInstruction>
                 </div>
-              </Hide>
+              )}
             </div>
           </div>
           <div

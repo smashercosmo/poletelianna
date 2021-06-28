@@ -1,0 +1,48 @@
+.root {
+  background: none;
+  padding: 0;
+  border: 0 none;
+  cursor: pointer;
+  outline: none;
+}
+
+.content {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  outline: none;
+}
+
+.outline {
+  transition: transform 0.1s linear;
+  border: 1px solid;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.left,
+.right {
+  width: calc(28 / var(--base-font-size) * 1rem);
+  display: block;
+}
+
+.right {
+  transform: scaleX(-1);
+}
+
+.root:hover .outline,
+.root:focus .outline {
+  transform: scale(1.1);
+}
+
+.root:focus > .content {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
+}

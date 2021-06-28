@@ -1,4 +1,22 @@
 .root {
+  --pl: initial;
+  --pr: initial;
+  --pt: initial;
+  --pb: initial;
+  --ml: initial;
+  --mr: initial;
+  --mt: initial;
+  --mb: initial;
+  --gap: initial;
+  --r-gap: initial;
+  --c-gap: initial;
+  --w: initial;
+  --h: initial;
+  --max-w: initial;
+  --min-w: initial;
+  --max-h: initial;
+  --min-h: initial;
+  --d: initial;
   --c: initial;
   --fz: initial;
   --fs: initial;
@@ -7,7 +25,25 @@
   --lh: initial;
   --ta: initial;
   --va: initial;
+  --bgc: initial;
+  --bdc: initial;
+  --bdrw: initial;
+  --bdlw: initial;
+  --bdtw: initial;
+  --bdbw: initial;
+  --fx-ai: initial;
+  --fx-jc: initial;
 
+  padding: var(--pt, 0) var(--pr, 0) var(--pb, 0) var(--pl, 0);
+  margin: var(--mt, 0) var(--mr, 0) var(--mb, 0) var(--ml, 0);
+  gap: var(--r-gap, 0) var(--c-gap, 0);
+  width: var(--w);
+  height: var(--h);
+  min-width: var(--min-w);
+  min-height: var(--min-h);
+  max-width: var(--max-w);
+  max-height: var(--max-h);
+  display: var(--d);
   color: var(--c);
   font-size: calc(var(--fz) / var(--base-font-size) * 1rem);
   font-style: var(--fs);
@@ -16,4 +52,29 @@
   line-height: var(--lh);
   text-align: var(--ta);
   vertical-align: var(--va);
+  background-color: var(--bgc);
+  border-top: var(--bdtw) solid var(--bdc);
+  border-bottom: var(--bdbw) solid var(--bdc);
+  border-left: var(--bdlw) solid var(--bdc);
+  border-right: var(--bdrw) solid var(--bdc);
+  align-items: var(--fx-ai);
+  justify-content: var(--fx-jc);
+}
+
+div.box,
+h1.h,
+h2.h,
+h3.h,
+h4.h,
+h5.h,
+h6.h {
+  display: var(--d, block);
+}
+
+div.grid {
+  display: var(--d, grid);
+}
+
+div.flex {
+  display: var(--d, flex);
 }

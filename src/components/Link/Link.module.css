@@ -9,6 +9,6 @@
 }
 
 .root:focus > .content {
-  outline: thin dotted currentColor;
-  outline-offset: 2px;
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
 }

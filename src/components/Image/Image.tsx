@@ -23,7 +23,7 @@ function isSimpleImageProps(props: ImageProps): props is SimpleImageProps {
 
 function Image(props: ImageProps) {
   if (isSimpleImageProps(props)) {
-    const { image, imgStyle, alt } = props
+    const { image, alt } = props
     return (
       <div
         style={{

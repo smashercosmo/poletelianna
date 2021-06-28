@@ -1,8 +1,4 @@
 .root {
-  --page-album-arrow-width: calc(28 / var(--base-font-size) * 1rem);
-  --page-album-arrow-height: calc(23 / var(--base-font-size) * 1rem);
-  --page-album-arrow-gap: 0.75rem;
-
   margin-bottom: calc(var(--gap-rem) * -1);
   margin-top: calc(var(--gap-rem) * -1);
   padding-top: calc(var(--gap-rem) * 1.5);
@@ -20,11 +16,23 @@
   justify-content: center;
 }
 
-.caption {
+.column {
   display: flex;
   flex-direction: column;
   padding-left: calc(var(--gap-rem) / 2);
   padding-right: calc(var(--gap-rem) / 2);
+}
+
+.text {
+  margin-top: auto;
+}
+
+.controls {
+  display: flex;
+}
+
+.prev {
+  margin-right: -0.5rem;
 }
 
 .scroller {
@@ -37,9 +45,13 @@
   -ms-overflow-style: none;
 }
 
+.scroller::-webkit-scrollbar {
+  display: none;
+}
+
 .scroller:focus {
-  outline: thin dotted currentColor;
-  outline-offset: 2px;
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
 }
 
 .item {
@@ -56,49 +68,13 @@
   margin-bottom: 3rem;
 }
 
-.backLinkContent {
-  display: flex;
-  align-items: center;
-}
-
-.arrow {
-  width: var(--page-album-arrow-width);
-  height: var(--page-album-arrow-height);
-  margin-right: var(--page-album-arrow-gap);
-}
-
-.left,
-.right {
-  width: var(--page-album-arrow-width);
-  height: var(--page-album-arrow-height);
-}
-
-.left {
-  margin-right: -14px;
-}
-
-.right {
-  transform: scaleX(-1);
-}
-
-.instruction {
-  display: flex;
-  align-items: center;
-  opacity: 0.3;
-  padding-top: 3rem;
-}
-
-.instructionIcon {
-  margin-right: 1rem;
-}
-
 @media (--md) {
   .root {
     padding-left: var(--gap-rem);
     padding-right: var(--gap-rem);
   }
 
-  .caption {
+  .column {
     padding-left: 0;
     padding-right: 0;
   }
@@ -115,9 +91,14 @@
     min-height: 700px;
   }
 
-  .caption {
+  .column {
     grid-row: 1;
     grid-column: 2;
+  }
+
+  .caption {
+    padding-left: 3.2rem;
+    padding-bottom: 3rem;
   }
 
   .scroller {
@@ -129,19 +110,6 @@
     align-items: center;
   }
 
-  .arrow,
-  .back {
-    margin-left: calc(
-      -1 * (var(--page-album-arrow-width) + var(--page-album-arrow-gap))
-    );
-  }
-
-  .backLinkContent {
-    padding-left: calc(
-      var(--page-album-arrow-width) + var(--page-album-arrow-gap)
-    );
-  }
-
   .instruction {
     height: 1px;
     width: 1px;
@@ -149,14 +117,6 @@
     position: absolute;
     clip: rect(0 0 0 0);
   }
-}
-
-.text {
-  margin-top: auto;
-}
-
-.scroller::-webkit-scrollbar {
-  display: none;
 }
 
 /* modern scroll snap points */

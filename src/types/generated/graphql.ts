@@ -422,13 +422,13 @@ export enum AlbumsJsonFieldsEnum {
   images___url___childAboutJson___id = 'images___url___childAboutJson___id',
   images___url___childAboutJson___children = 'images___url___childAboutJson___children',
   images___url___childAboutJson___title = 'images___url___childAboutJson___title',
-  images___url___childrenContactsJson = 'images___url___childrenContactsJson',
-  images___url___childrenContactsJson___id = 'images___url___childrenContactsJson___id',
-  images___url___childrenContactsJson___children = 'images___url___childrenContactsJson___children',
-  images___url___childrenContactsJson___title = 'images___url___childrenContactsJson___title',
-  images___url___childContactsJson___id = 'images___url___childContactsJson___id',
-  images___url___childContactsJson___children = 'images___url___childContactsJson___children',
-  images___url___childContactsJson___title = 'images___url___childContactsJson___title',
+  images___url___childrenBackstageJson = 'images___url___childrenBackstageJson',
+  images___url___childrenBackstageJson___id = 'images___url___childrenBackstageJson___id',
+  images___url___childrenBackstageJson___children = 'images___url___childrenBackstageJson___children',
+  images___url___childrenBackstageJson___title = 'images___url___childrenBackstageJson___title',
+  images___url___childBackstageJson___id = 'images___url___childBackstageJson___id',
+  images___url___childBackstageJson___children = 'images___url___childBackstageJson___children',
+  images___url___childBackstageJson___title = 'images___url___childBackstageJson___title',
   images___url___childrenPicsJson = 'images___url___childrenPicsJson',
   images___url___childrenPicsJson___id = 'images___url___childrenPicsJson___id',
   images___url___childrenPicsJson___children = 'images___url___childrenPicsJson___children',
@@ -438,13 +438,13 @@ export enum AlbumsJsonFieldsEnum {
   images___url___childPicsJson___children = 'images___url___childPicsJson___children',
   images___url___childPicsJson___title = 'images___url___childPicsJson___title',
   images___url___childPicsJson___pics = 'images___url___childPicsJson___pics',
-  images___url___childrenBackstageJson = 'images___url___childrenBackstageJson',
-  images___url___childrenBackstageJson___id = 'images___url___childrenBackstageJson___id',
-  images___url___childrenBackstageJson___children = 'images___url___childrenBackstageJson___children',
-  images___url___childrenBackstageJson___title = 'images___url___childrenBackstageJson___title',
-  images___url___childBackstageJson___id = 'images___url___childBackstageJson___id',
-  images___url___childBackstageJson___children = 'images___url___childBackstageJson___children',
-  images___url___childBackstageJson___title = 'images___url___childBackstageJson___title',
+  images___url___childrenContactsJson = 'images___url___childrenContactsJson',
+  images___url___childrenContactsJson___id = 'images___url___childrenContactsJson___id',
+  images___url___childrenContactsJson___children = 'images___url___childrenContactsJson___children',
+  images___url___childrenContactsJson___title = 'images___url___childrenContactsJson___title',
+  images___url___childContactsJson___id = 'images___url___childContactsJson___id',
+  images___url___childContactsJson___children = 'images___url___childContactsJson___children',
+  images___url___childContactsJson___title = 'images___url___childContactsJson___title',
   images___url___childrenAlbumsJson = 'images___url___childrenAlbumsJson',
   images___url___childrenAlbumsJson___id = 'images___url___childrenAlbumsJson___id',
   images___url___childrenAlbumsJson___children = 'images___url___childrenAlbumsJson___children',
@@ -1284,18 +1284,18 @@ export interface File extends Node {
   readonly childrenAboutJson: Maybe<ReadonlyArray<Maybe<AboutJson>>>;
   /** Returns the first child node of type AboutJson or null if there are no children of given type on this node */
   readonly childAboutJson: Maybe<AboutJson>;
-  /** Returns all children nodes filtered by type ContactsJson */
-  readonly childrenContactsJson: Maybe<ReadonlyArray<Maybe<ContactsJson>>>;
-  /** Returns the first child node of type ContactsJson or null if there are no children of given type on this node */
-  readonly childContactsJson: Maybe<ContactsJson>;
-  /** Returns all children nodes filtered by type PicsJson */
-  readonly childrenPicsJson: Maybe<ReadonlyArray<Maybe<PicsJson>>>;
-  /** Returns the first child node of type PicsJson or null if there are no children of given type on this node */
-  readonly childPicsJson: Maybe<PicsJson>;
   /** Returns all children nodes filtered by type BackstageJson */
   readonly childrenBackstageJson: Maybe<ReadonlyArray<Maybe<BackstageJson>>>;
   /** Returns the first child node of type BackstageJson or null if there are no children of given type on this node */
   readonly childBackstageJson: Maybe<BackstageJson>;
+  /** Returns all children nodes filtered by type PicsJson */
+  readonly childrenPicsJson: Maybe<ReadonlyArray<Maybe<PicsJson>>>;
+  /** Returns the first child node of type PicsJson or null if there are no children of given type on this node */
+  readonly childPicsJson: Maybe<PicsJson>;
+  /** Returns all children nodes filtered by type ContactsJson */
+  readonly childrenContactsJson: Maybe<ReadonlyArray<Maybe<ContactsJson>>>;
+  /** Returns the first child node of type ContactsJson or null if there are no children of given type on this node */
+  readonly childContactsJson: Maybe<ContactsJson>;
   /** Returns all children nodes filtered by type AlbumsJson */
   readonly childrenAlbumsJson: Maybe<ReadonlyArray<Maybe<AlbumsJson>>>;
   /** Returns the first child node of type AlbumsJson or null if there are no children of given type on this node */
@@ -1787,85 +1787,85 @@ export enum FileFieldsEnum {
   childAboutJson___internal___owner = 'childAboutJson___internal___owner',
   childAboutJson___internal___type = 'childAboutJson___internal___type',
   childAboutJson___title = 'childAboutJson___title',
-  childrenContactsJson = 'childrenContactsJson',
-  childrenContactsJson___id = 'childrenContactsJson___id',
-  childrenContactsJson___parent___id = 'childrenContactsJson___parent___id',
-  childrenContactsJson___parent___parent___id = 'childrenContactsJson___parent___parent___id',
-  childrenContactsJson___parent___parent___children = 'childrenContactsJson___parent___parent___children',
-  childrenContactsJson___parent___children = 'childrenContactsJson___parent___children',
-  childrenContactsJson___parent___children___id = 'childrenContactsJson___parent___children___id',
-  childrenContactsJson___parent___children___children = 'childrenContactsJson___parent___children___children',
-  childrenContactsJson___parent___internal___content = 'childrenContactsJson___parent___internal___content',
-  childrenContactsJson___parent___internal___contentDigest = 'childrenContactsJson___parent___internal___contentDigest',
-  childrenContactsJson___parent___internal___description = 'childrenContactsJson___parent___internal___description',
-  childrenContactsJson___parent___internal___fieldOwners = 'childrenContactsJson___parent___internal___fieldOwners',
-  childrenContactsJson___parent___internal___ignoreType = 'childrenContactsJson___parent___internal___ignoreType',
-  childrenContactsJson___parent___internal___mediaType = 'childrenContactsJson___parent___internal___mediaType',
-  childrenContactsJson___parent___internal___owner = 'childrenContactsJson___parent___internal___owner',
-  childrenContactsJson___parent___internal___type = 'childrenContactsJson___parent___internal___type',
-  childrenContactsJson___children = 'childrenContactsJson___children',
-  childrenContactsJson___children___id = 'childrenContactsJson___children___id',
-  childrenContactsJson___children___parent___id = 'childrenContactsJson___children___parent___id',
-  childrenContactsJson___children___parent___children = 'childrenContactsJson___children___parent___children',
-  childrenContactsJson___children___children = 'childrenContactsJson___children___children',
-  childrenContactsJson___children___children___id = 'childrenContactsJson___children___children___id',
-  childrenContactsJson___children___children___children = 'childrenContactsJson___children___children___children',
-  childrenContactsJson___children___internal___content = 'childrenContactsJson___children___internal___content',
-  childrenContactsJson___children___internal___contentDigest = 'childrenContactsJson___children___internal___contentDigest',
-  childrenContactsJson___children___internal___description = 'childrenContactsJson___children___internal___description',
-  childrenContactsJson___children___internal___fieldOwners = 'childrenContactsJson___children___internal___fieldOwners',
-  childrenContactsJson___children___internal___ignoreType = 'childrenContactsJson___children___internal___ignoreType',
-  childrenContactsJson___children___internal___mediaType = 'childrenContactsJson___children___internal___mediaType',
-  childrenContactsJson___children___internal___owner = 'childrenContactsJson___children___internal___owner',
-  childrenContactsJson___children___internal___type = 'childrenContactsJson___children___internal___type',
-  childrenContactsJson___internal___content = 'childrenContactsJson___internal___content',
-  childrenContactsJson___internal___contentDigest = 'childrenContactsJson___internal___contentDigest',
-  childrenContactsJson___internal___description = 'childrenContactsJson___internal___description',
-  childrenContactsJson___internal___fieldOwners = 'childrenContactsJson___internal___fieldOwners',
-  childrenContactsJson___internal___ignoreType = 'childrenContactsJson___internal___ignoreType',
-  childrenContactsJson___internal___mediaType = 'childrenContactsJson___internal___mediaType',
-  childrenContactsJson___internal___owner = 'childrenContactsJson___internal___owner',
-  childrenContactsJson___internal___type = 'childrenContactsJson___internal___type',
-  childrenContactsJson___title = 'childrenContactsJson___title',
-  childContactsJson___id = 'childContactsJson___id',
-  childContactsJson___parent___id = 'childContactsJson___parent___id',
-  childContactsJson___parent___parent___id = 'childContactsJson___parent___parent___id',
-  childContactsJson___parent___parent___children = 'childContactsJson___parent___parent___children',
-  childContactsJson___parent___children = 'childContactsJson___parent___children',
-  childContactsJson___parent___children___id = 'childContactsJson___parent___children___id',
-  childContactsJson___parent___children___children = 'childContactsJson___parent___children___children',
-  childContactsJson___parent___internal___content = 'childContactsJson___parent___internal___content',
-  childContactsJson___parent___internal___contentDigest = 'childContactsJson___parent___internal___contentDigest',
-  childContactsJson___parent___internal___description = 'childContactsJson___parent___internal___description',
-  childContactsJson___parent___internal___fieldOwners = 'childContactsJson___parent___internal___fieldOwners',
-  childContactsJson___parent___internal___ignoreType = 'childContactsJson___parent___internal___ignoreType',
-  childContactsJson___parent___internal___mediaType = 'childContactsJson___parent___internal___mediaType',
-  childContactsJson___parent___internal___owner = 'childContactsJson___parent___internal___owner',
-  childContactsJson___parent___internal___type = 'childContactsJson___parent___internal___type',
-  childContactsJson___children = 'childContactsJson___children',
-  childContactsJson___children___id = 'childContactsJson___children___id',
-  childContactsJson___children___parent___id = 'childContactsJson___children___parent___id',
-  childContactsJson___children___parent___children = 'childContactsJson___children___parent___children',
-  childContactsJson___children___children = 'childContactsJson___children___children',
-  childContactsJson___children___children___id = 'childContactsJson___children___children___id',
-  childContactsJson___children___children___children = 'childContactsJson___children___children___children',
-  childContactsJson___children___internal___content = 'childContactsJson___children___internal___content',
-  childContactsJson___children___internal___contentDigest = 'childContactsJson___children___internal___contentDigest',
-  childContactsJson___children___internal___description = 'childContactsJson___children___internal___description',
-  childContactsJson___children___internal___fieldOwners = 'childContactsJson___children___internal___fieldOwners',
-  childContactsJson___children___internal___ignoreType = 'childContactsJson___children___internal___ignoreType',
-  childContactsJson___children___internal___mediaType = 'childContactsJson___children___internal___mediaType',
-  childContactsJson___children___internal___owner = 'childContactsJson___children___internal___owner',
-  childContactsJson___children___internal___type = 'childContactsJson___children___internal___type',
-  childContactsJson___internal___content = 'childContactsJson___internal___content',
-  childContactsJson___internal___contentDigest = 'childContactsJson___internal___contentDigest',
-  childContactsJson___internal___description = 'childContactsJson___internal___description',
-  childContactsJson___internal___fieldOwners = 'childContactsJson___internal___fieldOwners',
-  childContactsJson___internal___ignoreType = 'childContactsJson___internal___ignoreType',
-  childContactsJson___internal___mediaType = 'childContactsJson___internal___mediaType',
-  childContactsJson___internal___owner = 'childContactsJson___internal___owner',
-  childContactsJson___internal___type = 'childContactsJson___internal___type',
-  childContactsJson___title = 'childContactsJson___title',
+  childrenBackstageJson = 'childrenBackstageJson',
+  childrenBackstageJson___id = 'childrenBackstageJson___id',
+  childrenBackstageJson___parent___id = 'childrenBackstageJson___parent___id',
+  childrenBackstageJson___parent___parent___id = 'childrenBackstageJson___parent___parent___id',
+  childrenBackstageJson___parent___parent___children = 'childrenBackstageJson___parent___parent___children',
+  childrenBackstageJson___parent___children = 'childrenBackstageJson___parent___children',
+  childrenBackstageJson___parent___children___id = 'childrenBackstageJson___parent___children___id',
+  childrenBackstageJson___parent___children___children = 'childrenBackstageJson___parent___children___children',
+  childrenBackstageJson___parent___internal___content = 'childrenBackstageJson___parent___internal___content',
+  childrenBackstageJson___parent___internal___contentDigest = 'childrenBackstageJson___parent___internal___contentDigest',
+  childrenBackstageJson___parent___internal___description = 'childrenBackstageJson___parent___internal___description',
+  childrenBackstageJson___parent___internal___fieldOwners = 'childrenBackstageJson___parent___internal___fieldOwners',
+  childrenBackstageJson___parent___internal___ignoreType = 'childrenBackstageJson___parent___internal___ignoreType',
+  childrenBackstageJson___parent___internal___mediaType = 'childrenBackstageJson___parent___internal___mediaType',
+  childrenBackstageJson___parent___internal___owner = 'childrenBackstageJson___parent___internal___owner',
+  childrenBackstageJson___parent___internal___type = 'childrenBackstageJson___parent___internal___type',
+  childrenBackstageJson___children = 'childrenBackstageJson___children',
+  childrenBackstageJson___children___id = 'childrenBackstageJson___children___id',
+  childrenBackstageJson___children___parent___id = 'childrenBackstageJson___children___parent___id',
+  childrenBackstageJson___children___parent___children = 'childrenBackstageJson___children___parent___children',
+  childrenBackstageJson___children___children = 'childrenBackstageJson___children___children',
+  childrenBackstageJson___children___children___id = 'childrenBackstageJson___children___children___id',
+  childrenBackstageJson___children___children___children = 'childrenBackstageJson___children___children___children',
+  childrenBackstageJson___children___internal___content = 'childrenBackstageJson___children___internal___content',
+  childrenBackstageJson___children___internal___contentDigest = 'childrenBackstageJson___children___internal___contentDigest',
+  childrenBackstageJson___children___internal___description = 'childrenBackstageJson___children___internal___description',
+  childrenBackstageJson___children___internal___fieldOwners = 'childrenBackstageJson___children___internal___fieldOwners',
+  childrenBackstageJson___children___internal___ignoreType = 'childrenBackstageJson___children___internal___ignoreType',
+  childrenBackstageJson___children___internal___mediaType = 'childrenBackstageJson___children___internal___mediaType',
+  childrenBackstageJson___children___internal___owner = 'childrenBackstageJson___children___internal___owner',
+  childrenBackstageJson___children___internal___type = 'childrenBackstageJson___children___internal___type',
+  childrenBackstageJson___internal___content = 'childrenBackstageJson___internal___content',
+  childrenBackstageJson___internal___contentDigest = 'childrenBackstageJson___internal___contentDigest',
+  childrenBackstageJson___internal___description = 'childrenBackstageJson___internal___description',
+  childrenBackstageJson___internal___fieldOwners = 'childrenBackstageJson___internal___fieldOwners',
+  childrenBackstageJson___internal___ignoreType = 'childrenBackstageJson___internal___ignoreType',
+  childrenBackstageJson___internal___mediaType = 'childrenBackstageJson___internal___mediaType',
+  childrenBackstageJson___internal___owner = 'childrenBackstageJson___internal___owner',
+  childrenBackstageJson___internal___type = 'childrenBackstageJson___internal___type',
+  childrenBackstageJson___title = 'childrenBackstageJson___title',
+  childBackstageJson___id = 'childBackstageJson___id',
+  childBackstageJson___parent___id = 'childBackstageJson___parent___id',
+  childBackstageJson___parent___parent___id = 'childBackstageJson___parent___parent___id',
+  childBackstageJson___parent___parent___children = 'childBackstageJson___parent___parent___children',
+  childBackstageJson___parent___children = 'childBackstageJson___parent___children',
+  childBackstageJson___parent___children___id = 'childBackstageJson___parent___children___id',
+  childBackstageJson___parent___children___children = 'childBackstageJson___parent___children___children',
+  childBackstageJson___parent___internal___content = 'childBackstageJson___parent___internal___content',
+  childBackstageJson___parent___internal___contentDigest = 'childBackstageJson___parent___internal___contentDigest',
+  childBackstageJson___parent___internal___description = 'childBackstageJson___parent___internal___description',
+  childBackstageJson___parent___internal___fieldOwners = 'childBackstageJson___parent___internal___fieldOwners',
+  childBackstageJson___parent___internal___ignoreType = 'childBackstageJson___parent___internal___ignoreType',
+  childBackstageJson___parent___internal___mediaType = 'childBackstageJson___parent___internal___mediaType',
+  childBackstageJson___parent___internal___owner = 'childBackstageJson___parent___internal___owner',
+  childBackstageJson___parent___internal___type = 'childBackstageJson___parent___internal___type',
+  childBackstageJson___children = 'childBackstageJson___children',
+  childBackstageJson___children___id = 'childBackstageJson___children___id',
+  childBackstageJson___children___parent___id = 'childBackstageJson___children___parent___id',
+  childBackstageJson___children___parent___children = 'childBackstageJson___children___parent___children',
+  childBackstageJson___children___children = 'childBackstageJson___children___children',
+  childBackstageJson___children___children___id = 'childBackstageJson___children___children___id',
+  childBackstageJson___children___children___children = 'childBackstageJson___children___children___children',
+  childBackstageJson___children___internal___content = 'childBackstageJson___children___internal___content',
+  childBackstageJson___children___internal___contentDigest = 'childBackstageJson___children___internal___contentDigest',
+  childBackstageJson___children___internal___description = 'childBackstageJson___children___internal___description',
+  childBackstageJson___children___internal___fieldOwners = 'childBackstageJson___children___internal___fieldOwners',
+  childBackstageJson___children___internal___ignoreType = 'childBackstageJson___children___internal___ignoreType',
+  childBackstageJson___children___internal___mediaType = 'childBackstageJson___children___internal___mediaType',
+  childBackstageJson___children___internal___owner = 'childBackstageJson___children___internal___owner',
+  childBackstageJson___children___internal___type = 'childBackstageJson___children___internal___type',
+  childBackstageJson___internal___content = 'childBackstageJson___internal___content',
+  childBackstageJson___internal___contentDigest = 'childBackstageJson___internal___contentDigest',
+  childBackstageJson___internal___description = 'childBackstageJson___internal___description',
+  childBackstageJson___internal___fieldOwners = 'childBackstageJson___internal___fieldOwners',
+  childBackstageJson___internal___ignoreType = 'childBackstageJson___internal___ignoreType',
+  childBackstageJson___internal___mediaType = 'childBackstageJson___internal___mediaType',
+  childBackstageJson___internal___owner = 'childBackstageJson___internal___owner',
+  childBackstageJson___internal___type = 'childBackstageJson___internal___type',
+  childBackstageJson___title = 'childBackstageJson___title',
   childrenPicsJson = 'childrenPicsJson',
   childrenPicsJson___id = 'childrenPicsJson___id',
   childrenPicsJson___parent___id = 'childrenPicsJson___parent___id',
@@ -1947,9 +1947,9 @@ export enum FileFieldsEnum {
   childrenPicsJson___pics___image___childrenImageSharp = 'childrenPicsJson___pics___image___childrenImageSharp',
   childrenPicsJson___pics___image___childrenSeriesJson = 'childrenPicsJson___pics___image___childrenSeriesJson',
   childrenPicsJson___pics___image___childrenAboutJson = 'childrenPicsJson___pics___image___childrenAboutJson',
-  childrenPicsJson___pics___image___childrenContactsJson = 'childrenPicsJson___pics___image___childrenContactsJson',
-  childrenPicsJson___pics___image___childrenPicsJson = 'childrenPicsJson___pics___image___childrenPicsJson',
   childrenPicsJson___pics___image___childrenBackstageJson = 'childrenPicsJson___pics___image___childrenBackstageJson',
+  childrenPicsJson___pics___image___childrenPicsJson = 'childrenPicsJson___pics___image___childrenPicsJson',
+  childrenPicsJson___pics___image___childrenContactsJson = 'childrenPicsJson___pics___image___childrenContactsJson',
   childrenPicsJson___pics___image___childrenAlbumsJson = 'childrenPicsJson___pics___image___childrenAlbumsJson',
   childrenPicsJson___pics___image___id = 'childrenPicsJson___pics___image___id',
   childrenPicsJson___pics___image___children = 'childrenPicsJson___pics___image___children',
@@ -2033,91 +2033,91 @@ export enum FileFieldsEnum {
   childPicsJson___pics___image___childrenImageSharp = 'childPicsJson___pics___image___childrenImageSharp',
   childPicsJson___pics___image___childrenSeriesJson = 'childPicsJson___pics___image___childrenSeriesJson',
   childPicsJson___pics___image___childrenAboutJson = 'childPicsJson___pics___image___childrenAboutJson',
-  childPicsJson___pics___image___childrenContactsJson = 'childPicsJson___pics___image___childrenContactsJson',
-  childPicsJson___pics___image___childrenPicsJson = 'childPicsJson___pics___image___childrenPicsJson',
   childPicsJson___pics___image___childrenBackstageJson = 'childPicsJson___pics___image___childrenBackstageJson',
+  childPicsJson___pics___image___childrenPicsJson = 'childPicsJson___pics___image___childrenPicsJson',
+  childPicsJson___pics___image___childrenContactsJson = 'childPicsJson___pics___image___childrenContactsJson',
   childPicsJson___pics___image___childrenAlbumsJson = 'childPicsJson___pics___image___childrenAlbumsJson',
   childPicsJson___pics___image___id = 'childPicsJson___pics___image___id',
   childPicsJson___pics___image___children = 'childPicsJson___pics___image___children',
-  childrenBackstageJson = 'childrenBackstageJson',
-  childrenBackstageJson___id = 'childrenBackstageJson___id',
-  childrenBackstageJson___parent___id = 'childrenBackstageJson___parent___id',
-  childrenBackstageJson___parent___parent___id = 'childrenBackstageJson___parent___parent___id',
-  childrenBackstageJson___parent___parent___children = 'childrenBackstageJson___parent___parent___children',
-  childrenBackstageJson___parent___children = 'childrenBackstageJson___parent___children',
-  childrenBackstageJson___parent___children___id = 'childrenBackstageJson___parent___children___id',
-  childrenBackstageJson___parent___children___children = 'childrenBackstageJson___parent___children___children',
-  childrenBackstageJson___parent___internal___content = 'childrenBackstageJson___parent___internal___content',
-  childrenBackstageJson___parent___internal___contentDigest = 'childrenBackstageJson___parent___internal___contentDigest',
-  childrenBackstageJson___parent___internal___description = 'childrenBackstageJson___parent___internal___description',
-  childrenBackstageJson___parent___internal___fieldOwners = 'childrenBackstageJson___parent___internal___fieldOwners',
-  childrenBackstageJson___parent___internal___ignoreType = 'childrenBackstageJson___parent___internal___ignoreType',
-  childrenBackstageJson___parent___internal___mediaType = 'childrenBackstageJson___parent___internal___mediaType',
-  childrenBackstageJson___parent___internal___owner = 'childrenBackstageJson___parent___internal___owner',
-  childrenBackstageJson___parent___internal___type = 'childrenBackstageJson___parent___internal___type',
-  childrenBackstageJson___children = 'childrenBackstageJson___children',
-  childrenBackstageJson___children___id = 'childrenBackstageJson___children___id',
-  childrenBackstageJson___children___parent___id = 'childrenBackstageJson___children___parent___id',
-  childrenBackstageJson___children___parent___children = 'childrenBackstageJson___children___parent___children',
-  childrenBackstageJson___children___children = 'childrenBackstageJson___children___children',
-  childrenBackstageJson___children___children___id = 'childrenBackstageJson___children___children___id',
-  childrenBackstageJson___children___children___children = 'childrenBackstageJson___children___children___children',
-  childrenBackstageJson___children___internal___content = 'childrenBackstageJson___children___internal___content',
-  childrenBackstageJson___children___internal___contentDigest = 'childrenBackstageJson___children___internal___contentDigest',
-  childrenBackstageJson___children___internal___description = 'childrenBackstageJson___children___internal___description',
-  childrenBackstageJson___children___internal___fieldOwners = 'childrenBackstageJson___children___internal___fieldOwners',
-  childrenBackstageJson___children___internal___ignoreType = 'childrenBackstageJson___children___internal___ignoreType',
-  childrenBackstageJson___children___internal___mediaType = 'childrenBackstageJson___children___internal___mediaType',
-  childrenBackstageJson___children___internal___owner = 'childrenBackstageJson___children___internal___owner',
-  childrenBackstageJson___children___internal___type = 'childrenBackstageJson___children___internal___type',
-  childrenBackstageJson___internal___content = 'childrenBackstageJson___internal___content',
-  childrenBackstageJson___internal___contentDigest = 'childrenBackstageJson___internal___contentDigest',
-  childrenBackstageJson___internal___description = 'childrenBackstageJson___internal___description',
-  childrenBackstageJson___internal___fieldOwners = 'childrenBackstageJson___internal___fieldOwners',
-  childrenBackstageJson___internal___ignoreType = 'childrenBackstageJson___internal___ignoreType',
-  childrenBackstageJson___internal___mediaType = 'childrenBackstageJson___internal___mediaType',
-  childrenBackstageJson___internal___owner = 'childrenBackstageJson___internal___owner',
-  childrenBackstageJson___internal___type = 'childrenBackstageJson___internal___type',
-  childrenBackstageJson___title = 'childrenBackstageJson___title',
-  childBackstageJson___id = 'childBackstageJson___id',
-  childBackstageJson___parent___id = 'childBackstageJson___parent___id',
-  childBackstageJson___parent___parent___id = 'childBackstageJson___parent___parent___id',
-  childBackstageJson___parent___parent___children = 'childBackstageJson___parent___parent___children',
-  childBackstageJson___parent___children = 'childBackstageJson___parent___children',
-  childBackstageJson___parent___children___id = 'childBackstageJson___parent___children___id',
-  childBackstageJson___parent___children___children = 'childBackstageJson___parent___children___children',
-  childBackstageJson___parent___internal___content = 'childBackstageJson___parent___internal___content',
-  childBackstageJson___parent___internal___contentDigest = 'childBackstageJson___parent___internal___contentDigest',
-  childBackstageJson___parent___internal___description = 'childBackstageJson___parent___internal___description',
-  childBackstageJson___parent___internal___fieldOwners = 'childBackstageJson___parent___internal___fieldOwners',
-  childBackstageJson___parent___internal___ignoreType = 'childBackstageJson___parent___internal___ignoreType',
-  childBackstageJson___parent___internal___mediaType = 'childBackstageJson___parent___internal___mediaType',
-  childBackstageJson___parent___internal___owner = 'childBackstageJson___parent___internal___owner',
-  childBackstageJson___parent___internal___type = 'childBackstageJson___parent___internal___type',
-  childBackstageJson___children = 'childBackstageJson___children',
-  childBackstageJson___children___id = 'childBackstageJson___children___id',
-  childBackstageJson___children___parent___id = 'childBackstageJson___children___parent___id',
-  childBackstageJson___children___parent___children = 'childBackstageJson___children___parent___children',
-  childBackstageJson___children___children = 'childBackstageJson___children___children',
-  childBackstageJson___children___children___id = 'childBackstageJson___children___children___id',
-  childBackstageJson___children___children___children = 'childBackstageJson___children___children___children',
-  childBackstageJson___children___internal___content = 'childBackstageJson___children___internal___content',
-  childBackstageJson___children___internal___contentDigest = 'childBackstageJson___children___internal___contentDigest',
-  childBackstageJson___children___internal___description = 'childBackstageJson___children___internal___description',
-  childBackstageJson___children___internal___fieldOwners = 'childBackstageJson___children___internal___fieldOwners',
-  childBackstageJson___children___internal___ignoreType = 'childBackstageJson___children___internal___ignoreType',
-  childBackstageJson___children___internal___mediaType = 'childBackstageJson___children___internal___mediaType',
-  childBackstageJson___children___internal___owner = 'childBackstageJson___children___internal___owner',
-  childBackstageJson___children___internal___type = 'childBackstageJson___children___internal___type',
-  childBackstageJson___internal___content = 'childBackstageJson___internal___content',
-  childBackstageJson___internal___contentDigest = 'childBackstageJson___internal___contentDigest',
-  childBackstageJson___internal___description = 'childBackstageJson___internal___description',
-  childBackstageJson___internal___fieldOwners = 'childBackstageJson___internal___fieldOwners',
-  childBackstageJson___internal___ignoreType = 'childBackstageJson___internal___ignoreType',
-  childBackstageJson___internal___mediaType = 'childBackstageJson___internal___mediaType',
-  childBackstageJson___internal___owner = 'childBackstageJson___internal___owner',
-  childBackstageJson___internal___type = 'childBackstageJson___internal___type',
-  childBackstageJson___title = 'childBackstageJson___title',
+  childrenContactsJson = 'childrenContactsJson',
+  childrenContactsJson___id = 'childrenContactsJson___id',
+  childrenContactsJson___parent___id = 'childrenContactsJson___parent___id',
+  childrenContactsJson___parent___parent___id = 'childrenContactsJson___parent___parent___id',
+  childrenContactsJson___parent___parent___children = 'childrenContactsJson___parent___parent___children',
+  childrenContactsJson___parent___children = 'childrenContactsJson___parent___children',
+  childrenContactsJson___parent___children___id = 'childrenContactsJson___parent___children___id',
+  childrenContactsJson___parent___children___children = 'childrenContactsJson___parent___children___children',
+  childrenContactsJson___parent___internal___content = 'childrenContactsJson___parent___internal___content',
+  childrenContactsJson___parent___internal___contentDigest = 'childrenContactsJson___parent___internal___contentDigest',
+  childrenContactsJson___parent___internal___description = 'childrenContactsJson___parent___internal___description',
+  childrenContactsJson___parent___internal___fieldOwners = 'childrenContactsJson___parent___internal___fieldOwners',
+  childrenContactsJson___parent___internal___ignoreType = 'childrenContactsJson___parent___internal___ignoreType',
+  childrenContactsJson___parent___internal___mediaType = 'childrenContactsJson___parent___internal___mediaType',
+  childrenContactsJson___parent___internal___owner = 'childrenContactsJson___parent___internal___owner',
+  childrenContactsJson___parent___internal___type = 'childrenContactsJson___parent___internal___type',
+  childrenContactsJson___children = 'childrenContactsJson___children',
+  childrenContactsJson___children___id = 'childrenContactsJson___children___id',
+  childrenContactsJson___children___parent___id = 'childrenContactsJson___children___parent___id',
+  childrenContactsJson___children___parent___children = 'childrenContactsJson___children___parent___children',
+  childrenContactsJson___children___children = 'childrenContactsJson___children___children',
+  childrenContactsJson___children___children___id = 'childrenContactsJson___children___children___id',
+  childrenContactsJson___children___children___children = 'childrenContactsJson___children___children___children',
+  childrenContactsJson___children___internal___content = 'childrenContactsJson___children___internal___content',
+  childrenContactsJson___children___internal___contentDigest = 'childrenContactsJson___children___internal___contentDigest',
+  childrenContactsJson___children___internal___description = 'childrenContactsJson___children___internal___description',
+  childrenContactsJson___children___internal___fieldOwners = 'childrenContactsJson___children___internal___fieldOwners',
+  childrenContactsJson___children___internal___ignoreType = 'childrenContactsJson___children___internal___ignoreType',
+  childrenContactsJson___children___internal___mediaType = 'childrenContactsJson___children___internal___mediaType',
+  childrenContactsJson___children___internal___owner = 'childrenContactsJson___children___internal___owner',
+  childrenContactsJson___children___internal___type = 'childrenContactsJson___children___internal___type',
+  childrenContactsJson___internal___content = 'childrenContactsJson___internal___content',
+  childrenContactsJson___internal___contentDigest = 'childrenContactsJson___internal___contentDigest',
+  childrenContactsJson___internal___description = 'childrenContactsJson___internal___description',
+  childrenContactsJson___internal___fieldOwners = 'childrenContactsJson___internal___fieldOwners',
+  childrenContactsJson___internal___ignoreType = 'childrenContactsJson___internal___ignoreType',
+  childrenContactsJson___internal___mediaType = 'childrenContactsJson___internal___mediaType',
+  childrenContactsJson___internal___owner = 'childrenContactsJson___internal___owner',
+  childrenContactsJson___internal___type = 'childrenContactsJson___internal___type',
+  childrenContactsJson___title = 'childrenContactsJson___title',
+  childContactsJson___id = 'childContactsJson___id',
+  childContactsJson___parent___id = 'childContactsJson___parent___id',
+  childContactsJson___parent___parent___id = 'childContactsJson___parent___parent___id',
+  childContactsJson___parent___parent___children = 'childContactsJson___parent___parent___children',
+  childContactsJson___parent___children = 'childContactsJson___parent___children',
+  childContactsJson___parent___children___id = 'childContactsJson___parent___children___id',
+  childContactsJson___parent___children___children = 'childContactsJson___parent___children___children',
+  childContactsJson___parent___internal___content = 'childContactsJson___parent___internal___content',
+  childContactsJson___parent___internal___contentDigest = 'childContactsJson___parent___internal___contentDigest',
+  childContactsJson___parent___internal___description = 'childContactsJson___parent___internal___description',
+  childContactsJson___parent___internal___fieldOwners = 'childContactsJson___parent___internal___fieldOwners',
+  childContactsJson___parent___internal___ignoreType = 'childContactsJson___parent___internal___ignoreType',
+  childContactsJson___parent___internal___mediaType = 'childContactsJson___parent___internal___mediaType',
+  childContactsJson___parent___internal___owner = 'childContactsJson___parent___internal___owner',
+  childContactsJson___parent___internal___type = 'childContactsJson___parent___internal___type',
+  childContactsJson___children = 'childContactsJson___children',
+  childContactsJson___children___id = 'childContactsJson___children___id',
+  childContactsJson___children___parent___id = 'childContactsJson___children___parent___id',
+  childContactsJson___children___parent___children = 'childContactsJson___children___parent___children',
+  childContactsJson___children___children = 'childContactsJson___children___children',
+  childContactsJson___children___children___id = 'childContactsJson___children___children___id',
+  childContactsJson___children___children___children = 'childContactsJson___children___children___children',
+  childContactsJson___children___internal___content = 'childContactsJson___children___internal___content',
+  childContactsJson___children___internal___contentDigest = 'childContactsJson___children___internal___contentDigest',
+  childContactsJson___children___internal___description = 'childContactsJson___children___internal___description',
+  childContactsJson___children___internal___fieldOwners = 'childContactsJson___children___internal___fieldOwners',
+  childContactsJson___children___internal___ignoreType = 'childContactsJson___children___internal___ignoreType',
+  childContactsJson___children___internal___mediaType = 'childContactsJson___children___internal___mediaType',
+  childContactsJson___children___internal___owner = 'childContactsJson___children___internal___owner',
+  childContactsJson___children___internal___type = 'childContactsJson___children___internal___type',
+  childContactsJson___internal___content = 'childContactsJson___internal___content',
+  childContactsJson___internal___contentDigest = 'childContactsJson___internal___contentDigest',
+  childContactsJson___internal___description = 'childContactsJson___internal___description',
+  childContactsJson___internal___fieldOwners = 'childContactsJson___internal___fieldOwners',
+  childContactsJson___internal___ignoreType = 'childContactsJson___internal___ignoreType',
+  childContactsJson___internal___mediaType = 'childContactsJson___internal___mediaType',
+  childContactsJson___internal___owner = 'childContactsJson___internal___owner',
+  childContactsJson___internal___type = 'childContactsJson___internal___type',
+  childContactsJson___title = 'childContactsJson___title',
   childrenAlbumsJson = 'childrenAlbumsJson',
   childrenAlbumsJson___id = 'childrenAlbumsJson___id',
   childrenAlbumsJson___parent___id = 'childrenAlbumsJson___parent___id',
@@ -2196,9 +2196,9 @@ export enum FileFieldsEnum {
   childrenAlbumsJson___images___url___childrenImageSharp = 'childrenAlbumsJson___images___url___childrenImageSharp',
   childrenAlbumsJson___images___url___childrenSeriesJson = 'childrenAlbumsJson___images___url___childrenSeriesJson',
   childrenAlbumsJson___images___url___childrenAboutJson = 'childrenAlbumsJson___images___url___childrenAboutJson',
-  childrenAlbumsJson___images___url___childrenContactsJson = 'childrenAlbumsJson___images___url___childrenContactsJson',
-  childrenAlbumsJson___images___url___childrenPicsJson = 'childrenAlbumsJson___images___url___childrenPicsJson',
   childrenAlbumsJson___images___url___childrenBackstageJson = 'childrenAlbumsJson___images___url___childrenBackstageJson',
+  childrenAlbumsJson___images___url___childrenPicsJson = 'childrenAlbumsJson___images___url___childrenPicsJson',
+  childrenAlbumsJson___images___url___childrenContactsJson = 'childrenAlbumsJson___images___url___childrenContactsJson',
   childrenAlbumsJson___images___url___childrenAlbumsJson = 'childrenAlbumsJson___images___url___childrenAlbumsJson',
   childrenAlbumsJson___images___url___id = 'childrenAlbumsJson___images___url___id',
   childrenAlbumsJson___images___url___children = 'childrenAlbumsJson___images___url___children',
@@ -2284,9 +2284,9 @@ export enum FileFieldsEnum {
   childAlbumsJson___images___url___childrenImageSharp = 'childAlbumsJson___images___url___childrenImageSharp',
   childAlbumsJson___images___url___childrenSeriesJson = 'childAlbumsJson___images___url___childrenSeriesJson',
   childAlbumsJson___images___url___childrenAboutJson = 'childAlbumsJson___images___url___childrenAboutJson',
-  childAlbumsJson___images___url___childrenContactsJson = 'childAlbumsJson___images___url___childrenContactsJson',
-  childAlbumsJson___images___url___childrenPicsJson = 'childAlbumsJson___images___url___childrenPicsJson',
   childAlbumsJson___images___url___childrenBackstageJson = 'childAlbumsJson___images___url___childrenBackstageJson',
+  childAlbumsJson___images___url___childrenPicsJson = 'childAlbumsJson___images___url___childrenPicsJson',
+  childAlbumsJson___images___url___childrenContactsJson = 'childAlbumsJson___images___url___childrenContactsJson',
   childAlbumsJson___images___url___childrenAlbumsJson = 'childAlbumsJson___images___url___childrenAlbumsJson',
   childAlbumsJson___images___url___id = 'childAlbumsJson___images___url___id',
   childAlbumsJson___images___url___children = 'childAlbumsJson___images___url___children',
@@ -2424,12 +2424,12 @@ export interface FileFilterInput {
   readonly childSeriesJson: Maybe<SeriesJsonFilterInput>;
   readonly childrenAboutJson: Maybe<AboutJsonFilterListInput>;
   readonly childAboutJson: Maybe<AboutJsonFilterInput>;
-  readonly childrenContactsJson: Maybe<ContactsJsonFilterListInput>;
-  readonly childContactsJson: Maybe<ContactsJsonFilterInput>;
-  readonly childrenPicsJson: Maybe<PicsJsonFilterListInput>;
-  readonly childPicsJson: Maybe<PicsJsonFilterInput>;
   readonly childrenBackstageJson: Maybe<BackstageJsonFilterListInput>;
   readonly childBackstageJson: Maybe<BackstageJsonFilterInput>;
+  readonly childrenPicsJson: Maybe<PicsJsonFilterListInput>;
+  readonly childPicsJson: Maybe<PicsJsonFilterInput>;
+  readonly childrenContactsJson: Maybe<ContactsJsonFilterListInput>;
+  readonly childContactsJson: Maybe<ContactsJsonFilterInput>;
   readonly childrenAlbumsJson: Maybe<AlbumsJsonFilterListInput>;
   readonly childAlbumsJson: Maybe<AlbumsJsonFilterInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
@@ -3467,13 +3467,13 @@ export enum PicsJsonFieldsEnum {
   pics___image___childAboutJson___id = 'pics___image___childAboutJson___id',
   pics___image___childAboutJson___children = 'pics___image___childAboutJson___children',
   pics___image___childAboutJson___title = 'pics___image___childAboutJson___title',
-  pics___image___childrenContactsJson = 'pics___image___childrenContactsJson',
-  pics___image___childrenContactsJson___id = 'pics___image___childrenContactsJson___id',
-  pics___image___childrenContactsJson___children = 'pics___image___childrenContactsJson___children',
-  pics___image___childrenContactsJson___title = 'pics___image___childrenContactsJson___title',
-  pics___image___childContactsJson___id = 'pics___image___childContactsJson___id',
-  pics___image___childContactsJson___children = 'pics___image___childContactsJson___children',
-  pics___image___childContactsJson___title = 'pics___image___childContactsJson___title',
+  pics___image___childrenBackstageJson = 'pics___image___childrenBackstageJson',
+  pics___image___childrenBackstageJson___id = 'pics___image___childrenBackstageJson___id',
+  pics___image___childrenBackstageJson___children = 'pics___image___childrenBackstageJson___children',
+  pics___image___childrenBackstageJson___title = 'pics___image___childrenBackstageJson___title',
+  pics___image___childBackstageJson___id = 'pics___image___childBackstageJson___id',
+  pics___image___childBackstageJson___children = 'pics___image___childBackstageJson___children',
+  pics___image___childBackstageJson___title = 'pics___image___childBackstageJson___title',
   pics___image___childrenPicsJson = 'pics___image___childrenPicsJson',
   pics___image___childrenPicsJson___id = 'pics___image___childrenPicsJson___id',
   pics___image___childrenPicsJson___children = 'pics___image___childrenPicsJson___children',
@@ -3483,13 +3483,13 @@ export enum PicsJsonFieldsEnum {
   pics___image___childPicsJson___children = 'pics___image___childPicsJson___children',
   pics___image___childPicsJson___title = 'pics___image___childPicsJson___title',
   pics___image___childPicsJson___pics = 'pics___image___childPicsJson___pics',
-  pics___image___childrenBackstageJson = 'pics___image___childrenBackstageJson',
-  pics___image___childrenBackstageJson___id = 'pics___image___childrenBackstageJson___id',
-  pics___image___childrenBackstageJson___children = 'pics___image___childrenBackstageJson___children',
-  pics___image___childrenBackstageJson___title = 'pics___image___childrenBackstageJson___title',
-  pics___image___childBackstageJson___id = 'pics___image___childBackstageJson___id',
-  pics___image___childBackstageJson___children = 'pics___image___childBackstageJson___children',
-  pics___image___childBackstageJson___title = 'pics___image___childBackstageJson___title',
+  pics___image___childrenContactsJson = 'pics___image___childrenContactsJson',
+  pics___image___childrenContactsJson___id = 'pics___image___childrenContactsJson___id',
+  pics___image___childrenContactsJson___children = 'pics___image___childrenContactsJson___children',
+  pics___image___childrenContactsJson___title = 'pics___image___childrenContactsJson___title',
+  pics___image___childContactsJson___id = 'pics___image___childContactsJson___id',
+  pics___image___childContactsJson___children = 'pics___image___childContactsJson___children',
+  pics___image___childContactsJson___title = 'pics___image___childContactsJson___title',
   pics___image___childrenAlbumsJson = 'pics___image___childrenAlbumsJson',
   pics___image___childrenAlbumsJson___id = 'pics___image___childrenAlbumsJson___id',
   pics___image___childrenAlbumsJson___children = 'pics___image___childrenAlbumsJson___children',
@@ -3609,12 +3609,12 @@ export interface Query {
   readonly allSeriesJson: SeriesJsonConnection;
   readonly aboutJson: Maybe<AboutJson>;
   readonly allAboutJson: AboutJsonConnection;
-  readonly contactsJson: Maybe<ContactsJson>;
-  readonly allContactsJson: ContactsJsonConnection;
-  readonly picsJson: Maybe<PicsJson>;
-  readonly allPicsJson: PicsJsonConnection;
   readonly backstageJson: Maybe<BackstageJson>;
   readonly allBackstageJson: BackstageJsonConnection;
+  readonly picsJson: Maybe<PicsJson>;
+  readonly allPicsJson: PicsJsonConnection;
+  readonly contactsJson: Maybe<ContactsJson>;
+  readonly allContactsJson: ContactsJsonConnection;
   readonly albumsJson: Maybe<AlbumsJson>;
   readonly allAlbumsJson: AlbumsJsonConnection;
   readonly siteBuildMetadata: Maybe<SiteBuildMetadata>;
@@ -3665,12 +3665,12 @@ export interface QueryFileArgs {
   childSeriesJson: Maybe<SeriesJsonFilterInput>;
   childrenAboutJson: Maybe<AboutJsonFilterListInput>;
   childAboutJson: Maybe<AboutJsonFilterInput>;
-  childrenContactsJson: Maybe<ContactsJsonFilterListInput>;
-  childContactsJson: Maybe<ContactsJsonFilterInput>;
-  childrenPicsJson: Maybe<PicsJsonFilterListInput>;
-  childPicsJson: Maybe<PicsJsonFilterInput>;
   childrenBackstageJson: Maybe<BackstageJsonFilterListInput>;
   childBackstageJson: Maybe<BackstageJsonFilterInput>;
+  childrenPicsJson: Maybe<PicsJsonFilterListInput>;
+  childPicsJson: Maybe<PicsJsonFilterInput>;
+  childrenContactsJson: Maybe<ContactsJsonFilterListInput>;
+  childContactsJson: Maybe<ContactsJsonFilterInput>;
   childrenAlbumsJson: Maybe<AlbumsJsonFilterListInput>;
   childAlbumsJson: Maybe<AlbumsJsonFilterInput>;
   id: Maybe<StringQueryOperatorInput>;
@@ -3743,6 +3743,8 @@ export interface QuerySiteArgs {
   port: Maybe<IntQueryOperatorInput>;
   host: Maybe<StringQueryOperatorInput>;
   flags: Maybe<SiteFlagsFilterInput>;
+  polyfill: Maybe<BooleanQueryOperatorInput>;
+  pathPrefix: Maybe<StringQueryOperatorInput>;
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
@@ -3785,15 +3787,14 @@ export interface QuerySitePageArgs {
   internalComponentName: Maybe<StringQueryOperatorInput>;
   componentChunkName: Maybe<StringQueryOperatorInput>;
   matchPath: Maybe<StringQueryOperatorInput>;
-  isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>;
-  pluginCreator: Maybe<SitePluginFilterInput>;
-  pluginCreatorId: Maybe<StringQueryOperatorInput>;
-  componentPath: Maybe<StringQueryOperatorInput>;
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
   internal: Maybe<InternalFilterInput>;
+  isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>;
   context: Maybe<SitePageContextFilterInput>;
+  pluginCreator: Maybe<SitePluginFilterInput>;
+  pluginCreatorId: Maybe<StringQueryOperatorInput>;
 }
 
 
@@ -3885,7 +3886,7 @@ export interface QueryAllAboutJsonArgs {
 }
 
 
-export interface QueryContactsJsonArgs {
+export interface QueryBackstageJsonArgs {
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
@@ -3894,9 +3895,9 @@ export interface QueryContactsJsonArgs {
 }
 
 
-export interface QueryAllContactsJsonArgs {
-  filter: Maybe<ContactsJsonFilterInput>;
-  sort: Maybe<ContactsJsonSortInput>;
+export interface QueryAllBackstageJsonArgs {
+  filter: Maybe<BackstageJsonFilterInput>;
+  sort: Maybe<BackstageJsonSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 }
@@ -3920,7 +3921,7 @@ export interface QueryAllPicsJsonArgs {
 }
 
 
-export interface QueryBackstageJsonArgs {
+export interface QueryContactsJsonArgs {
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
@@ -3929,9 +3930,9 @@ export interface QueryBackstageJsonArgs {
 }
 
 
-export interface QueryAllBackstageJsonArgs {
-  filter: Maybe<BackstageJsonFilterInput>;
-  sort: Maybe<BackstageJsonSortInput>;
+export interface QueryAllContactsJsonArgs {
+  filter: Maybe<ContactsJsonFilterInput>;
+  sort: Maybe<ContactsJsonSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 }
@@ -4136,9 +4137,9 @@ export enum SeriesJsonFieldsEnum {
   albums___images___url___childrenImageSharp = 'albums___images___url___childrenImageSharp',
   albums___images___url___childrenSeriesJson = 'albums___images___url___childrenSeriesJson',
   albums___images___url___childrenAboutJson = 'albums___images___url___childrenAboutJson',
-  albums___images___url___childrenContactsJson = 'albums___images___url___childrenContactsJson',
-  albums___images___url___childrenPicsJson = 'albums___images___url___childrenPicsJson',
   albums___images___url___childrenBackstageJson = 'albums___images___url___childrenBackstageJson',
+  albums___images___url___childrenPicsJson = 'albums___images___url___childrenPicsJson',
+  albums___images___url___childrenContactsJson = 'albums___images___url___childrenContactsJson',
   albums___images___url___childrenAlbumsJson = 'albums___images___url___childrenAlbumsJson',
   albums___images___url___id = 'albums___images___url___id',
   albums___images___url___children = 'albums___images___url___children',
@@ -4271,6 +4272,8 @@ export interface Site extends Node {
   readonly port: Maybe<Scalars['Int']>;
   readonly host: Maybe<Scalars['String']>;
   readonly flags: Maybe<SiteFlags>;
+  readonly polyfill: Maybe<Scalars['Boolean']>;
+  readonly pathPrefix: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
   readonly parent: Maybe<Node>;
   readonly children: ReadonlyArray<Node>;
@@ -4516,6 +4519,8 @@ export enum SiteFieldsEnum {
   port = 'port',
   host = 'host',
   flags___FAST_DEV = 'flags___FAST_DEV',
+  polyfill = 'polyfill',
+  pathPrefix = 'pathPrefix',
   id = 'id',
   parent___id = 'parent___id',
   parent___parent___id = 'parent___parent___id',
@@ -4610,6 +4615,8 @@ export interface SiteFilterInput {
   readonly port: Maybe<IntQueryOperatorInput>;
   readonly host: Maybe<StringQueryOperatorInput>;
   readonly flags: Maybe<SiteFlagsFilterInput>;
+  readonly polyfill: Maybe<BooleanQueryOperatorInput>;
+  readonly pathPrefix: Maybe<StringQueryOperatorInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
   readonly parent: Maybe<NodeFilterInput>;
   readonly children: Maybe<NodeFilterListInput>;
@@ -4823,15 +4830,14 @@ export interface SitePage extends Node {
   readonly internalComponentName: Scalars['String'];
   readonly componentChunkName: Scalars['String'];
   readonly matchPath: Maybe<Scalars['String']>;
-  readonly isCreatedByStatefulCreatePages: Maybe<Scalars['Boolean']>;
-  readonly pluginCreator: Maybe<SitePlugin>;
-  readonly pluginCreatorId: Maybe<Scalars['String']>;
-  readonly componentPath: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
   readonly parent: Maybe<Node>;
   readonly children: ReadonlyArray<Node>;
   readonly internal: Internal;
+  readonly isCreatedByStatefulCreatePages: Maybe<Scalars['Boolean']>;
   readonly context: Maybe<SitePageContext>;
+  readonly pluginCreator: Maybe<SitePlugin>;
+  readonly pluginCreatorId: Maybe<Scalars['String']>;
 }
 
 export interface SitePageConnection {
@@ -4909,83 +4915,6 @@ export enum SitePageFieldsEnum {
   internalComponentName = 'internalComponentName',
   componentChunkName = 'componentChunkName',
   matchPath = 'matchPath',
-  isCreatedByStatefulCreatePages = 'isCreatedByStatefulCreatePages',
-  pluginCreator___id = 'pluginCreator___id',
-  pluginCreator___parent___id = 'pluginCreator___parent___id',
-  pluginCreator___parent___parent___id = 'pluginCreator___parent___parent___id',
-  pluginCreator___parent___parent___children = 'pluginCreator___parent___parent___children',
-  pluginCreator___parent___children = 'pluginCreator___parent___children',
-  pluginCreator___parent___children___id = 'pluginCreator___parent___children___id',
-  pluginCreator___parent___children___children = 'pluginCreator___parent___children___children',
-  pluginCreator___parent___internal___content = 'pluginCreator___parent___internal___content',
-  pluginCreator___parent___internal___contentDigest = 'pluginCreator___parent___internal___contentDigest',
-  pluginCreator___parent___internal___description = 'pluginCreator___parent___internal___description',
-  pluginCreator___parent___internal___fieldOwners = 'pluginCreator___parent___internal___fieldOwners',
-  pluginCreator___parent___internal___ignoreType = 'pluginCreator___parent___internal___ignoreType',
-  pluginCreator___parent___internal___mediaType = 'pluginCreator___parent___internal___mediaType',
-  pluginCreator___parent___internal___owner = 'pluginCreator___parent___internal___owner',
-  pluginCreator___parent___internal___type = 'pluginCreator___parent___internal___type',
-  pluginCreator___children = 'pluginCreator___children',
-  pluginCreator___children___id = 'pluginCreator___children___id',
-  pluginCreator___children___parent___id = 'pluginCreator___children___parent___id',
-  pluginCreator___children___parent___children = 'pluginCreator___children___parent___children',
-  pluginCreator___children___children = 'pluginCreator___children___children',
-  pluginCreator___children___children___id = 'pluginCreator___children___children___id',
-  pluginCreator___children___children___children = 'pluginCreator___children___children___children',
-  pluginCreator___children___internal___content = 'pluginCreator___children___internal___content',
-  pluginCreator___children___internal___contentDigest = 'pluginCreator___children___internal___contentDigest',
-  pluginCreator___children___internal___description = 'pluginCreator___children___internal___description',
-  pluginCreator___children___internal___fieldOwners = 'pluginCreator___children___internal___fieldOwners',
-  pluginCreator___children___internal___ignoreType = 'pluginCreator___children___internal___ignoreType',
-  pluginCreator___children___internal___mediaType = 'pluginCreator___children___internal___mediaType',
-  pluginCreator___children___internal___owner = 'pluginCreator___children___internal___owner',
-  pluginCreator___children___internal___type = 'pluginCreator___children___internal___type',
-  pluginCreator___internal___content = 'pluginCreator___internal___content',
-  pluginCreator___internal___contentDigest = 'pluginCreator___internal___contentDigest',
-  pluginCreator___internal___description = 'pluginCreator___internal___description',
-  pluginCreator___internal___fieldOwners = 'pluginCreator___internal___fieldOwners',
-  pluginCreator___internal___ignoreType = 'pluginCreator___internal___ignoreType',
-  pluginCreator___internal___mediaType = 'pluginCreator___internal___mediaType',
-  pluginCreator___internal___owner = 'pluginCreator___internal___owner',
-  pluginCreator___internal___type = 'pluginCreator___internal___type',
-  pluginCreator___resolve = 'pluginCreator___resolve',
-  pluginCreator___name = 'pluginCreator___name',
-  pluginCreator___version = 'pluginCreator___version',
-  pluginCreator___pluginOptions___base64Width = 'pluginCreator___pluginOptions___base64Width',
-  pluginCreator___pluginOptions___stripMetadata = 'pluginCreator___pluginOptions___stripMetadata',
-  pluginCreator___pluginOptions___defaultQuality = 'pluginCreator___pluginOptions___defaultQuality',
-  pluginCreator___pluginOptions___failOnError = 'pluginCreator___pluginOptions___failOnError',
-  pluginCreator___pluginOptions___isTSX = 'pluginCreator___pluginOptions___isTSX',
-  pluginCreator___pluginOptions___jsxPragma = 'pluginCreator___pluginOptions___jsxPragma',
-  pluginCreator___pluginOptions___allExtensions = 'pluginCreator___pluginOptions___allExtensions',
-  pluginCreator___pluginOptions___output = 'pluginCreator___pluginOptions___output',
-  pluginCreator___pluginOptions___createLinkInHead = 'pluginCreator___pluginOptions___createLinkInHead',
-  pluginCreator___pluginOptions___modulePath = 'pluginCreator___pluginOptions___modulePath',
-  pluginCreator___pluginOptions___manualInit = 'pluginCreator___pluginOptions___manualInit',
-  pluginCreator___pluginOptions___name = 'pluginCreator___pluginOptions___name',
-  pluginCreator___pluginOptions___path = 'pluginCreator___pluginOptions___path',
-  pluginCreator___pluginOptions___pathCheck = 'pluginCreator___pluginOptions___pathCheck',
-  pluginCreator___nodeAPIs = 'pluginCreator___nodeAPIs',
-  pluginCreator___browserAPIs = 'pluginCreator___browserAPIs',
-  pluginCreator___ssrAPIs = 'pluginCreator___ssrAPIs',
-  pluginCreator___pluginFilepath = 'pluginCreator___pluginFilepath',
-  pluginCreator___packageJson___name = 'pluginCreator___packageJson___name',
-  pluginCreator___packageJson___description = 'pluginCreator___packageJson___description',
-  pluginCreator___packageJson___version = 'pluginCreator___packageJson___version',
-  pluginCreator___packageJson___main = 'pluginCreator___packageJson___main',
-  pluginCreator___packageJson___license = 'pluginCreator___packageJson___license',
-  pluginCreator___packageJson___dependencies = 'pluginCreator___packageJson___dependencies',
-  pluginCreator___packageJson___dependencies___name = 'pluginCreator___packageJson___dependencies___name',
-  pluginCreator___packageJson___dependencies___version = 'pluginCreator___packageJson___dependencies___version',
-  pluginCreator___packageJson___devDependencies = 'pluginCreator___packageJson___devDependencies',
-  pluginCreator___packageJson___devDependencies___name = 'pluginCreator___packageJson___devDependencies___name',
-  pluginCreator___packageJson___devDependencies___version = 'pluginCreator___packageJson___devDependencies___version',
-  pluginCreator___packageJson___peerDependencies = 'pluginCreator___packageJson___peerDependencies',
-  pluginCreator___packageJson___peerDependencies___name = 'pluginCreator___packageJson___peerDependencies___name',
-  pluginCreator___packageJson___peerDependencies___version = 'pluginCreator___packageJson___peerDependencies___version',
-  pluginCreator___packageJson___keywords = 'pluginCreator___packageJson___keywords',
-  pluginCreatorId = 'pluginCreatorId',
-  componentPath = 'componentPath',
   id = 'id',
   parent___id = 'parent___id',
   parent___parent___id = 'parent___parent___id',
@@ -5072,9 +5001,83 @@ export enum SitePageFieldsEnum {
   internal___mediaType = 'internal___mediaType',
   internal___owner = 'internal___owner',
   internal___type = 'internal___type',
+  isCreatedByStatefulCreatePages = 'isCreatedByStatefulCreatePages',
   context___id = 'context___id',
   context___fields__slug = 'context___fields__slug',
-  context____xparams___fields__slug = 'context____xparams___fields__slug'
+  context____xparams___fields__slug = 'context____xparams___fields__slug',
+  pluginCreator___id = 'pluginCreator___id',
+  pluginCreator___parent___id = 'pluginCreator___parent___id',
+  pluginCreator___parent___parent___id = 'pluginCreator___parent___parent___id',
+  pluginCreator___parent___parent___children = 'pluginCreator___parent___parent___children',
+  pluginCreator___parent___children = 'pluginCreator___parent___children',
+  pluginCreator___parent___children___id = 'pluginCreator___parent___children___id',
+  pluginCreator___parent___children___children = 'pluginCreator___parent___children___children',
+  pluginCreator___parent___internal___content = 'pluginCreator___parent___internal___content',
+  pluginCreator___parent___internal___contentDigest = 'pluginCreator___parent___internal___contentDigest',
+  pluginCreator___parent___internal___description = 'pluginCreator___parent___internal___description',
+  pluginCreator___parent___internal___fieldOwners = 'pluginCreator___parent___internal___fieldOwners',
+  pluginCreator___parent___internal___ignoreType = 'pluginCreator___parent___internal___ignoreType',
+  pluginCreator___parent___internal___mediaType = 'pluginCreator___parent___internal___mediaType',
+  pluginCreator___parent___internal___owner = 'pluginCreator___parent___internal___owner',
+  pluginCreator___parent___internal___type = 'pluginCreator___parent___internal___type',
+  pluginCreator___children = 'pluginCreator___children',
+  pluginCreator___children___id = 'pluginCreator___children___id',
+  pluginCreator___children___parent___id = 'pluginCreator___children___parent___id',
+  pluginCreator___children___parent___children = 'pluginCreator___children___parent___children',
+  pluginCreator___children___children = 'pluginCreator___children___children',
+  pluginCreator___children___children___id = 'pluginCreator___children___children___id',
+  pluginCreator___children___children___children = 'pluginCreator___children___children___children',
+  pluginCreator___children___internal___content = 'pluginCreator___children___internal___content',
+  pluginCreator___children___internal___contentDigest = 'pluginCreator___children___internal___contentDigest',
+  pluginCreator___children___internal___description = 'pluginCreator___children___internal___description',
+  pluginCreator___children___internal___fieldOwners = 'pluginCreator___children___internal___fieldOwners',
+  pluginCreator___children___internal___ignoreType = 'pluginCreator___children___internal___ignoreType',
+  pluginCreator___children___internal___mediaType = 'pluginCreator___children___internal___mediaType',
+  pluginCreator___children___internal___owner = 'pluginCreator___children___internal___owner',
+  pluginCreator___children___internal___type = 'pluginCreator___children___internal___type',
+  pluginCreator___internal___content = 'pluginCreator___internal___content',
+  pluginCreator___internal___contentDigest = 'pluginCreator___internal___contentDigest',
+  pluginCreator___internal___description = 'pluginCreator___internal___description',
+  pluginCreator___internal___fieldOwners = 'pluginCreator___internal___fieldOwners',
+  pluginCreator___internal___ignoreType = 'pluginCreator___internal___ignoreType',
+  pluginCreator___internal___mediaType = 'pluginCreator___internal___mediaType',
+  pluginCreator___internal___owner = 'pluginCreator___internal___owner',
+  pluginCreator___internal___type = 'pluginCreator___internal___type',
+  pluginCreator___resolve = 'pluginCreator___resolve',
+  pluginCreator___name = 'pluginCreator___name',
+  pluginCreator___version = 'pluginCreator___version',
+  pluginCreator___pluginOptions___base64Width = 'pluginCreator___pluginOptions___base64Width',
+  pluginCreator___pluginOptions___stripMetadata = 'pluginCreator___pluginOptions___stripMetadata',
+  pluginCreator___pluginOptions___defaultQuality = 'pluginCreator___pluginOptions___defaultQuality',
+  pluginCreator___pluginOptions___failOnError = 'pluginCreator___pluginOptions___failOnError',
+  pluginCreator___pluginOptions___isTSX = 'pluginCreator___pluginOptions___isTSX',
+  pluginCreator___pluginOptions___jsxPragma = 'pluginCreator___pluginOptions___jsxPragma',
+  pluginCreator___pluginOptions___allExtensions = 'pluginCreator___pluginOptions___allExtensions',
+  pluginCreator___pluginOptions___modulePath = 'pluginCreator___pluginOptions___modulePath',
+  pluginCreator___pluginOptions___manualInit = 'pluginCreator___pluginOptions___manualInit',
+  pluginCreator___pluginOptions___name = 'pluginCreator___pluginOptions___name',
+  pluginCreator___pluginOptions___path = 'pluginCreator___pluginOptions___path',
+  pluginCreator___pluginOptions___pathCheck = 'pluginCreator___pluginOptions___pathCheck',
+  pluginCreator___nodeAPIs = 'pluginCreator___nodeAPIs',
+  pluginCreator___browserAPIs = 'pluginCreator___browserAPIs',
+  pluginCreator___ssrAPIs = 'pluginCreator___ssrAPIs',
+  pluginCreator___pluginFilepath = 'pluginCreator___pluginFilepath',
+  pluginCreator___packageJson___name = 'pluginCreator___packageJson___name',
+  pluginCreator___packageJson___description = 'pluginCreator___packageJson___description',
+  pluginCreator___packageJson___version = 'pluginCreator___packageJson___version',
+  pluginCreator___packageJson___main = 'pluginCreator___packageJson___main',
+  pluginCreator___packageJson___license = 'pluginCreator___packageJson___license',
+  pluginCreator___packageJson___dependencies = 'pluginCreator___packageJson___dependencies',
+  pluginCreator___packageJson___dependencies___name = 'pluginCreator___packageJson___dependencies___name',
+  pluginCreator___packageJson___dependencies___version = 'pluginCreator___packageJson___dependencies___version',
+  pluginCreator___packageJson___devDependencies = 'pluginCreator___packageJson___devDependencies',
+  pluginCreator___packageJson___devDependencies___name = 'pluginCreator___packageJson___devDependencies___name',
+  pluginCreator___packageJson___devDependencies___version = 'pluginCreator___packageJson___devDependencies___version',
+  pluginCreator___packageJson___peerDependencies = 'pluginCreator___packageJson___peerDependencies',
+  pluginCreator___packageJson___peerDependencies___name = 'pluginCreator___packageJson___peerDependencies___name',
+  pluginCreator___packageJson___peerDependencies___version = 'pluginCreator___packageJson___peerDependencies___version',
+  pluginCreator___packageJson___keywords = 'pluginCreator___packageJson___keywords',
+  pluginCreatorId = 'pluginCreatorId'
 }
 
 export interface SitePageFilterInput {
@@ -5083,15 +5086,14 @@ export interface SitePageFilterInput {
   readonly internalComponentName: Maybe<StringQueryOperatorInput>;
   readonly componentChunkName: Maybe<StringQueryOperatorInput>;
   readonly matchPath: Maybe<StringQueryOperatorInput>;
-  readonly isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>;
-  readonly pluginCreator: Maybe<SitePluginFilterInput>;
-  readonly pluginCreatorId: Maybe<StringQueryOperatorInput>;
-  readonly componentPath: Maybe<StringQueryOperatorInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
   readonly parent: Maybe<NodeFilterInput>;
   readonly children: Maybe<NodeFilterListInput>;
   readonly internal: Maybe<InternalFilterInput>;
+  readonly isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>;
   readonly context: Maybe<SitePageContextFilterInput>;
+  readonly pluginCreator: Maybe<SitePluginFilterInput>;
+  readonly pluginCreatorId: Maybe<StringQueryOperatorInput>;
 }
 
 export interface SitePageGroupConnection {
@@ -5270,8 +5272,6 @@ export enum SitePluginFieldsEnum {
   pluginOptions___isTSX = 'pluginOptions___isTSX',
   pluginOptions___jsxPragma = 'pluginOptions___jsxPragma',
   pluginOptions___allExtensions = 'pluginOptions___allExtensions',
-  pluginOptions___output = 'pluginOptions___output',
-  pluginOptions___createLinkInHead = 'pluginOptions___createLinkInHead',
   pluginOptions___cssLoaderOptions___modules___namedExport = 'pluginOptions___cssLoaderOptions___modules___namedExport',
   pluginOptions___modulePath = 'pluginOptions___modulePath',
   pluginOptions___manualInit = 'pluginOptions___manualInit',
@@ -5404,8 +5404,6 @@ export interface SitePluginPluginOptions {
   readonly isTSX: Maybe<Scalars['Boolean']>;
   readonly jsxPragma: Maybe<Scalars['String']>;
   readonly allExtensions: Maybe<Scalars['Boolean']>;
-  readonly output: Maybe<Scalars['String']>;
-  readonly createLinkInHead: Maybe<Scalars['Boolean']>;
   readonly cssLoaderOptions: Maybe<SitePluginPluginOptionsCssLoaderOptions>;
   readonly modulePath: Maybe<Scalars['String']>;
   readonly manualInit: Maybe<Scalars['Boolean']>;
@@ -5440,8 +5438,6 @@ export interface SitePluginPluginOptionsFilterInput {
   readonly isTSX: Maybe<BooleanQueryOperatorInput>;
   readonly jsxPragma: Maybe<StringQueryOperatorInput>;
   readonly allExtensions: Maybe<BooleanQueryOperatorInput>;
-  readonly output: Maybe<StringQueryOperatorInput>;
-  readonly createLinkInHead: Maybe<BooleanQueryOperatorInput>;
   readonly cssLoaderOptions: Maybe<SitePluginPluginOptionsCssLoaderOptionsFilterInput>;
   readonly modulePath: Maybe<StringQueryOperatorInput>;
   readonly manualInit: Maybe<BooleanQueryOperatorInput>;

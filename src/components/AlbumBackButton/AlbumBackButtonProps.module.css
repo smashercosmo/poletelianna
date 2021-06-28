@@ -1,0 +1,14 @@
+.content {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  transition: transform 0.1s linear;
+  width: calc(28 / var(--base-font-size) * 1rem);
+  margin-right: 0.75rem;
+}
+
+.content:hover > .arrow {
+  transform: translateX(-25%);
+}

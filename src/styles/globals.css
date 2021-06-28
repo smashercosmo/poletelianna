@@ -9,6 +9,8 @@
   --fz-56: calc(56 / var(--base-font-size) * 1rem);
   --gap-px: 50;
   --gap-rem: calc(var(--gap-px) / var(--base-font-size) * 1rem);
+  --focus-outline: thin dotted currentColor;
+  --focus-outline-offset: 2px;
 }
 
 * {

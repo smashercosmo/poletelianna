@@ -1,0 +1,11 @@
+.root {
+  display: flex;
+  align-items: center;
+  opacity: 0.3;
+  padding-top: 3rem;
+}
+
+.icon {
+  width: calc(42 / var(--base-font-size) * 1rem);
+  margin-right: 1rem;
+}
