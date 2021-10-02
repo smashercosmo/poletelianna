@@ -32,17 +32,25 @@ function Series(props: { data: SeriesPageQuery }) {
   const { data } = props
   const { albums, title: pageTitle } = data.page
 
-  const simplifiedAlbums = albums.map((album) => {
-    const { background, description, title: albumTitle, images, fields } = album
-    const cover = images.find((image) => image.cover) || images[0]
-    return {
-      background,
-      description,
-      title: albumTitle,
-      slug: fields.slug,
-      cover: cover.url.childImageSharp.gatsbyImageData,
-    }
-  })
+  const simplifiedAlbums = albums
+    .filter((album) => album.images)
+    .map((album) => {
+      const {
+        background,
+        description,
+        title: albumTitle,
+        images,
+        fields,
+      } = album
+      const cover = images.find((image) => image.cover) || images[0]
+      return {
+        background,
+        description,
+        title: albumTitle,
+        slug: fields.slug,
+        cover: cover.url.childImageSharp.gatsbyImageData,
+      }
+    })
 
   return <PageSeries albums={simplifiedAlbums} title={pageTitle} />
 }

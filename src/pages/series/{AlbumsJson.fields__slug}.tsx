@@ -26,7 +26,7 @@ function Album(props: PageProps<AlbumPageQuery>) {
   const { data } = props
   const { title, description, images, background } = data.content
 
-  const simplifiedImages = images.map((image) => {
+  const simplifiedImages = (images ?? []).map((image) => {
     return image.url.childImageSharp.gatsbyImageData
   })
 
