@@ -33,7 +33,7 @@ function Series(props: { data: SeriesPageQuery }) {
   const { albums, title: pageTitle } = data.page
 
   const simplifiedAlbums = albums
-    .filter((album) => album.images)
+    .filter((album) => album?.images)
     .map((album) => {
       const {
         background,
