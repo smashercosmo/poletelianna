@@ -2,5 +2,13 @@
   "title": "muse",
   "description": "my muse",
   "background": "#c0e0cd",
-  "images": []
+  "images": [
+    {
+      "url": "/images/series/muse/dsc02837web.jpg"
+    },
+    {
+      "url": "/images/series/muse/dsc08906-3web2.jpg",
+      "cover": true
+    }
+  ]
 }
