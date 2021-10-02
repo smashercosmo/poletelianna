@@ -1,7 +1,7 @@
 {
   "title": "gots and nerds",
   "background": "#c7e6f7",
-  "description": "Slava said BLABLABLA",
+  "description": "colorless ",
   "images": [
     {
       "url": "/images/series/gots-and-nerds/dsc09907web.jpg",
@@ -25,6 +25,9 @@
     },
     {
       "url": "/images/series/gots-and-nerds/dsc00521web.jpg"
+    },
+    {
+      "url": "/images/series/gots-and-nerds/dsc00221web.jpg"
     }
   ]
 }
