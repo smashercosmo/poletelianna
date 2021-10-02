@@ -25,6 +25,6 @@ config:
   maybeValue: T
   declarationKind: interface
   useTypeImports: true
-  preResolveTypes: true
+  preResolveTypes: false
   scalars:
     GatsbyImageData: gatsby-plugin-image#IGatsbyImageData

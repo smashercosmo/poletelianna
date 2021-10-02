@@ -15,6 +15,7 @@ import type { IGatsbyImageData } from 'gatsby-plugin-image'
 interface PageAlbumProps {
   title: string
   description: string
+  background: string
   images: ReadonlyArray<IGatsbyImageData>
 }
 
@@ -34,7 +35,7 @@ function getIndex(
 }
 
 function PageAlbum(props: PageAlbumProps) {
-  const { title, description, images } = props
+  const { title, description, images, background } = props
   const mayBePage =
     typeof window === 'undefined'
       ? '0'
@@ -45,6 +46,13 @@ function PageAlbum(props: PageAlbumProps) {
   const [scrollerVisible, setScrollerVisible] = useState(false)
   const scrollerRef = useRef<HTMLDivElement | null>(null)
   const resizedImages = useResizedImages({ images, maxSize: 620 })
+
+  useEffect(() => {
+    document.body.style.backgroundColor = background
+    return () => {
+      document.body.removeAttribute('style')
+    }
+  }, [background])
 
   useEffect(() => {
     let scrollerNode: HTMLDivElement | undefined

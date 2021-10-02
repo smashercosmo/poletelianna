@@ -10,6 +10,7 @@ export const query = graphql`
     content: albumsJson(id: { eq: $id }) {
       title
       description
+      background
       images {
         url {
           childImageSharp {
@@ -23,7 +24,7 @@ export const query = graphql`
 
 function Album(props: PageProps<AlbumPageQuery>) {
   const { data } = props
-  const { title, description, images } = data.content
+  const { title, description, images, background } = data.content
 
   const simplifiedImages = images.map((image) => {
     return image.url.childImageSharp.gatsbyImageData
@@ -34,6 +35,7 @@ function Album(props: PageProps<AlbumPageQuery>) {
       title={title}
       description={description}
       images={simplifiedImages}
+      background={background}
     />
   )
 }

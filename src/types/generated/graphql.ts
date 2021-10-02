@@ -183,12 +183,44 @@ export interface AboutJsonFilterListInput {
 
 export interface AboutJsonGroupConnection {
   readonly __typename?: 'AboutJsonGroupConnection';
+  readonly distinct: ReadonlyArray<Scalars['String']>;
   readonly edges: ReadonlyArray<AboutJsonEdge>;
   readonly field: Scalars['String'];
   readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<AboutJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
   readonly nodes: ReadonlyArray<AboutJson>;
   readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly totalCount: Scalars['Int'];
+}
+
+
+export interface AboutJsonGroupConnectionDistinctArgs {
+  field: AboutJsonFieldsEnum;
+}
+
+
+export interface AboutJsonGroupConnectionGroupArgs {
+  field: AboutJsonFieldsEnum;
+  limit: Maybe<Scalars['Int']>;
+  skip: Maybe<Scalars['Int']>;
+}
+
+
+export interface AboutJsonGroupConnectionMaxArgs {
+  field: AboutJsonFieldsEnum;
+}
+
+
+export interface AboutJsonGroupConnectionMinArgs {
+  field: AboutJsonFieldsEnum;
+}
+
+
+export interface AboutJsonGroupConnectionSumArgs {
+  field: AboutJsonFieldsEnum;
 }
 
 export interface AboutJsonSortInput {
@@ -506,12 +538,44 @@ export interface AlbumsJsonFilterListInput {
 
 export interface AlbumsJsonGroupConnection {
   readonly __typename?: 'AlbumsJsonGroupConnection';
+  readonly distinct: ReadonlyArray<Scalars['String']>;
   readonly edges: ReadonlyArray<AlbumsJsonEdge>;
   readonly field: Scalars['String'];
   readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<AlbumsJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
   readonly nodes: ReadonlyArray<AlbumsJson>;
   readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly totalCount: Scalars['Int'];
+}
+
+
+export interface AlbumsJsonGroupConnectionDistinctArgs {
+  field: AlbumsJsonFieldsEnum;
+}
+
+
+export interface AlbumsJsonGroupConnectionGroupArgs {
+  field: AlbumsJsonFieldsEnum;
+  limit: Maybe<Scalars['Int']>;
+  skip: Maybe<Scalars['Int']>;
+}
+
+
+export interface AlbumsJsonGroupConnectionMaxArgs {
+  field: AlbumsJsonFieldsEnum;
+}
+
+
+export interface AlbumsJsonGroupConnectionMinArgs {
+  field: AlbumsJsonFieldsEnum;
+}
+
+
+export interface AlbumsJsonGroupConnectionSumArgs {
+  field: AlbumsJsonFieldsEnum;
 }
 
 export interface AlbumsJsonImages {
@@ -694,12 +758,44 @@ export interface BackstageJsonFilterListInput {
 
 export interface BackstageJsonGroupConnection {
   readonly __typename?: 'BackstageJsonGroupConnection';
+  readonly distinct: ReadonlyArray<Scalars['String']>;
   readonly edges: ReadonlyArray<BackstageJsonEdge>;
   readonly field: Scalars['String'];
   readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<BackstageJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
   readonly nodes: ReadonlyArray<BackstageJson>;
   readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly totalCount: Scalars['Int'];
+}
+
+
+export interface BackstageJsonGroupConnectionDistinctArgs {
+  field: BackstageJsonFieldsEnum;
+}
+
+
+export interface BackstageJsonGroupConnectionGroupArgs {
+  field: BackstageJsonFieldsEnum;
+  limit: Maybe<Scalars['Int']>;
+  skip: Maybe<Scalars['Int']>;
+}
+
+
+export interface BackstageJsonGroupConnectionMaxArgs {
+  field: BackstageJsonFieldsEnum;
+}
+
+
+export interface BackstageJsonGroupConnectionMinArgs {
+  field: BackstageJsonFieldsEnum;
+}
+
+
+export interface BackstageJsonGroupConnectionSumArgs {
+  field: BackstageJsonFieldsEnum;
 }
 
 export interface BackstageJsonSortInput {
@@ -881,12 +977,44 @@ export interface ContactsJsonFilterListInput {
 
 export interface ContactsJsonGroupConnection {
   readonly __typename?: 'ContactsJsonGroupConnection';
+  readonly distinct: ReadonlyArray<Scalars['String']>;
   readonly edges: ReadonlyArray<ContactsJsonEdge>;
   readonly field: Scalars['String'];
   readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<ContactsJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
   readonly nodes: ReadonlyArray<ContactsJson>;
   readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly totalCount: Scalars['Int'];
+}
+
+
+export interface ContactsJsonGroupConnectionDistinctArgs {
+  field: ContactsJsonFieldsEnum;
+}
+
+
+export interface ContactsJsonGroupConnectionGroupArgs {
+  field: ContactsJsonFieldsEnum;
+  limit: Maybe<Scalars['Int']>;
+  skip: Maybe<Scalars['Int']>;
+}
+
+
+export interface ContactsJsonGroupConnectionMaxArgs {
+  field: ContactsJsonFieldsEnum;
+}
+
+
+export interface ContactsJsonGroupConnectionMinArgs {
+  field: ContactsJsonFieldsEnum;
+}
+
+
+export interface ContactsJsonGroupConnectionSumArgs {
+  field: ContactsJsonFieldsEnum;
 }
 
 export interface ContactsJsonSortInput {
@@ -1215,12 +1343,44 @@ export interface DirectoryFilterInput {
 
 export interface DirectoryGroupConnection {
   readonly __typename?: 'DirectoryGroupConnection';
+  readonly distinct: ReadonlyArray<Scalars['String']>;
   readonly edges: ReadonlyArray<DirectoryEdge>;
   readonly field: Scalars['String'];
   readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<DirectoryGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
   readonly nodes: ReadonlyArray<Directory>;
   readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly totalCount: Scalars['Int'];
+}
+
+
+export interface DirectoryGroupConnectionDistinctArgs {
+  field: DirectoryFieldsEnum;
+}
+
+
+export interface DirectoryGroupConnectionGroupArgs {
+  field: DirectoryFieldsEnum;
+  limit: Maybe<Scalars['Int']>;
+  skip: Maybe<Scalars['Int']>;
+}
+
+
+export interface DirectoryGroupConnectionMaxArgs {
+  field: DirectoryFieldsEnum;
+}
+
+
+export interface DirectoryGroupConnectionMinArgs {
+  field: DirectoryFieldsEnum;
+}
+
+
+export interface DirectoryGroupConnectionSumArgs {
+  field: DirectoryFieldsEnum;
 }
 
 export interface DirectorySortInput {
@@ -2806,12 +2966,44 @@ export interface FileFilterInput {
 
 export interface FileGroupConnection {
   readonly __typename?: 'FileGroupConnection';
+  readonly distinct: ReadonlyArray<Scalars['String']>;
   readonly edges: ReadonlyArray<FileEdge>;
   readonly field: Scalars['String'];
   readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<FileGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
   readonly nodes: ReadonlyArray<File>;
   readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly totalCount: Scalars['Int'];
+}
+
+
+export interface FileGroupConnectionDistinctArgs {
+  field: FileFieldsEnum;
+}
+
+
+export interface FileGroupConnectionGroupArgs {
+  field: FileFieldsEnum;
+  limit: Maybe<Scalars['Int']>;
+  skip: Maybe<Scalars['Int']>;
+}
+
+
+export interface FileGroupConnectionMaxArgs {
+  field: FileFieldsEnum;
+}
+
+
+export interface FileGroupConnectionMinArgs {
+  field: FileFieldsEnum;
+}
+
+
+export interface FileGroupConnectionSumArgs {
+  field: FileFieldsEnum;
 }
 
 export interface FileSortInput {
@@ -3231,12 +3423,44 @@ export interface ImageSharpFluidFilterInput {
 
 export interface ImageSharpGroupConnection {
   readonly __typename?: 'ImageSharpGroupConnection';
+  readonly distinct: ReadonlyArray<Scalars['String']>;
   readonly edges: ReadonlyArray<ImageSharpEdge>;
   readonly field: Scalars['String'];
   readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<ImageSharpGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
   readonly nodes: ReadonlyArray<ImageSharp>;
   readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly totalCount: Scalars['Int'];
+}
+
+
+export interface ImageSharpGroupConnectionDistinctArgs {
+  field: ImageSharpFieldsEnum;
+}
+
+
+export interface ImageSharpGroupConnectionGroupArgs {
+  field: ImageSharpFieldsEnum;
+  limit: Maybe<Scalars['Int']>;
+  skip: Maybe<Scalars['Int']>;
+}
+
+
+export interface ImageSharpGroupConnectionMaxArgs {
+  field: ImageSharpFieldsEnum;
+}
+
+
+export interface ImageSharpGroupConnectionMinArgs {
+  field: ImageSharpFieldsEnum;
+}
+
+
+export interface ImageSharpGroupConnectionSumArgs {
+  field: ImageSharpFieldsEnum;
 }
 
 export interface ImageSharpOriginal {
@@ -3564,12 +3788,44 @@ export interface MarkdownRemarkFilterInput {
 
 export interface MarkdownRemarkGroupConnection {
   readonly __typename?: 'MarkdownRemarkGroupConnection';
+  readonly distinct: ReadonlyArray<Scalars['String']>;
   readonly edges: ReadonlyArray<MarkdownRemarkEdge>;
   readonly field: Scalars['String'];
   readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<MarkdownRemarkGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
   readonly nodes: ReadonlyArray<MarkdownRemark>;
   readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly totalCount: Scalars['Int'];
+}
+
+
+export interface MarkdownRemarkGroupConnectionDistinctArgs {
+  field: MarkdownRemarkFieldsEnum;
+}
+
+
+export interface MarkdownRemarkGroupConnectionGroupArgs {
+  field: MarkdownRemarkFieldsEnum;
+  limit: Maybe<Scalars['Int']>;
+  skip: Maybe<Scalars['Int']>;
+}
+
+
+export interface MarkdownRemarkGroupConnectionMaxArgs {
+  field: MarkdownRemarkFieldsEnum;
+}
+
+
+export interface MarkdownRemarkGroupConnectionMinArgs {
+  field: MarkdownRemarkFieldsEnum;
+}
+
+
+export interface MarkdownRemarkGroupConnectionSumArgs {
+  field: MarkdownRemarkFieldsEnum;
 }
 
 export interface MarkdownRemarkSortInput {
@@ -3950,12 +4206,44 @@ export interface PicsJsonFilterListInput {
 
 export interface PicsJsonGroupConnection {
   readonly __typename?: 'PicsJsonGroupConnection';
+  readonly distinct: ReadonlyArray<Scalars['String']>;
   readonly edges: ReadonlyArray<PicsJsonEdge>;
   readonly field: Scalars['String'];
   readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<PicsJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
   readonly nodes: ReadonlyArray<PicsJson>;
   readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly totalCount: Scalars['Int'];
+}
+
+
+export interface PicsJsonGroupConnectionDistinctArgs {
+  field: PicsJsonFieldsEnum;
+}
+
+
+export interface PicsJsonGroupConnectionGroupArgs {
+  field: PicsJsonFieldsEnum;
+  limit: Maybe<Scalars['Int']>;
+  skip: Maybe<Scalars['Int']>;
+}
+
+
+export interface PicsJsonGroupConnectionMaxArgs {
+  field: PicsJsonFieldsEnum;
+}
+
+
+export interface PicsJsonGroupConnectionMinArgs {
+  field: PicsJsonFieldsEnum;
+}
+
+
+export interface PicsJsonGroupConnectionSumArgs {
+  field: PicsJsonFieldsEnum;
 }
 
 export interface PicsJsonSortInput {
@@ -4659,12 +4947,44 @@ export interface PicturesJsonFilterListInput {
 
 export interface PicturesJsonGroupConnection {
   readonly __typename?: 'PicturesJsonGroupConnection';
+  readonly distinct: ReadonlyArray<Scalars['String']>;
   readonly edges: ReadonlyArray<PicturesJsonEdge>;
   readonly field: Scalars['String'];
   readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<PicturesJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
   readonly nodes: ReadonlyArray<PicturesJson>;
   readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly totalCount: Scalars['Int'];
+}
+
+
+export interface PicturesJsonGroupConnectionDistinctArgs {
+  field: PicturesJsonFieldsEnum;
+}
+
+
+export interface PicturesJsonGroupConnectionGroupArgs {
+  field: PicturesJsonFieldsEnum;
+  limit: Maybe<Scalars['Int']>;
+  skip: Maybe<Scalars['Int']>;
+}
+
+
+export interface PicturesJsonGroupConnectionMaxArgs {
+  field: PicturesJsonFieldsEnum;
+}
+
+
+export interface PicturesJsonGroupConnectionMinArgs {
+  field: PicturesJsonFieldsEnum;
+}
+
+
+export interface PicturesJsonGroupConnectionSumArgs {
+  field: PicturesJsonFieldsEnum;
 }
 
 export interface PicturesJsonSortInput {
@@ -5384,12 +5704,44 @@ export interface SeriesJsonFilterListInput {
 
 export interface SeriesJsonGroupConnection {
   readonly __typename?: 'SeriesJsonGroupConnection';
+  readonly distinct: ReadonlyArray<Scalars['String']>;
   readonly edges: ReadonlyArray<SeriesJsonEdge>;
   readonly field: Scalars['String'];
   readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<SeriesJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
   readonly nodes: ReadonlyArray<SeriesJson>;
   readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly totalCount: Scalars['Int'];
+}
+
+
+export interface SeriesJsonGroupConnectionDistinctArgs {
+  field: SeriesJsonFieldsEnum;
+}
+
+
+export interface SeriesJsonGroupConnectionGroupArgs {
+  field: SeriesJsonFieldsEnum;
+  limit: Maybe<Scalars['Int']>;
+  skip: Maybe<Scalars['Int']>;
+}
+
+
+export interface SeriesJsonGroupConnectionMaxArgs {
+  field: SeriesJsonFieldsEnum;
+}
+
+
+export interface SeriesJsonGroupConnectionMinArgs {
+  field: SeriesJsonFieldsEnum;
+}
+
+
+export interface SeriesJsonGroupConnectionSumArgs {
+  field: SeriesJsonFieldsEnum;
 }
 
 export interface SeriesJsonSortInput {
@@ -5584,12 +5936,44 @@ export interface SiteBuildMetadataFilterInput {
 
 export interface SiteBuildMetadataGroupConnection {
   readonly __typename?: 'SiteBuildMetadataGroupConnection';
+  readonly distinct: ReadonlyArray<Scalars['String']>;
   readonly edges: ReadonlyArray<SiteBuildMetadataEdge>;
   readonly field: Scalars['String'];
   readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<SiteBuildMetadataGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
   readonly nodes: ReadonlyArray<SiteBuildMetadata>;
   readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly totalCount: Scalars['Int'];
+}
+
+
+export interface SiteBuildMetadataGroupConnectionDistinctArgs {
+  field: SiteBuildMetadataFieldsEnum;
+}
+
+
+export interface SiteBuildMetadataGroupConnectionGroupArgs {
+  field: SiteBuildMetadataFieldsEnum;
+  limit: Maybe<Scalars['Int']>;
+  skip: Maybe<Scalars['Int']>;
+}
+
+
+export interface SiteBuildMetadataGroupConnectionMaxArgs {
+  field: SiteBuildMetadataFieldsEnum;
+}
+
+
+export interface SiteBuildMetadataGroupConnectionMinArgs {
+  field: SiteBuildMetadataFieldsEnum;
+}
+
+
+export interface SiteBuildMetadataGroupConnectionSumArgs {
+  field: SiteBuildMetadataFieldsEnum;
 }
 
 export interface SiteBuildMetadataSortInput {
@@ -5686,6 +6070,7 @@ export enum SiteFieldsEnum {
   children___parent___parent___children = 'children___parent___parent___children',
   children___parent___parent___id = 'children___parent___parent___id',
   flags___FAST_DEV = 'flags___FAST_DEV',
+  flags___PARALLEL_SOURCING = 'flags___PARALLEL_SOURCING',
   host = 'host',
   id = 'id',
   internal___content = 'internal___content',
@@ -5758,10 +6143,12 @@ export interface SiteFilterInput {
 export interface SiteFlags {
   readonly __typename?: 'SiteFlags';
   readonly FAST_DEV: Maybe<Scalars['Boolean']>;
+  readonly PARALLEL_SOURCING: Maybe<Scalars['Boolean']>;
 }
 
 export interface SiteFlagsFilterInput {
   readonly FAST_DEV: Maybe<BooleanQueryOperatorInput>;
+  readonly PARALLEL_SOURCING: Maybe<BooleanQueryOperatorInput>;
 }
 
 export interface SiteFunction extends Node {
@@ -5938,12 +6325,44 @@ export interface SiteFunctionFilterInput {
 
 export interface SiteFunctionGroupConnection {
   readonly __typename?: 'SiteFunctionGroupConnection';
+  readonly distinct: ReadonlyArray<Scalars['String']>;
   readonly edges: ReadonlyArray<SiteFunctionEdge>;
   readonly field: Scalars['String'];
   readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<SiteFunctionGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
   readonly nodes: ReadonlyArray<SiteFunction>;
   readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly totalCount: Scalars['Int'];
+}
+
+
+export interface SiteFunctionGroupConnectionDistinctArgs {
+  field: SiteFunctionFieldsEnum;
+}
+
+
+export interface SiteFunctionGroupConnectionGroupArgs {
+  field: SiteFunctionFieldsEnum;
+  limit: Maybe<Scalars['Int']>;
+  skip: Maybe<Scalars['Int']>;
+}
+
+
+export interface SiteFunctionGroupConnectionMaxArgs {
+  field: SiteFunctionFieldsEnum;
+}
+
+
+export interface SiteFunctionGroupConnectionMinArgs {
+  field: SiteFunctionFieldsEnum;
+}
+
+
+export interface SiteFunctionGroupConnectionSumArgs {
+  field: SiteFunctionFieldsEnum;
 }
 
 export interface SiteFunctionSortInput {
@@ -5953,12 +6372,44 @@ export interface SiteFunctionSortInput {
 
 export interface SiteGroupConnection {
   readonly __typename?: 'SiteGroupConnection';
+  readonly distinct: ReadonlyArray<Scalars['String']>;
   readonly edges: ReadonlyArray<SiteEdge>;
   readonly field: Scalars['String'];
   readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<SiteGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
   readonly nodes: ReadonlyArray<Site>;
   readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly totalCount: Scalars['Int'];
+}
+
+
+export interface SiteGroupConnectionDistinctArgs {
+  field: SiteFieldsEnum;
+}
+
+
+export interface SiteGroupConnectionGroupArgs {
+  field: SiteFieldsEnum;
+  limit: Maybe<Scalars['Int']>;
+  skip: Maybe<Scalars['Int']>;
+}
+
+
+export interface SiteGroupConnectionMaxArgs {
+  field: SiteFieldsEnum;
+}
+
+
+export interface SiteGroupConnectionMinArgs {
+  field: SiteFieldsEnum;
+}
+
+
+export interface SiteGroupConnectionSumArgs {
+  field: SiteFieldsEnum;
 }
 
 export interface SitePage extends Node {
@@ -6023,16 +6474,12 @@ export interface SitePageContext {
   readonly _xparams: Maybe<SitePageContext_Xparams>;
   readonly fields__slug: Maybe<Scalars['String']>;
   readonly id: Maybe<Scalars['String']>;
-  readonly nextPicId: Maybe<Scalars['String']>;
-  readonly previousPicId: Maybe<Scalars['String']>;
 }
 
 export interface SitePageContextFilterInput {
   readonly _xparams: Maybe<SitePageContext_XparamsFilterInput>;
   readonly fields__slug: Maybe<StringQueryOperatorInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
-  readonly nextPicId: Maybe<StringQueryOperatorInput>;
-  readonly previousPicId: Maybe<StringQueryOperatorInput>;
 }
 
 export interface SitePageContext_Xparams {
@@ -6096,8 +6543,6 @@ export enum SitePageFieldsEnum {
   context____xparams___fields__slug = 'context____xparams___fields__slug',
   context___fields__slug = 'context___fields__slug',
   context___id = 'context___id',
-  context___nextPicId = 'context___nextPicId',
-  context___previousPicId = 'context___previousPicId',
   id = 'id',
   internalComponentName = 'internalComponentName',
   internal___content = 'internal___content',
@@ -6242,12 +6687,44 @@ export interface SitePageFilterInput {
 
 export interface SitePageGroupConnection {
   readonly __typename?: 'SitePageGroupConnection';
+  readonly distinct: ReadonlyArray<Scalars['String']>;
   readonly edges: ReadonlyArray<SitePageEdge>;
   readonly field: Scalars['String'];
   readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<SitePageGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
   readonly nodes: ReadonlyArray<SitePage>;
   readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly totalCount: Scalars['Int'];
+}
+
+
+export interface SitePageGroupConnectionDistinctArgs {
+  field: SitePageFieldsEnum;
+}
+
+
+export interface SitePageGroupConnectionGroupArgs {
+  field: SitePageFieldsEnum;
+  limit: Maybe<Scalars['Int']>;
+  skip: Maybe<Scalars['Int']>;
+}
+
+
+export interface SitePageGroupConnectionMaxArgs {
+  field: SitePageFieldsEnum;
+}
+
+
+export interface SitePageGroupConnectionMinArgs {
+  field: SitePageFieldsEnum;
+}
+
+
+export interface SitePageGroupConnectionSumArgs {
+  field: SitePageFieldsEnum;
 }
 
 export interface SitePageSortInput {
@@ -6461,12 +6938,44 @@ export interface SitePluginFilterInput {
 
 export interface SitePluginGroupConnection {
   readonly __typename?: 'SitePluginGroupConnection';
+  readonly distinct: ReadonlyArray<Scalars['String']>;
   readonly edges: ReadonlyArray<SitePluginEdge>;
   readonly field: Scalars['String'];
   readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<SitePluginGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
   readonly nodes: ReadonlyArray<SitePlugin>;
   readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly totalCount: Scalars['Int'];
+}
+
+
+export interface SitePluginGroupConnectionDistinctArgs {
+  field: SitePluginFieldsEnum;
+}
+
+
+export interface SitePluginGroupConnectionGroupArgs {
+  field: SitePluginFieldsEnum;
+  limit: Maybe<Scalars['Int']>;
+  skip: Maybe<Scalars['Int']>;
+}
+
+
+export interface SitePluginGroupConnectionMaxArgs {
+  field: SitePluginFieldsEnum;
+}
+
+
+export interface SitePluginGroupConnectionMinArgs {
+  field: SitePluginFieldsEnum;
+}
+
+
+export interface SitePluginGroupConnectionSumArgs {
+  field: SitePluginFieldsEnum;
 }
 
 export interface SitePluginPackageJson {
@@ -6638,48 +7147,147 @@ export interface WebPOptions {
   readonly quality: Maybe<Scalars['Int']>;
 }
 
-export type GatsbyImageSharpFixedFragment = { readonly __typename?: 'ImageSharpFixed', readonly base64: Maybe<string>, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
+export type GatsbyImageSharpFixedFragment = (
+  { readonly __typename?: 'ImageSharpFixed' }
+  & Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>
+);
 
-export type GatsbyImageSharpFixed_TracedSvgFragment = { readonly __typename?: 'ImageSharpFixed', readonly tracedSVG: Maybe<string>, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
+export type GatsbyImageSharpFixed_TracedSvgFragment = (
+  { readonly __typename?: 'ImageSharpFixed' }
+  & Pick<ImageSharpFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>
+);
 
-export type GatsbyImageSharpFixed_WithWebpFragment = { readonly __typename?: 'ImageSharpFixed', readonly base64: Maybe<string>, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string, readonly srcWebp: Maybe<string>, readonly srcSetWebp: Maybe<string> };
+export type GatsbyImageSharpFixed_WithWebpFragment = (
+  { readonly __typename?: 'ImageSharpFixed' }
+  & Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>
+);
 
-export type GatsbyImageSharpFixed_WithWebp_TracedSvgFragment = { readonly __typename?: 'ImageSharpFixed', readonly tracedSVG: Maybe<string>, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string, readonly srcWebp: Maybe<string>, readonly srcSetWebp: Maybe<string> };
+export type GatsbyImageSharpFixed_WithWebp_TracedSvgFragment = (
+  { readonly __typename?: 'ImageSharpFixed' }
+  & Pick<ImageSharpFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>
+);
 
-export type GatsbyImageSharpFixed_NoBase64Fragment = { readonly __typename?: 'ImageSharpFixed', readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
+export type GatsbyImageSharpFixed_NoBase64Fragment = (
+  { readonly __typename?: 'ImageSharpFixed' }
+  & Pick<ImageSharpFixed, 'width' | 'height' | 'src' | 'srcSet'>
+);
 
-export type GatsbyImageSharpFixed_WithWebp_NoBase64Fragment = { readonly __typename?: 'ImageSharpFixed', readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string, readonly srcWebp: Maybe<string>, readonly srcSetWebp: Maybe<string> };
+export type GatsbyImageSharpFixed_WithWebp_NoBase64Fragment = (
+  { readonly __typename?: 'ImageSharpFixed' }
+  & Pick<ImageSharpFixed, 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>
+);
 
-export type GatsbyImageSharpFluidFragment = { readonly __typename?: 'ImageSharpFluid', readonly base64: Maybe<string>, readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly sizes: string };
+export type GatsbyImageSharpFluidFragment = (
+  { readonly __typename?: 'ImageSharpFluid' }
+  & Pick<ImageSharpFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>
+);
 
-export type GatsbyImageSharpFluidLimitPresentationSizeFragment = { readonly __typename?: 'ImageSharpFluid', readonly maxHeight: number, readonly maxWidth: number };
+export type GatsbyImageSharpFluidLimitPresentationSizeFragment = (
+  { readonly __typename?: 'ImageSharpFluid' }
+  & { maxHeight: ImageSharpFluid['presentationHeight'], maxWidth: ImageSharpFluid['presentationWidth'] }
+);
 
-export type GatsbyImageSharpFluid_TracedSvgFragment = { readonly __typename?: 'ImageSharpFluid', readonly tracedSVG: Maybe<string>, readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly sizes: string };
+export type GatsbyImageSharpFluid_TracedSvgFragment = (
+  { readonly __typename?: 'ImageSharpFluid' }
+  & Pick<ImageSharpFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>
+);
 
-export type GatsbyImageSharpFluid_WithWebpFragment = { readonly __typename?: 'ImageSharpFluid', readonly base64: Maybe<string>, readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly srcWebp: Maybe<string>, readonly srcSetWebp: Maybe<string>, readonly sizes: string };
+export type GatsbyImageSharpFluid_WithWebpFragment = (
+  { readonly __typename?: 'ImageSharpFluid' }
+  & Pick<ImageSharpFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>
+);
 
-export type GatsbyImageSharpFluid_WithWebp_TracedSvgFragment = { readonly __typename?: 'ImageSharpFluid', readonly tracedSVG: Maybe<string>, readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly srcWebp: Maybe<string>, readonly srcSetWebp: Maybe<string>, readonly sizes: string };
+export type GatsbyImageSharpFluid_WithWebp_TracedSvgFragment = (
+  { readonly __typename?: 'ImageSharpFluid' }
+  & Pick<ImageSharpFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>
+);
 
-export type GatsbyImageSharpFluid_NoBase64Fragment = { readonly __typename?: 'ImageSharpFluid', readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly sizes: string };
+export type GatsbyImageSharpFluid_NoBase64Fragment = (
+  { readonly __typename?: 'ImageSharpFluid' }
+  & Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>
+);
 
-export type GatsbyImageSharpFluid_WithWebp_NoBase64Fragment = { readonly __typename?: 'ImageSharpFluid', readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly srcWebp: Maybe<string>, readonly srcSetWebp: Maybe<string>, readonly sizes: string };
+export type GatsbyImageSharpFluid_WithWebp_NoBase64Fragment = (
+  { readonly __typename?: 'ImageSharpFluid' }
+  & Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>
+);
 
 export type SeriesPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type SeriesPageQuery = { readonly __typename?: 'Query', readonly page: Maybe<{ readonly __typename?: 'SeriesJson', readonly title: Maybe<string>, readonly albums: Maybe<ReadonlyArray<Maybe<{ readonly __typename?: 'AlbumsJson', readonly background: Maybe<string>, readonly description: Maybe<string>, readonly title: Maybe<string>, readonly fields: Maybe<{ readonly __typename?: 'AlbumsJsonFields', readonly slug: Maybe<string> }>, readonly images: Maybe<ReadonlyArray<Maybe<{ readonly __typename?: 'AlbumsJsonImages', readonly cover: Maybe<boolean>, readonly url: Maybe<{ readonly __typename?: 'File', readonly childImageSharp: Maybe<{ readonly __typename?: 'ImageSharp', readonly gatsbyImageData: IGatsbyImageData }> }> }>>> }>>> }> };
+export type SeriesPageQuery = (
+  { readonly __typename?: 'Query' }
+  & { readonly page: Maybe<(
+    { readonly __typename?: 'SeriesJson' }
+    & Pick<SeriesJson, 'title'>
+    & { readonly albums: Maybe<ReadonlyArray<Maybe<(
+      { readonly __typename?: 'AlbumsJson' }
+      & Pick<AlbumsJson, 'background' | 'description' | 'title'>
+      & { readonly fields: Maybe<(
+        { readonly __typename?: 'AlbumsJsonFields' }
+        & Pick<AlbumsJsonFields, 'slug'>
+      )>, readonly images: Maybe<ReadonlyArray<Maybe<(
+        { readonly __typename?: 'AlbumsJsonImages' }
+        & Pick<AlbumsJsonImages, 'cover'>
+        & { readonly url: Maybe<(
+          { readonly __typename?: 'File' }
+          & { readonly childImageSharp: Maybe<(
+            { readonly __typename?: 'ImageSharp' }
+            & Pick<ImageSharp, 'gatsbyImageData'>
+          )> }
+        )> }
+      )>>> }
+    )>>> }
+  )> }
+);
 
 export type PicsPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type PicsPageQuery = { readonly __typename?: 'Query', readonly page: Maybe<{ readonly __typename?: 'PicsJson', readonly title: Maybe<string>, readonly pictures: Maybe<ReadonlyArray<Maybe<{ readonly __typename?: 'PicturesJson', readonly background: Maybe<string>, readonly title: Maybe<string>, readonly description: Maybe<string>, readonly fields: Maybe<{ readonly __typename?: 'PicturesJsonFields', readonly slug: Maybe<string> }>, readonly image: Maybe<{ readonly __typename?: 'File', readonly childImageSharp: Maybe<{ readonly __typename?: 'ImageSharp', readonly gatsbyImageData: IGatsbyImageData }> }> }>>> }> };
+export type PicsPageQuery = (
+  { readonly __typename?: 'Query' }
+  & { readonly page: Maybe<(
+    { readonly __typename?: 'PicsJson' }
+    & Pick<PicsJson, 'title'>
+    & { readonly pictures: Maybe<ReadonlyArray<Maybe<(
+      { readonly __typename?: 'PicturesJson' }
+      & Pick<PicturesJson, 'background' | 'title' | 'description'>
+      & { readonly fields: Maybe<(
+        { readonly __typename?: 'PicturesJsonFields' }
+        & Pick<PicturesJsonFields, 'slug'>
+      )>, readonly image: Maybe<(
+        { readonly __typename?: 'File' }
+        & { readonly childImageSharp: Maybe<(
+          { readonly __typename?: 'ImageSharp' }
+          & Pick<ImageSharp, 'gatsbyImageData'>
+        )> }
+      )> }
+    )>>> }
+  )> }
+);
 
 export type AlbumPageQueryVariables = Exact<{
   id: Scalars['String'];
 }>;
 
 
-export type AlbumPageQuery = { readonly __typename?: 'Query', readonly content: Maybe<{ readonly __typename?: 'AlbumsJson', readonly title: Maybe<string>, readonly description: Maybe<string>, readonly images: Maybe<ReadonlyArray<Maybe<{ readonly __typename?: 'AlbumsJsonImages', readonly url: Maybe<{ readonly __typename?: 'File', readonly childImageSharp: Maybe<{ readonly __typename?: 'ImageSharp', readonly gatsbyImageData: IGatsbyImageData }> }> }>>> }> };
+export type AlbumPageQuery = (
+  { readonly __typename?: 'Query' }
+  & { readonly content: Maybe<(
+    { readonly __typename?: 'AlbumsJson' }
+    & Pick<AlbumsJson, 'title' | 'description' | 'background'>
+    & { readonly images: Maybe<ReadonlyArray<Maybe<(
+      { readonly __typename?: 'AlbumsJsonImages' }
+      & { readonly url: Maybe<(
+        { readonly __typename?: 'File' }
+        & { readonly childImageSharp: Maybe<(
+          { readonly __typename?: 'ImageSharp' }
+          & Pick<ImageSharp, 'gatsbyImageData'>
+        )> }
+      )> }
+    )>>> }
+  )> }
+);
 
 export type PicPageQueryVariables = Exact<{
   id: Scalars['String'];
@@ -6688,4 +7296,31 @@ export type PicPageQueryVariables = Exact<{
 }>;
 
 
-export type PicPageQuery = { readonly __typename?: 'Query', readonly picture: Maybe<{ readonly __typename?: 'PicturesJson', readonly title: Maybe<string>, readonly description: Maybe<string>, readonly image: Maybe<{ readonly __typename?: 'File', readonly childImageSharp: Maybe<{ readonly __typename?: 'ImageSharp', readonly gatsbyImageData: IGatsbyImageData }> }> }>, readonly previous: Maybe<{ readonly __typename?: 'PicturesJson', readonly title: Maybe<string>, readonly fields: Maybe<{ readonly __typename?: 'PicturesJsonFields', readonly slug: Maybe<string> }> }>, readonly next: Maybe<{ readonly __typename?: 'PicturesJson', readonly title: Maybe<string>, readonly fields: Maybe<{ readonly __typename?: 'PicturesJsonFields', readonly slug: Maybe<string> }> }> };
+export type PicPageQuery = (
+  { readonly __typename?: 'Query' }
+  & { readonly picture: Maybe<(
+    { readonly __typename?: 'PicturesJson' }
+    & Pick<PicturesJson, 'title' | 'description'>
+    & { readonly image: Maybe<(
+      { readonly __typename?: 'File' }
+      & { readonly childImageSharp: Maybe<(
+        { readonly __typename?: 'ImageSharp' }
+        & Pick<ImageSharp, 'gatsbyImageData'>
+      )> }
+    )> }
+  )>, readonly previous: Maybe<(
+    { readonly __typename?: 'PicturesJson' }
+    & Pick<PicturesJson, 'title'>
+    & { readonly fields: Maybe<(
+      { readonly __typename?: 'PicturesJsonFields' }
+      & Pick<PicturesJsonFields, 'slug'>
+    )> }
+  )>, readonly next: Maybe<(
+    { readonly __typename?: 'PicturesJson' }
+    & Pick<PicturesJson, 'title'>
+    & { readonly fields: Maybe<(
+      { readonly __typename?: 'PicturesJsonFields' }
+      & Pick<PicturesJsonFields, 'slug'>
+    )> }
+  )> }
+);
