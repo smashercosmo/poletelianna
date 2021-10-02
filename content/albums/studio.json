@@ -1,5 +1,35 @@
 {
   "title": "studio",
   "description": "Blabla",
-  "background": "#9c2525"
+  "background": "#9c2525",
+  "images": [
+    {
+      "url": "/images/series/studio/dsc06227web2.jpg"
+    },
+    {
+      "url": "/images/series/studio/dsc05712web.jpg"
+    },
+    {
+      "url": "/images/series/studio/dsc05702web.jpg"
+    },
+    {
+      "url": "/images/series/studio/dsc04654web.jpg",
+      "cover": true
+    },
+    {
+      "url": "/images/series/studio/dsc03779big.jpg"
+    },
+    {
+      "url": "/images/series/studio/dsc02054web.jpg"
+    },
+    {
+      "url": "/images/series/studio/dsc01832web.jpg"
+    },
+    {
+      "url": "/images/series/studio/dsc01793web.jpg"
+    },
+    {
+      "url": "/images/series/studio/dsc01791web.jpg"
+    }
+  ]
 }
