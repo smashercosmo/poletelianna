@@ -1,6 +1,16 @@
 {
-  "title": "faceless",
-  "description": "faceless",
+  "title": "fantastic creatures",
+  "description": "faceless mostly",
   "background": "#abcbd8",
-  "images": []
+  "images": [
+    {
+      "url": "/images/series/faceless/dsc05395web.jpg"
+    },
+    {
+      "url": "/images/series/faceless/dsc01051web.jpg"
+    },
+    {
+      "url": "/images/series/faceless/dsc01275web.jpg"
+    }
+  ]
 }
