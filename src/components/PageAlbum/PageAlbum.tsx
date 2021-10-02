@@ -6,6 +6,7 @@ import { AlbumCaption } from '../AlbumCaption/AlbumCaption'
 import { AlbumControl } from '../AlbumControl/AlbumControl'
 import { AlbumBackButton } from '../AlbumBackButton/AlbumBackButton'
 import { AlbumScrollerInstruction } from '../AlbumScrollerInstruction/AlbumScrollerInstruction'
+import { Background } from '../Background/Background'
 import { useResizedImages } from '../../hooks/useResizedImage'
 import { smoothScroll } from '../../lib/smoothScroll'
 import styles from './PageAlbum.module.css'
@@ -46,13 +47,6 @@ function PageAlbum(props: PageAlbumProps) {
   const [scrollerVisible, setScrollerVisible] = useState(false)
   const scrollerRef = useRef<HTMLDivElement | null>(null)
   const resizedImages = useResizedImages({ images, maxSize: 620 })
-
-  useEffect(() => {
-    document.body.style.backgroundColor = background
-    return () => {
-      document.body.removeAttribute('style')
-    }
-  }, [background])
 
   useEffect(() => {
     let scrollerNode: HTMLDivElement | undefined
@@ -212,6 +206,7 @@ function PageAlbum(props: PageAlbumProps) {
           </div>
         </div>
       </Show>
+      <Background color={background} />
     </div>
   )
 }

@@ -58,6 +58,7 @@ type AlignItems = 'baseline' | 'center' | 'flex-start' | 'flex-end'
 type JustifyContent = 'flex-start' | 'flex-end' | 'center' | 'space-between'
 type Position = 'relative' | 'absolute' | 'fixed' | 'sticky'
 type Coordinates = 0 | '100%' | '-100%'
+type ZIndex = -1 | 0 | 1 | 2
 type BorderRadius = number | '50%'
 
 type BaseProps = {
@@ -89,6 +90,7 @@ type BaseProps = {
   bottom?: Coordinates
   left?: Coordinates
   right?: Coordinates
+  zIndex?: ZIndex
   display?: Display
   overflow?: Overflow
   color?: Colors
@@ -161,6 +163,7 @@ function useProps<P>({
     bottom,
     left,
     right,
+    zIndex,
     display,
     overflow,
     color,
@@ -208,6 +211,7 @@ function useProps<P>({
     ...(bottom !== undefined && { ['--b']: bottom }),
     ...(left !== undefined && { ['--l']: left }),
     ...(right !== undefined && { ['--r']: right }),
+    ...(zIndex !== undefined && { ['--z']: zIndex }),
     ...(display !== undefined && { ['--d']: display }),
     ...(overflow !== undefined && { ['--o']: overflow }),
     ...(color !== undefined && { ['--c']: getColor(color) }),

@@ -21,6 +21,7 @@
   --b: initial;
   --l: initial;
   --r: initial;
+  --z: initial;
   --d: initial;
   --o: initial;
   --c: initial;
@@ -58,6 +59,7 @@
   bottom: var(--b);
   left: var(--l);
   right: var(--r);
+  z-index: var(--z);
   display: var(--d);
   overflow: var(--o);
   color: var(--c);
