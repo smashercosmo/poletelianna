@@ -1,5 +1,30 @@
 {
   "title": "Gots and nerds",
   "background": "#c7e6f7",
-  "description": "Slava said BLABLABLA"
+  "description": "Slava said BLABLABLA",
+  "images": [
+    {
+      "url": "/images/series/gots-and-nerds/dsc09907web.jpg",
+      "cover": false
+    },
+    {
+      "url": "/images/series/gots-and-nerds/dsc04991web.jpg",
+      "cover": true
+    },
+    {
+      "url": "/images/series/gots-and-nerds/dsc08924web.jpg"
+    },
+    {
+      "url": "/images/series/gots-and-nerds/dsc04426web.jpg"
+    },
+    {
+      "url": "/images/series/gots-and-nerds/dsc04108web.jpg"
+    },
+    {
+      "url": "/images/series/gots-and-nerds/dsc00692web.jpg"
+    },
+    {
+      "url": "/images/series/gots-and-nerds/dsc00521web.jpg"
+    }
+  ]
 }
