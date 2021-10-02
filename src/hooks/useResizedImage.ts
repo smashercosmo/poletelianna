@@ -1,10 +1,10 @@
-import * as React from 'react'
+import { useMemo } from 'react'
 
 import { calculateAspectRatioFit } from '../lib/calculateAspectRatioFit'
 
-import type { ImageProps } from '../components/Image/Image'
+import type { IGatsbyImageData } from 'gatsby-plugin-image'
 
-function resizeImage(args: { image: ImageProps['image']; maxSize: number }) {
+function resizeImage(args: { image: IGatsbyImageData; maxSize: number }) {
   const { image, maxSize } = args
   const { width, height } = calculateAspectRatioFit({
     width: image.width,
@@ -14,29 +14,28 @@ function resizeImage(args: { image: ImageProps['image']; maxSize: number }) {
   })
 
   // TODO https://github.com/gatsbyjs/gatsby/discussions/30572
-  const clone = JSON.parse(JSON.stringify(image)) as ImageProps['image']
+  const clone = JSON.parse(JSON.stringify(image)) as IGatsbyImageData
   clone.width = width
   clone.height = height
 
   return clone
 }
 
-function useResizedImage(args: {
-  image: ImageProps['image']
-  maxSize: number
-}) {
+function useResizedImage(args: { image?: IGatsbyImageData; maxSize: number }) {
   const { image, maxSize } = args
-  return React.useMemo(() => {
+
+  return useMemo(() => {
+    if (!image) return undefined
     return resizeImage({ image, maxSize })
   }, [image, maxSize])
 }
 
 function useResizedImages(args: {
-  images: ReadonlyArray<ImageProps['image']>
+  images: ReadonlyArray<IGatsbyImageData>
   maxSize: number
 }) {
   const { images, maxSize } = args
-  return React.useMemo(() => {
+  return useMemo(() => {
     return images.map((image) => resizeImage({ image, maxSize }))
   }, [images, maxSize])
 }

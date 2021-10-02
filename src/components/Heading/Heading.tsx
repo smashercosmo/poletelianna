@@ -1,23 +1,18 @@
-import clsx from 'clsx'
+import { H1, H2, H3, H4, H5, H6 } from '../Base/H'
 
-import styles from './Heading.module.css'
+import type { HProps } from '../Base/H'
 
-import type { DetailedHTMLProps, HTMLAttributes } from 'react'
-
-type HeadingProps = DetailedHTMLProps<
-  HTMLAttributes<HTMLHeadingElement>,
-  HTMLHeadingElement
-> & {
+interface HeadingProps extends HProps {
   level: 1 | 2 | 3 | 4 | 5 | 6
 }
 
-const headings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] as const
+const headings = [H1, H2, H3, H4, H5, H6] as const
 
 function Heading(props: HeadingProps) {
-  const { level, className, ...rest } = props
+  const { level, ...rest } = props
   const Component = headings[level - 1]
 
-  return <Component {...rest} className={clsx(styles.root, className)} />
+  return <Component m={0} {...rest} />
 }
 
 export { Heading }

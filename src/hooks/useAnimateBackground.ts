@@ -1,6 +1,8 @@
-import * as React from 'react'
+import { useEffect } from 'react'
 
 import { hex2rgb } from '../lib/hex2rgb'
+
+import type { MouseEvent, FocusEvent } from 'react'
 
 function changeBackgroundColor(bg: `rgb(${number}, ${number}, ${number})`) {
   document.body.style.backgroundColor = bg
@@ -9,16 +11,14 @@ function changeBackgroundColor(bg: `rgb(${number}, ${number}, ${number})`) {
 function useAnimateBackground(
   defaultBg: `rgb(${number}, ${number}, ${number})`,
 ) {
-  React.useEffect(() => {
+  useEffect(() => {
     document.body.style.transition = 'background-color 0.5s linear'
     return () => {
       document.body.removeAttribute('style')
     }
   }, [])
 
-  function animateOnMouseOverOrFocus(
-    event: React.MouseEvent | React.FocusEvent,
-  ) {
+  function animateOnMouseOverOrFocus(event: MouseEvent | FocusEvent) {
     if (
       event.currentTarget &&
       event.currentTarget instanceof HTMLElement &&
@@ -38,7 +38,7 @@ function useAnimateBackground(
     }
   }
 
-  function animateOnMouseOutOrBlur(event: React.MouseEvent | React.FocusEvent) {
+  function animateOnMouseOutOrBlur(event: MouseEvent | FocusEvent) {
     if (
       event.type === 'blur' ||
       (event.target && event.target instanceof HTMLImageElement)

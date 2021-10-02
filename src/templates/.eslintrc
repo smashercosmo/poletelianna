@@ -1,0 +1,6 @@
+{
+  "rules": {
+    // All templates should have default export
+    "import/no-default-export": "off"
+  }
+}

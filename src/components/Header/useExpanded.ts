@@ -1,4 +1,4 @@
-import * as React from 'react'
+import { useEffect, useState } from 'react'
 
 import { getMediaQueryList } from '../../lib/getMediaQueryList'
 
@@ -11,10 +11,10 @@ function useExpanded({
   collapseAt: keyof typeof breakpoints
   currentPath: string
 }) {
-  const [isExpanded, setIsExpanded] = React.useState(false)
+  const [isExpanded, setIsExpanded] = useState(false)
 
   // 1. Hide expanded sidebar on wide screens
-  React.useEffect(() => {
+  useEffect(() => {
     const mq = getMediaQueryList({ breakpoint: collapseAt })
 
     function onMediaChange(event: MediaQueryListEvent) {
@@ -31,7 +31,7 @@ function useExpanded({
   }, [collapseAt])
 
   // 2. Hide expanded sidebar when user clicks any link inside it
-  React.useEffect(() => {
+  useEffect(() => {
     setIsExpanded(false)
   }, [currentPath])
 

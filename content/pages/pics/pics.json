@@ -1,11 +1,6 @@
 {
   "title": "Pics",
-  "pics": [
-    {
-      "title": "Hello",
-      "description": "Hello",
-      "background": "#de4b4b",
-      "image": "/images/pics/2026043.jpg"
-    }
+  "pictures": [
+    "Hello"
   ]
 }

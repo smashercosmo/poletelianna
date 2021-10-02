@@ -3,13 +3,12 @@ import { Image } from '../Image/Image'
 import { useResizedImage } from '../../hooks/useResizedImage'
 import styles from './PageSeriesAlbum.module.css'
 
-import type { ImageProps } from '../Image/Image'
 import type { IGatsbyImageData } from 'gatsby-plugin-image'
 
 interface PageSeriesAlbumProps {
   title: string
   description: string
-  cover: ImageProps['image']
+  cover: IGatsbyImageData
 }
 
 function PageSeriesAlbum(props: PageSeriesAlbumProps) {
@@ -19,7 +18,7 @@ function PageSeriesAlbum(props: PageSeriesAlbumProps) {
   return (
     <article className={styles.root}>
       <div className={styles.image}>
-        <Image image={image as IGatsbyImageData} alt="" />
+        {image && <Image image={image} alt="" />}
       </div>
       <AlbumCaption
         title={title}

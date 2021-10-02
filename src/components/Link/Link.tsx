@@ -15,20 +15,15 @@ function Link<TState>(props: LinkProps<TState>) {
 
   if ('to' in rest) {
     return (
-      <GatsbyLink {...rest} className={classes} tabIndex={0}>
-        <div className={styles.content} tabIndex={-1}>
-          {children}
-        </div>
+      <GatsbyLink {...rest} className={classes}>
+        <div className={styles.content}>{children}</div>
       </GatsbyLink>
     )
   }
 
   return (
-    // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-    <a {...rest} className={classes} tabIndex={0}>
-      <div className={styles.content} tabIndex={-1}>
-        {children}
-      </div>
+    <a {...rest} className={classes}>
+      <div className={styles.content}>{children}</div>
     </a>
   )
 }

@@ -1,7 +1,5 @@
-import * as React from 'react'
-
 import { Link } from '../Link/Link'
-import { Text } from '../Base/Base'
+import { Text } from '../Base/Text'
 import styles from './AlbumBackButtonProps.module.css'
 
 function AlbumBackButton() {

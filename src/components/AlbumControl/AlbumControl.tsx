@@ -1,11 +1,11 @@
-import * as React from 'react'
-
 import styles from './AlbumControl.module.css'
+
+import type { MouseEventHandler } from 'react'
 
 interface AlbumControlProps {
   direction: 'left' | 'right'
   disabled?: boolean
-  onClick?: React.MouseEventHandler<HTMLButtonElement>
+  onClick?: MouseEventHandler<HTMLButtonElement>
 }
 
 function AlbumControl(props: AlbumControlProps) {

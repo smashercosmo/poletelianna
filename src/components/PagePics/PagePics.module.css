@@ -1,8 +1,13 @@
 .pic {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   grid-row-end: span 2;
+}
+
+.text:first-of-type {
+  grid-row: 1;
 }
 
 @media (--md) {

@@ -35,8 +35,62 @@ function createSlugField({ node, actions, getNode }) {
   })
 }
 
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  const { createPage } = actions
+
+  const picTemplate = path.resolve(`./src/templates/pic.tsx`)
+  const result = await graphql(
+    `
+      {
+        allPicturesJson(limit: 1000) {
+          nodes {
+            id
+            image {
+              id
+            }
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    `,
+  )
+
+  if (result.errors) {
+    reporter.panicOnBuild(`There was an error loading your pics`, result.errors)
+    return
+  }
+
+  // filter out text only nodes
+  const pictures = result.data.allPicturesJson.nodes.filter((node) => {
+    return node.image
+  })
+
+  if (pictures.length > 0) {
+    pictures.forEach((picture, index) => {
+      const previousPicId = index === 0 ? null : pictures[index - 1].id
+      const nextPicId =
+        index === pictures.length - 1 ? null : pictures[index + 1].id
+
+      createPage({
+        path: `/pics${picture.fields.slug}`,
+        component: picTemplate,
+        context: {
+          id: picture.id,
+          previousPicId,
+          nextPicId,
+        },
+      })
+    })
+  }
+}
+
 exports.onCreateNode = async ({ node, actions, getNode }) => {
-  if (node.internal.type === `AlbumsJson`) {
+  if (
+    node.internal.type === `AlbumsJson` ||
+    node.internal.type === `PicturesJson`
+  ) {
     createSlugField({ node, actions, getNode })
   }
 
@@ -101,6 +155,11 @@ exports.createSchemaCustomization = ({ actions }) => {
       albums: [AlbumsJson] @link(by: "title")
     }
   `
+  const picLinkType = `
+    type PicsJson implements Node {
+      pictures: [PicturesJson] @link(by: "title")
+    }
+  `
 
-  createTypes([gatsbyImageDataType, albumLinkType])
+  createTypes([gatsbyImageDataType, albumLinkType, picLinkType])
 }

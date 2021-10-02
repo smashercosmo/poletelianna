@@ -6,6 +6,7 @@ module.exports = {
   },
   flags: {
     FAST_DEV: true,
+    PARALLEL_SOURCING: true,
   },
   plugins: [
     `gatsby-transformer-json`,
@@ -46,6 +47,13 @@ module.exports = {
       options: {
         name: `albums`,
         path: `${__dirname}/content/albums`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pictures`,
+        path: `${__dirname}/content/pictures`,
       },
     },
     {

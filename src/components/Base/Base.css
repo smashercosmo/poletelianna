@@ -16,13 +16,20 @@
   --min-w: initial;
   --max-h: initial;
   --min-h: initial;
+  --pos: initial;
+  --t: initial;
+  --b: initial;
+  --l: initial;
+  --r: initial;
   --d: initial;
+  --o: initial;
   --c: initial;
   --fz: initial;
   --fs: initial;
   --fw: initial;
   --ff: initial;
   --lh: initial;
+  --td: initial;
   --ta: initial;
   --va: initial;
   --bgc: initial;
@@ -31,6 +38,9 @@
   --bdlw: initial;
   --bdtw: initial;
   --bdbw: initial;
+  --bdrs: initial;
+  --fx: initial;
+  --fx-d: initial;
   --fx-ai: initial;
   --fx-jc: initial;
 
@@ -43,13 +53,20 @@
   min-height: var(--min-h);
   max-width: var(--max-w);
   max-height: var(--max-h);
+  position: var(--pos);
+  top: var(--t);
+  bottom: var(--b);
+  left: var(--l);
+  right: var(--r);
   display: var(--d);
+  overflow: var(--o);
   color: var(--c);
   font-size: calc(var(--fz) / var(--base-font-size) * 1rem);
   font-style: var(--fs);
   font-weight: var(--fw);
   font-family: var(--ff);
   line-height: var(--lh);
+  text-decoration: var(--td);
   text-align: var(--ta);
   vertical-align: var(--va);
   background-color: var(--bgc);
@@ -57,6 +74,9 @@
   border-bottom: var(--bdbw) solid var(--bdc);
   border-left: var(--bdlw) solid var(--bdc);
   border-right: var(--bdrw) solid var(--bdc);
+  border-radius: var(--bdrs);
+  flex: var(--fx);
+  flex-direction: var(--fx-d);
   align-items: var(--fx-ai);
   justify-content: var(--fx-jc);
 }

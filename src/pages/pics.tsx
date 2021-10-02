@@ -8,9 +8,13 @@ export const query = graphql`
   query PicsPage {
     page: picsJson {
       title
-      pics {
+      pictures {
         background
         title
+        description
+        fields {
+          slug
+        }
         image {
           childImageSharp {
             gatsbyImageData(width: 450, transformOptions: { fit: CONTAIN })
@@ -21,21 +25,29 @@ export const query = graphql`
   }
 `
 
-function Series(props: { data: PicsPageQuery }) {
+function Pics(props: { data: PicsPageQuery }) {
   const { data } = props
-  const { pics, title: pageTitle } = data.page
+  const { pictures, title: pageTitle } = data.page
 
-  const simplifiedPics = pics.map((pic) => {
-    const { background, title: albumTitle, image } = pic
+  const simplifiedPics = pictures.map((picture) => {
+    const {
+      background,
+      title: picTitle,
+      description: picDescription,
+      image,
+      fields,
+    } = picture
     return {
       background,
-      title: albumTitle,
-      slug: '/',
-      image: image.childImageSharp.gatsbyImageData,
+      title: picTitle,
+      description: picDescription,
+      picture,
+      slug: fields.slug,
+      image: image ? image.childImageSharp.gatsbyImageData : undefined,
     }
   })
 
   return <PagePics pics={simplifiedPics} title={pageTitle} />
 }
 
-export default Series
+export default Pics

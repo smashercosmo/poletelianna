@@ -3,12 +3,11 @@
   outline: none;
 }
 
-.content {
-  display: inline-block;
+.root:focus {
   outline: none;
 }
 
-.root:focus > .content {
+.root:focus-visible > .content {
   outline: var(--focus-outline);
   outline-offset: var(--focus-outline-offset);
 }

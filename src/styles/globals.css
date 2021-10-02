@@ -24,6 +24,7 @@ body {
 }
 
 body {
+  line-height: 1.2;
   font-family: var(--ff-object-sans);
   background-color: rgb(245, 234, 234);
 }

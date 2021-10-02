@@ -2,9 +2,10 @@ import { Frame } from './src/components/Frame/Frame.tsx'
 import navigation from './content/blocks/navigation.json'
 
 export function wrapPageElement({ element, props }) {
-  const { path } = props
+  const { location } = props
+
   return (
-    <Frame currentPath={path} navigationItems={navigation.items}>
+    <Frame currentPath={location.pathname} navigationItems={navigation.items}>
       {element}
     </Frame>
   )

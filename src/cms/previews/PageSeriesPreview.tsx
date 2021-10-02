@@ -1,4 +1,4 @@
-import * as React from 'react'
+import { useState, useEffect } from 'react'
 import slugify from '@sindresorhus/slugify'
 
 import { PageSeries } from '../../components/PageSeries/PageSeries'
@@ -15,9 +15,9 @@ function PageSeriesPreview(props: PageSeriesPreviewProps) {
   const data = entry.get('data')
   const pageTitle = data.get('title')
   const albumTitles = data.get('albums')
-  const [loadedAlbums, setLoadedAlbums] = React.useState<any[] | undefined>()
+  const [loadedAlbums, setLoadedAlbums] = useState<any[] | undefined>()
 
-  React.useEffect(() => {
+  useEffect(() => {
     async function loadData() {
       const albums = albumTitles
         .map((album: string) => {

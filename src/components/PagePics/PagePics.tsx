@@ -1,18 +1,22 @@
-import { Link } from 'gatsby'
+import clsx from 'clsx'
 
+import { Article } from '../Base/Article'
 import { PagePicsPic } from '../PagePicsPic/PagePicsPic'
 import { Gallery } from '../Gallery/Gallery'
 import { useAnimateBackground } from '../../hooks/useAnimateBackground'
 import { useDragScroll } from '../../hooks/useDragScroll'
+import { Heading } from '../Heading/Heading'
+import { Paragraph } from '../Paragraph/Paragraph'
 import styles from './PagePics.module.css'
 
-import type { ImageProps } from '../Image/Image'
+import type { IGatsbyImageData } from 'gatsby-plugin-image'
 
 export interface Pic {
   title: string
+  description?: string
   background: string
   slug: string
-  image: ImageProps['image']
+  image?: IGatsbyImageData
 }
 
 interface PageSeriesProps {
@@ -35,28 +39,55 @@ function PagePics(props: PageSeriesProps) {
   return (
     <Gallery title={title} currentWindow={currentWindow} isPreview={isPreview}>
       {pics.map((pic) => {
-        const { title: albumTitle, background, slug, image } = pic
+        const {
+          title: picTitle,
+          description: picDescription,
+          background,
+          slug,
+          image,
+        } = pic
+
+        if (!image) {
+          return (
+            // We use <section> tag here (which is not semantically correct)
+            // to be able to target first of text-only blocks in css using first-of-type selector.
+            // In future it will be possible to use :nth-child(1 of .class) selector
+            // to achieve the same result.
+            <section className={clsx(styles.pic, styles.text)}>
+              <Article maxWidth={450}>
+                <Heading
+                  level={1}
+                  lineHeight={1}
+                  fontSize={40}
+                  fontFamily="transgender"
+                  mb={32}>
+                  {picTitle}
+                </Heading>
+                {picDescription && <Paragraph>{picDescription}</Paragraph>}
+              </Article>
+            </section>
+          )
+        }
 
         return (
-          <Link
-            // Firefox doesn't respect 'draggable' attribute
-            onDragStart={(event) => event.preventDefault()}
-            key={albumTitle}
-            to={`/pics${slug}`}
-            className={styles.pic}
-            data-background={background}
-            onClick={(event) => {
-              // Otherwise every drag attempt will result in page transition
-              if (isAnimating()) {
-                event.preventDefault()
-              }
-            }}
-            onFocus={animateOnMouseOverOrFocus}
-            onBlur={animateOnMouseOutOrBlur}
-            onMouseOut={animateOnMouseOutOrBlur}
-            onMouseOver={animateOnMouseOverOrFocus}>
-            <PagePicsPic title={albumTitle} pic={image} />
-          </Link>
+          <div key={picTitle} className={styles.pic}>
+            <PagePicsPic
+              title={picTitle}
+              to={`/pics${slug}`}
+              background={background}
+              pic={image}
+              onClick={(event) => {
+                // Otherwise every drag attempt will result in page transition
+                if (isAnimating()) {
+                  event.preventDefault()
+                }
+              }}
+              onFocus={animateOnMouseOverOrFocus}
+              onBlur={animateOnMouseOutOrBlur}
+              onMouseOut={animateOnMouseOutOrBlur}
+              onMouseOver={animateOnMouseOverOrFocus}
+            />
+          </div>
         )
       })}
     </Gallery>

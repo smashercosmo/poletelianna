@@ -5,14 +5,14 @@ import { useAnimateBackground } from '../../hooks/useAnimateBackground'
 import { useDragScroll } from '../../hooks/useDragScroll'
 import styles from './PageSeries.module.css'
 
-import type { ImageProps } from '../Image/Image'
+import type { IGatsbyImageData } from 'gatsby-plugin-image'
 
 export interface Album {
   title: string
   description: string
   background: string
   slug: string
-  cover: ImageProps['image']
+  cover: IGatsbyImageData
 }
 
 interface PageSeriesProps {

@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import styles from './AlbumScrollerInstruction.module.css'
 
 import type { ReactNode } from 'react'

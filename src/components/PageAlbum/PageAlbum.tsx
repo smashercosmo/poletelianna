@@ -1,4 +1,4 @@
-import * as React from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 import { Image } from '../Image/Image'
 import { Show } from '../Show/Show'
@@ -10,13 +10,12 @@ import { useResizedImages } from '../../hooks/useResizedImage'
 import { smoothScroll } from '../../lib/smoothScroll'
 import styles from './PageAlbum.module.css'
 
-import type { ImageProps } from '../Image/Image'
 import type { IGatsbyImageData } from 'gatsby-plugin-image'
 
 interface PageAlbumProps {
   title: string
   description: string
-  images: ReadonlyArray<ImageProps['image']>
+  images: ReadonlyArray<IGatsbyImageData>
 }
 
 function getIndex(
@@ -42,12 +41,12 @@ function PageAlbum(props: PageAlbumProps) {
       : new URLSearchParams(window.location.search).get('page')
   const scrollItemsCount = images.length
   const page = getIndex(mayBePage, scrollItemsCount)
-  const [scrolledItem, setScrolledItem] = React.useState(page)
-  const [scrollerVisible, setScrollerVisible] = React.useState(false)
-  const scrollerRef = React.useRef<HTMLDivElement | null>(null)
+  const [scrolledItem, setScrolledItem] = useState(page)
+  const [scrollerVisible, setScrollerVisible] = useState(false)
+  const scrollerRef = useRef<HTMLDivElement | null>(null)
   const resizedImages = useResizedImages({ images, maxSize: 620 })
 
-  React.useEffect(() => {
+  useEffect(() => {
     let scrollerNode: HTMLDivElement | undefined
     let scrollTimeout: number | null = null
     let wheelTimeout: number | null = null
@@ -103,12 +102,12 @@ function PageAlbum(props: PageAlbumProps) {
     }
   }, [scrollItemsCount])
 
-  React.useEffect(() => {
+  useEffect(() => {
     const path = `${window.location.pathname}?page=${scrolledItem}`
     window.history.replaceState({ path }, '', path)
   }, [scrolledItem])
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!scrollerRef.current) return
     const node = scrollerRef.current
     const params = new URLSearchParams(window.location.search)
@@ -195,7 +194,7 @@ function PageAlbum(props: PageAlbumProps) {
                 // eslint-disable-next-line react/no-array-index-key
                 <div key={`item-${index}`} className={styles.item}>
                   <Image
-                    image={image as IGatsbyImageData}
+                    image={image}
                     imgStyle={{ maxWidth: '100%', maxHeight: '100%' }}
                     alt=""
                   />
