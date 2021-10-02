@@ -1,5 +1,26 @@
 {
   "title": "fashion",
   "description": "fashion fashion",
-  "background": "#2b0404"
+  "background": "#2b0404",
+  "images": [
+    {
+      "url": "/images/series/fashion/mirkkametsola_ss21_9891web.jpg"
+    },
+    {
+      "url": "/images/series/fashion/mirkkametsola_ss21_9015web.jpg"
+    },
+    {
+      "url": "/images/series/fashion/mirkkametsola_ss21_7930web.jpg"
+    },
+    {
+      "url": "/images/series/fashion/mirkkametsola_ss21_7381web1.jpg"
+    },
+    {
+      "url": "/images/series/fashion/mirkkametsola_ss21_1866web.jpg"
+    },
+    {
+      "url": "/images/series/fashion/mirkkametsola_ss21_0556web.jpg",
+      "cover": true
+    }
+  ]
 }
