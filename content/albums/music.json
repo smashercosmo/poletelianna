@@ -1,6 +1,35 @@
 {
   "title": "music ",
-  "images": [],
+  "images": [
+    {
+      "url": "/images/series/music/dsc03934web.jpg"
+    },
+    {
+      "url": "/images/series/music/dsc04036web.jpg"
+    },
+    {
+      "url": "/images/series/music/dsc03733web.jpg"
+    },
+    {
+      "url": "/images/series/music/dsc01537web.jpg"
+    },
+    {
+      "url": "/images/series/music/dsc01377web.jpg"
+    },
+    {
+      "url": "/images/series/music/dsc01314web.jpg"
+    },
+    {
+      "url": "/images/series/music/dsc01266web.jpg"
+    },
+    {
+      "url": "/images/series/music/dsc01227web.jpg",
+      "cover": true
+    },
+    {
+      "url": "/images/series/music/dsc01108web.jpg"
+    }
+  ],
   "description": "BLABLA",
   "background": "#185d7f"
 }
