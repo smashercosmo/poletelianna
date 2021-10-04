@@ -7300,7 +7300,7 @@ export type PicPageQuery = (
   { readonly __typename?: 'Query' }
   & { readonly picture: Maybe<(
     { readonly __typename?: 'PicturesJson' }
-    & Pick<PicturesJson, 'title' | 'description'>
+    & Pick<PicturesJson, 'title' | 'description' | 'background'>
     & { readonly image: Maybe<(
       { readonly __typename?: 'File' }
       & { readonly childImageSharp: Maybe<(

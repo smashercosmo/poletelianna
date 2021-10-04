@@ -26,8 +26,10 @@ body {
 body {
   line-height: 1.2;
   font-family: var(--ff-object-sans);
-  background-color: rgb(245, 234, 234);
   position: relative;
+
+  /* to prevent page transition on overscroll */
+  overscroll-behavior-x: contain;
 }
 
 a {

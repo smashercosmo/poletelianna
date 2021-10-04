@@ -23,7 +23,7 @@ function Frame(props: FrameProps) {
       <div className={styles.top}>
         <Header navigationItems={navigationItems} currentPath={currentPath} />
       </div>
-      <main className={styles.main}>{children}</main>
+      {children}
       <Show at="md">
         <div className={styles.telegram}>
           <Link href="https://t.me/poletelianna">telegram</Link>

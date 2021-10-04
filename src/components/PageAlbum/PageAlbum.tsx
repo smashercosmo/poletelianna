@@ -1,13 +1,13 @@
 import { useState, useRef, useEffect } from 'react'
+import clsx from 'clsx'
 
 import { Image } from '../Image/Image'
 import { Show } from '../Show/Show'
+import { Main } from '../Main/Main'
 import { AlbumCaption } from '../AlbumCaption/AlbumCaption'
 import { AlbumControl } from '../AlbumControl/AlbumControl'
 import { AlbumBackButton } from '../AlbumBackButton/AlbumBackButton'
 import { AlbumScrollerInstruction } from '../AlbumScrollerInstruction/AlbumScrollerInstruction'
-import { Background } from '../Background/Background'
-import { useResizedImages } from '../../hooks/useResizedImage'
 import { smoothScroll } from '../../lib/smoothScroll'
 import styles from './PageAlbum.module.css'
 
@@ -46,7 +46,8 @@ function PageAlbum(props: PageAlbumProps) {
   const [scrolledItem, setScrolledItem] = useState(page)
   const [scrollerVisible, setScrollerVisible] = useState(false)
   const scrollerRef = useRef<HTMLDivElement | null>(null)
-  const resizedImages = useResizedImages({ images, maxSize: 620 })
+  const biggestWidth = Math.max(...images.map((image) => image.width))
+  const biggestHeight = Math.max(...images.map((image) => image.height))
 
   useEffect(() => {
     let scrollerNode: HTMLDivElement | undefined
@@ -137,9 +138,12 @@ function PageAlbum(props: PageAlbumProps) {
   }
 
   return (
-    <div className={styles.root}>
-      <Show when={scrollerVisible} mode="visibility">
-        <div className={styles.content}>
+    <Main backgroundColor={background}>
+      <div className={styles.root}>
+        <div
+          className={clsx(styles.wrapper, {
+            [styles.hidden]: !scrollerVisible,
+          })}>
           <div className={styles.column}>
             <div className={styles.back}>
               <AlbumBackButton />
@@ -185,29 +189,42 @@ function PageAlbum(props: PageAlbumProps) {
               )}
             </div>
           </div>
-          <div
-            className={styles.scroller}
-            ref={scrollerRef}
-            /* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */
-            tabIndex={0}
-            aria-labelledby="scroller-caption">
-            {resizedImages.map((image, index) => {
-              return (
-                // eslint-disable-next-line react/no-array-index-key
-                <div key={`item-${index}`} className={styles.item}>
-                  <Image
-                    image={image}
-                    imgStyle={{ maxWidth: '100%', maxHeight: '100%' }}
-                    alt=""
-                  />
-                </div>
-              )
-            })}
+          <div className={styles.inner} style={{ maxHeight: biggestHeight }}>
+            <div className={styles.content}>
+              <img
+                className={styles.placeholder}
+                alt=""
+                role="presentation"
+                aria-hidden="true"
+                src={`data:image/svg+xml;charset=utf-8,%3Csvg height='${
+                  biggestHeight || 0
+                }' width='${
+                  biggestWidth || 0
+                }' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E`}
+              />
+              <div
+                className={styles.scroller}
+                ref={scrollerRef}
+                /* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */
+                tabIndex={0}
+                aria-labelledby="scroller-caption">
+                {images.map((image, index) => {
+                  return (
+                    // eslint-disable-next-line react/no-array-index-key
+                    <div key={`item-${index}`} className={styles.item}>
+                      <Image
+                        image={image}
+                        alt=""
+                      />
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
           </div>
         </div>
-      </Show>
-      <Background color={background} />
-    </div>
+      </div>
+    </Main>
   )
 }
 

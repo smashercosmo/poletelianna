@@ -1,9 +1,10 @@
 .title {
   font-family: var(--ff-transgender);
   padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
   text-transform: lowercase;
   clear: left;
+  line-height: 1;
 }
 
 .subtitle {
@@ -21,10 +22,6 @@
 }
 
 @media (--md) {
-  .title {
-    padding-bottom: 1rem;
-  }
-
   .description {
     line-height: 1.6;
   }

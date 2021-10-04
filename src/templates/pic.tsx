@@ -4,6 +4,7 @@ import { Image } from '../components/Image/Image'
 import { Heading } from '../components/Heading/Heading'
 import { useResizedImage } from '../hooks/useResizedImage'
 import { ReactComponent as LongRightArrowIcon } from './long-right-arrow-icon.svg'
+import { Main } from '../components/Main/Main'
 import styles from './pic.module.css'
 
 import type { PageProps } from 'gatsby'
@@ -14,6 +15,7 @@ export const pageQuery = graphql`
     picture: picturesJson(id: { eq: $id }) {
       title
       description
+      background
       image {
         childImageSharp {
           gatsbyImageData(width: 620, transformOptions: { fit: CONTAIN })
@@ -41,44 +43,48 @@ const longLeftArrow = <LongRightArrowIcon width={207} transform="rotate(180)" />
 function PicTemplate(props: PageProps<PicPageQuery>) {
   const { data } = props
   const { picture, previous, next } = data
-  const { title, description, image } = picture
+  const { title, description, background, image } = picture
   const resizedImage = useResizedImage({
     image: image.childImageSharp.gatsbyImageData,
     maxSize: 620,
   })
 
   return (
-    <div className={styles.root}>
-      <div className={styles.content}>
-        <div className={styles.header}>
-          <Heading level={1} fontSize={56} fontFamily="transgender">{title}</Heading>
+    <Main backgroundColor={background}>
+      <div className={styles.root}>
+        <div className={styles.content}>
+          <div className={styles.header}>
+            <Heading level={1} fontSize={56} fontFamily="transgender">
+              {title}
+            </Heading>
+          </div>
+          <div className={styles.left}>
+            {previous && (
+              <Link to={`/pics${previous.fields.slug}`} rel="prev">
+                {longLeftArrow}
+              </Link>
+            )}
+          </div>
+          <div className={styles.image}>
+            {resizedImage && (
+              <Image
+                image={resizedImage}
+                imgStyle={{ maxWidth: '100%', maxHeight: '100%' }}
+                alt=""
+              />
+            )}
+          </div>
+          <div className={styles.right}>
+            {next && (
+              <Link to={`/pics${next.fields.slug}`} rel="next">
+                {longRightArrow}
+              </Link>
+            )}
+          </div>
+          <div className={styles.description}>{description}</div>
         </div>
-        <div className={styles.left}>
-          {previous && (
-            <Link to={`/pics${previous.fields.slug}`} rel="prev">
-              {longLeftArrow}
-            </Link>
-          )}
-        </div>
-        <div className={styles.image}>
-          {resizedImage && (
-            <Image
-              image={resizedImage}
-              imgStyle={{ maxWidth: '100%', maxHeight: '100%' }}
-              alt=""
-            />
-          )}
-        </div>
-        <div className={styles.right}>
-          {next && (
-            <Link to={`/pics${next.fields.slug}`} rel="next">
-              {longRightArrow}
-            </Link>
-          )}
-        </div>
-        <div className={styles.description}>{description}</div>
       </div>
-    </div>
+    </Main>
   )
 }
 

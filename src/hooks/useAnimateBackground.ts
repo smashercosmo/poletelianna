@@ -1,22 +1,15 @@
-import { useEffect } from 'react'
+import { useState } from 'react'
 
 import { hex2rgb } from '../lib/hex2rgb'
+import { DEFAULT_BG_STRING } from '../lib/constants'
 
 import type { MouseEvent, FocusEvent } from 'react'
 
-function changeBackgroundColor(bg: `rgb(${number}, ${number}, ${number})`) {
-  document.body.style.backgroundColor = bg
-}
-
 function useAnimateBackground(
-  defaultBg: `rgb(${number}, ${number}, ${number})`,
+  initialBg?: `rgb(${number}, ${number}, ${number})`,
 ) {
-  useEffect(() => {
-    document.body.style.transition = 'background-color 0.5s linear'
-    return () => {
-      document.body.removeAttribute('style')
-    }
-  }, [])
+  const defaultBg = initialBg || DEFAULT_BG_STRING
+  const [backgroundColor, setBackgroundColor] = useState(defaultBg)
 
   function animateOnMouseOverOrFocus(event: MouseEvent | FocusEvent) {
     if (
@@ -30,10 +23,10 @@ function useAnimateBackground(
         const rgbBackground = hex2rgb(background)
         if (rgbBackground) {
           const [r, g, b] = rgbBackground
-          changeBackgroundColor(`rgb(${r}, ${g}, ${b})` as const)
+          setBackgroundColor(`rgb(${r}, ${g}, ${b})` as const)
         }
       } else {
-        changeBackgroundColor(defaultBg)
+        setBackgroundColor(defaultBg)
       }
     }
   }
@@ -43,11 +36,12 @@ function useAnimateBackground(
       event.type === 'blur' ||
       (event.target && event.target instanceof HTMLImageElement)
     ) {
-      changeBackgroundColor(defaultBg)
+      setBackgroundColor(defaultBg)
     }
   }
 
   return {
+    backgroundColor,
     animateOnMouseOverOrFocus,
     animateOnMouseOutOrBlur,
   }
