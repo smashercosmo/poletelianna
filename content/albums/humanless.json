@@ -1,10 +1,13 @@
 {
   "title": "humanless",
   "description": "human without",
-  "background": "#ec9d9d",
+  "background": "#c5a8a8",
   "images": [
     {
       "url": "/images/series/humanless/dsc05342web.jpg"
+    },
+    {
+      "url": "/images/series/humanless/dsc05616web.jpg"
     }
   ]
 }
