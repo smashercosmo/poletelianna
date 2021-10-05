@@ -1,7 +1,7 @@
 {
   "title": "studio",
   "description": "Blabla",
-  "background": "#ff8080",
+  "background": "#cad8c6",
   "images": [
     {
       "url": "/images/series/studio/dsc06227web2.jpg"
@@ -30,6 +30,12 @@
     },
     {
       "url": "/images/series/studio/dsc01791web.jpg"
+    },
+    {
+      "url": "/images/series/studio/dsc04728web.jpg"
+    },
+    {
+      "url": "/images/series/studio/dsc05826web.jpg"
     }
   ]
 }
