@@ -3,6 +3,7 @@
 import CMS from 'netlify-cms-app'
 
 import { PageSeriesPreview } from './previews/PageSeriesPreview'
+import { PageAlbumPreview } from './previews/PageAlbumPreview'
 
 const config =
   process.env.NODE_ENV === 'development'
@@ -15,5 +16,6 @@ const config =
       }
 
 CMS.registerPreviewTemplate('series', PageSeriesPreview)
+CMS.registerPreviewTemplate('albums', PageAlbumPreview)
 
 CMS.init({ config })

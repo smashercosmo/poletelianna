@@ -18,6 +18,8 @@ interface PageAlbumProps {
   description: string
   background: string
   images: ReadonlyArray<IGatsbyImageData>
+  currentWindow?: Window
+  isPreview?: boolean
 }
 
 function getIndex(
@@ -36,11 +38,13 @@ function getIndex(
 }
 
 function PageAlbum(props: PageAlbumProps) {
-  const { title, description, images, background } = props
+  const { title, description, images, background, currentWindow, isPreview } =
+    props
+  const win = currentWindow || window
   const mayBePage =
-    typeof window === 'undefined'
+    typeof win === 'undefined'
       ? '0'
-      : new URLSearchParams(window.location.search).get('page')
+      : new URLSearchParams(win.location.search).get('page')
   const scrollItemsCount = images.length
   const page = getIndex(mayBePage, scrollItemsCount)
   const [scrolledItem, setScrolledItem] = useState(page)
@@ -79,14 +83,14 @@ function PageAlbum(props: PageAlbumProps) {
         if (typeof currentPage === 'number') setScrolledItem(currentPage)
       }
 
-      if (scrollTimeout) window.clearTimeout(scrollTimeout)
-      scrollTimeout = window.setTimeout(onScrollEnd, 100)
+      if (scrollTimeout) win.clearTimeout(scrollTimeout)
+      scrollTimeout = win.setTimeout(onScrollEnd, 100)
     }
 
     function onWheel() {
       isBeingManuallyScrolled = true
-      if (wheelTimeout) window.clearTimeout(wheelTimeout)
-      wheelTimeout = window.setTimeout(onWheelEnd, 100)
+      if (wheelTimeout) win.clearTimeout(wheelTimeout)
+      wheelTimeout = win.setTimeout(onWheelEnd, 100)
     }
 
     if (scrollerRef.current) {
@@ -103,22 +107,24 @@ function PageAlbum(props: PageAlbumProps) {
         scrollerNode.removeEventListener('touchmove', onTouchMove)
       }
     }
-  }, [scrollItemsCount])
+  }, [win, scrollItemsCount])
 
   useEffect(() => {
-    const path = `${window.location.pathname}?page=${scrolledItem}`
-    window.history.replaceState({ path }, '', path)
-  }, [scrolledItem])
+    // For some reason calling replaceState in iframe fails
+    if (isPreview) return
+    const path = `${win.location.pathname}?page=${scrolledItem}`
+    win.history.replaceState({ path }, '', path)
+  }, [win, isPreview, scrolledItem])
 
   useEffect(() => {
     if (!scrollerRef.current) return
     const node = scrollerRef.current
-    const params = new URLSearchParams(window.location.search)
+    const params = new URLSearchParams(win.location.search)
     const page = getIndex(params.get('page'), scrollItemsCount)
     const scrollLeft = Math.floor(node.scrollWidth * (page / scrollItemsCount))
     scrollerRef.current.scrollTo(scrollLeft, 0)
     setScrollerVisible(true)
-  }, [scrollItemsCount])
+  }, [win, scrollItemsCount])
 
   function scrollTo(itemToScroll: number) {
     if (
@@ -212,10 +218,7 @@ function PageAlbum(props: PageAlbumProps) {
                   return (
                     // eslint-disable-next-line react/no-array-index-key
                     <div key={`item-${index}`} className={styles.item}>
-                      <Image
-                        image={image}
-                        alt=""
-                      />
+                      <Image image={image} alt="" />
                     </div>
                   )
                 })}
