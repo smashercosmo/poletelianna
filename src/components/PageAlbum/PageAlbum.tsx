@@ -40,11 +40,12 @@ function getIndex(
 function PageAlbum(props: PageAlbumProps) {
   const { title, description, images, background, currentWindow, isPreview } =
     props
-  const win = currentWindow || window
   const mayBePage =
-    typeof win === 'undefined'
+    typeof window === 'undefined'
       ? '0'
-      : new URLSearchParams(win.location.search).get('page')
+      : new URLSearchParams((currentWindow || window).location.search).get(
+          'page',
+        )
   const scrollItemsCount = images.length
   const page = getIndex(mayBePage, scrollItemsCount)
   const [scrolledItem, setScrolledItem] = useState(page)
@@ -54,6 +55,7 @@ function PageAlbum(props: PageAlbumProps) {
   const biggestHeight = Math.max(...images.map((image) => image.height))
 
   useEffect(() => {
+    const win = currentWindow || window
     let scrollerNode: HTMLDivElement | undefined
     let scrollTimeout: number | null = null
     let wheelTimeout: number | null = null
@@ -107,24 +109,26 @@ function PageAlbum(props: PageAlbumProps) {
         scrollerNode.removeEventListener('touchmove', onTouchMove)
       }
     }
-  }, [win, scrollItemsCount])
+  }, [currentWindow, scrollItemsCount])
 
   useEffect(() => {
     // For some reason calling replaceState in iframe fails
     if (isPreview) return
+    const win = currentWindow || window
     const path = `${win.location.pathname}?page=${scrolledItem}`
     win.history.replaceState({ path }, '', path)
-  }, [win, isPreview, scrolledItem])
+  }, [currentWindow, isPreview, scrolledItem])
 
   useEffect(() => {
     if (!scrollerRef.current) return
+    const win = currentWindow || window
     const node = scrollerRef.current
     const params = new URLSearchParams(win.location.search)
     const page = getIndex(params.get('page'), scrollItemsCount)
     const scrollLeft = Math.floor(node.scrollWidth * (page / scrollItemsCount))
     scrollerRef.current.scrollTo(scrollLeft, 0)
     setScrollerVisible(true)
-  }, [win, scrollItemsCount])
+  }, [currentWindow, scrollItemsCount])
 
   function scrollTo(itemToScroll: number) {
     if (
