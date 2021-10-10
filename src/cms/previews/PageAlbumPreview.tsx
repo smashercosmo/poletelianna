@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 
 import { PageAlbum } from '../../components/PageAlbum/PageAlbum'
+import { DEFAULT_BG_STRING } from '../../lib/constants'
 
 import type { PreviewTemplateComponentProps } from 'netlify-cms-core'
 
@@ -10,17 +11,17 @@ type PageAlbumPreviewProps = PreviewTemplateComponentProps & {
 }
 
 function PageAlbumPreview(props: PageAlbumPreviewProps) {
-  const { window, entry, fieldsMetaData } = props
+  const { window, entry } = props
   const data = entry.get('data')
-  const pageTitle = data.get('title')
-  const pageDescription = data.get('description')
-  const pageBackground = data.get('background')
+  const pageTitle = data.get('title') || 'Album title'
+  const pageDescription = data.get('description') || 'Album description'
+  const pageBackground = data.get('background') || DEFAULT_BG_STRING
   const images = data.get('images')
-  const [loadedImages, setLoadedImages] = useState<any[] | undefined>()
+  const [loadedImages, setLoadedImages] = useState<any[]>([])
 
   useEffect(() => {
     async function loadData() {
-      if (images.size) {
+      if (images && images.size) {
         const loadedAlbumsData = await Promise.all(
           images.toJS().map((image: any) => {
             return new Promise((resolve) => {
@@ -41,8 +42,6 @@ function PageAlbumPreview(props: PageAlbumPreviewProps) {
     }
     loadData()
   }, [images])
-
-  if (!loadedImages) return null
 
   return (
     <PageAlbum
