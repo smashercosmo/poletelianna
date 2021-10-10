@@ -11,7 +11,7 @@ type PageAlbumPreviewProps = PreviewTemplateComponentProps & {
 }
 
 function PageAlbumPreview(props: PageAlbumPreviewProps) {
-  const { window, entry } = props
+  const { window, entry, getAsset } = props
   const data = entry.get('data')
   const pageTitle = data.get('title') || 'Album title'
   const pageDescription = data.get('description') || 'Album description'
@@ -23,13 +23,14 @@ function PageAlbumPreview(props: PageAlbumPreviewProps) {
     async function loadData() {
       if (images && images.size) {
         const loadedAlbumsData = await Promise.all(
-          images.toJS().map((image: any) => {
+          images.map((image: any) => {
             return new Promise((resolve) => {
+              const src = getAsset(image.get('url')).toString()
               const img = new Image()
-              img.src = image.url
+              img.src = src
               img.onload = () => {
                 resolve({
-                  src: image.url,
+                  src,
                   width: img.naturalWidth,
                   height: img.naturalHeight,
                 })
@@ -41,7 +42,7 @@ function PageAlbumPreview(props: PageAlbumPreviewProps) {
       }
     }
     loadData()
-  }, [images])
+  }, [getAsset, images])
 
   return (
     <PageAlbum
