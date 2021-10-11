@@ -13,20 +13,18 @@ export function FullHeightContent(props: FullHeightContentProps) {
 
   return (
     <div className={styles.root}>
-      <div className={styles.inner}>
-        <img
-          className={styles.placeholder}
-          alt=""
-          role="presentation"
-          aria-hidden="true"
-          src={`data:image/svg+xml;charset=utf-8,%3Csvg height='${
-            height || 0
-          }' width='${
-            width || 0
-          }' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E`}
-        />
-        <div className={styles.content}>{children}</div>
-      </div>
+      <img
+        className={styles.placeholder}
+        alt=""
+        role="presentation"
+        aria-hidden="true"
+        src={`data:image/svg+xml;charset=utf-8,%3Csvg height='${
+          height || 0
+        }' width='${
+          width || 0
+        }' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E`}
+      />
+      <div className={styles.content}>{children}</div>
     </div>
   )
 }

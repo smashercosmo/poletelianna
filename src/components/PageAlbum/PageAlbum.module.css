@@ -8,8 +8,10 @@
 }
 
 .wrapper {
-  display: grid;
-  grid-gap: calc(var(--gap-rem) / 2);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: calc(var(--gap-rem) / 2);
 }
 
 .hidden {
@@ -90,8 +92,9 @@
   }
 
   .wrapper {
-    grid-template-columns: auto auto;
-    grid-gap: var(--gap-rem);
+    align-items: stretch;
+    flex-direction: row-reverse;
+    gap: var(--gap-rem);
   }
 
   .scroller {
@@ -99,7 +102,6 @@
   }
 
   .column {
-    order: 1;
     padding-top: var(--gap-rem);
     padding-bottom: var(--gap-rem);
   }
