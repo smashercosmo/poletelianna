@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { Helmet } from 'react-helmet'
 import clsx from 'clsx'
 
 import { Image } from '../Image/Image'
@@ -150,6 +151,9 @@ function PageAlbum(props: PageAlbumProps) {
 
   return (
     <Main backgroundColor={background}>
+      <Helmet>
+        <body data-show-scroll-bar />
+      </Helmet>
       <div className={styles.root}>
         <div
           className={clsx(styles.wrapper, {

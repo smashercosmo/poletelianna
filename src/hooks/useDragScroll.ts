@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useGesture } from '@use-gesture/react'
 import { useSpring, config } from '@react-spring/web'
 
@@ -100,13 +99,6 @@ function useDragScroll(currentWindow?: Window) {
       target: win,
     },
   )
-
-  useEffect(() => {
-    win?.document.body.classList.add('hide-scrollbar')
-    return () => {
-      win?.document.body.classList.remove('hide-scrollbar')
-    }
-  })
 
   return {
     isAnimating() {

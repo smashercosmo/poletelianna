@@ -54,14 +54,23 @@ a {
   font-style: normal;
 }
 
+
+/*
+   By default scrollbar is hidden,
+   it's enabled on certain pages
+   by setting data-show-scroll-bar attribute
+   via react-helmet. For some reason,
+   if scrollbar is visible by default, then
+   safari fails to hide it dynamically ¯\_(ツ)_/¯
+*/
 @media (--md) {
-  .hide-scrollbar {
+  body:not([data-show-scroll-bar]) {
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
 
-  .hide-scrollbar::-webkit-scrollbar {
+  body:not([data-show-scroll-bar])::-webkit-scrollbar {
     display: none;
   }
 }
