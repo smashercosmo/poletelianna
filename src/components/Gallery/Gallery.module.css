@@ -9,7 +9,7 @@
     var(--home-page-columns-number),
     var(--home-page-column-width)
   );
-  grid-gap: calc(var(--gap-rem) * 2);
+  grid-gap: calc(var(--gap-rem) * 1.5);
   padding: 0 calc(var(--gap-rem) / 2) var(--gap-rem) calc(var(--gap-rem) / 2);
   position: relative;
 }

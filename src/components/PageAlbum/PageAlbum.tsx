@@ -4,6 +4,7 @@ import clsx from 'clsx'
 import { Image } from '../Image/Image'
 import { Show } from '../Show/Show'
 import { Main } from '../Main/Main'
+import { FullHeightContent } from '../FullHeightContent/FullHeightContent'
 import { AlbumCaption } from '../AlbumCaption/AlbumCaption'
 import { AlbumControl } from '../AlbumControl/AlbumControl'
 import { AlbumBackButton } from '../AlbumBackButton/AlbumBackButton'
@@ -199,36 +200,23 @@ function PageAlbum(props: PageAlbumProps) {
               )}
             </div>
           </div>
-          <div className={styles.inner} style={{ maxHeight: biggestHeight }}>
-            <div className={styles.content}>
-              <img
-                className={styles.placeholder}
-                alt=""
-                role="presentation"
-                aria-hidden="true"
-                src={`data:image/svg+xml;charset=utf-8,%3Csvg height='${
-                  biggestHeight || 0
-                }' width='${
-                  biggestWidth || 0
-                }' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E`}
-              />
-              <div
-                className={styles.scroller}
-                ref={scrollerRef}
-                /* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */
-                tabIndex={0}
-                aria-labelledby="scroller-caption">
-                {images.map((image, index) => {
-                  return (
-                    // eslint-disable-next-line react/no-array-index-key
-                    <div key={`item-${index}`} className={styles.item}>
-                      <Image image={image} alt="" />
-                    </div>
-                  )
-                })}
-              </div>
+          <FullHeightContent width={biggestWidth} height={biggestHeight}>
+            <div
+              className={styles.scroller}
+              ref={scrollerRef}
+              /* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */
+              tabIndex={0}
+              aria-labelledby="scroller-caption">
+              {images.map((image, index) => {
+                return (
+                  // eslint-disable-next-line react/no-array-index-key
+                  <div key={`item-${index}`} className={styles.item}>
+                    <Image image={image} alt="" />
+                  </div>
+                )
+              })}
             </div>
-          </div>
+          </FullHeightContent>
         </div>
       </div>
     </Main>

@@ -1,12 +1,9 @@
-.album {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  grid-row-end: span 2;
-}
-
 @media (--md) {
   .album {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-row-end: span 2;
     padding: var(--gap-rem);
   }
 
