@@ -19,14 +19,3 @@
   justify-content: center;
   align-items: center;
 }
-
-@media (--lg) {
-  .root {
-    padding-top: calc(var(--gap-rem) * 2);
-    padding-bottom: calc(var(--gap-rem) * 2);
-    margin-top: calc(var(--gap-rem) * -1);
-    margin-bottom: calc(var(--gap-rem) * -1);
-    align-items: center;
-    justify-content: center;
-  }
-}
