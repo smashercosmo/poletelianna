@@ -1,3 +1,4 @@
+import { forwardRef } from 'react'
 import { VisuallyHidden } from '@react-aria/visually-hidden'
 import { a } from '@react-spring/web'
 import clsx from 'clsx'
@@ -8,7 +9,7 @@ import { Hide } from '../Hide/Hide'
 import { useAnimateScale } from '../../hooks/useAnimateScale'
 import styles from './Gallery.module.css'
 
-import type { ReactNode } from 'react'
+import type { ForwardedRef, ReactNode } from 'react'
 
 interface GalleryProps {
   title: string
@@ -17,10 +18,9 @@ interface GalleryProps {
   currentWindow?: Window
 }
 
-function Gallery(props: GalleryProps) {
+function Gallery(props: GalleryProps, ref: ForwardedRef<HTMLDivElement>) {
   const { title, children, isPreview = false, currentWindow } = props
 
-  // TODO currently you need to wait for animation to end before you can start dragging or scrolling
   const { style: animationStyle } = useAnimateScale({
     animateAt: 'md',
     disable: isPreview,
@@ -29,6 +29,7 @@ function Gallery(props: GalleryProps) {
 
   return (
     <div
+      ref={ref}
       className={clsx(styles.root, {
         [styles.isPreview]: isPreview,
       })}>
@@ -47,4 +48,5 @@ function Gallery(props: GalleryProps) {
   )
 }
 
-export { Gallery }
+const _Gallery = forwardRef(Gallery)
+export { _Gallery as Gallery }

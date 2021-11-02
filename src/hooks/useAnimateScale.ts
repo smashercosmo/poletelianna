@@ -28,21 +28,19 @@ function useAnimateScale({
   const style = useSpring({
     from: { scale: 0.1 },
     to: { scale: 1 },
-    onChange: {
-      scale() {
-        if (isDesktop) {
-          const { documentElement } = (currentWindow || window).document
-          const { scrollWidth, clientWidth, scrollHeight, clientHeight } =
-            documentElement
-          const maxScrollLeft = scrollWidth - clientWidth
-          const maxScrollTop = scrollHeight - clientHeight
-          documentElement.scrollLeft = maxScrollLeft / 2
-          documentElement.scrollTop = maxScrollTop / 2
-        }
-      },
-    },
     immediate: !isDesktop || prefersReducedMotion || disable,
     config: config.slow,
+    onStart() {
+      if (isDesktop) {
+        const { documentElement } = (currentWindow || window).document
+        const { scrollWidth, clientWidth, scrollHeight, clientHeight } =
+          documentElement
+        const maxScrollLeft = scrollWidth - clientWidth
+        const maxScrollTop = scrollHeight - clientHeight
+        documentElement.scrollLeft = maxScrollLeft / 2
+        documentElement.scrollTop = maxScrollTop / 2
+      }
+    },
   })
 
   return { style }
